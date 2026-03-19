@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Intelligence & Data Science - Jio Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600&family=Inter:wght@300;400;500;700&family=Sora:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/pdp.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute"></a>
+            </div>
+            <div class="navbar-center">
+                <a href="about.html">About Us</a>
+                <a href="programmes.html">Programmes</a>
+                <a href="placements.html">Placements</a>
+                <a href="#">Research</a>
+                <a href="#">Sports &amp; Athletics</a>
+            </div>
+            <div class="navbar-icons">
+                <img src="images/search.svg" alt="Search">
+                <img src="images/menu.svg" alt="Menu" class="menu-icon">
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-mobile-header">
+            <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute"
+                    class="search-overlay-logo"></a>
+            <button class="search-overlay-mobile-close" id="searchMobileClose">
+                <img src="images/close-icon.svg" alt="Close" style="--stroke-0: #ffffff;">
+            </button>
+        </div>
+        <div class="search-overlay-inner">
+            <button class="search-overlay-close" id="searchClose">
+                <img src="images/close-icon.svg" alt="Close">
+            </button>
+            <div class="search-input-area">
+                <div class="search-input-row">
+                    <img src="images/search-large.svg" alt="" class="search-icon">
+                    <input type="text" id="searchInput" placeholder="Search for programmes, events, etc...">
+                    <button class="search-input-clear" id="searchClear">
+                        <img src="images/close-circle.svg" alt="Clear">
+                    </button>
+                </div>
+            </div>
+            <div class="popular-searches">
+                <p class="popular-searches-label">Popular Searches</p>
+                <div class="popular-searches-grid">
+                    <a href="about.html#vision" class="popular-search-link">Mission &amp; Values <img src="images/chevron-right.svg"
+                            alt=""></a>
+                    <a href="about.html" class="popular-search-link desktop-only-search">Get to Know Us <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Journey <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Story <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Future Aspirations <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#vision" class="popular-search-link desktop-only-search">Vision for Tomorrow <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Why Us? <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Benefits of Studying Here <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">Growth Roadmap <img src="images/chevron-right.svg"
+                            alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Strategic Development Plan <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">FAQs <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Your Questions Answered <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html" class="popular-search-link mobile-only-search">Get to Know Us <img
+                            src="images/chevron-right.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="search-bottom-tabs desktop-search-tabs">
+                <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg" alt=""
+                        style="--stroke-0: #ffffff;"></a>
+                <a href="#" class="search-bottom-tab">Events</a>
+                <a href="#" class="search-bottom-tab">Jio Digital Library</a>
+                <a href="#" class="search-bottom-tab">News</a>
+                <a href="#" class="search-bottom-tab">Careers at Jio</a>
+                <a href="#" class="search-bottom-tab apply-now">Apply Now</a>
+            </div>
+            <div class="search-bottom-tabs mobile-search-tabs">
+                <div class="search-bottom-tabs-scroll">
+                    <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg"
+                            alt="" style="--stroke-0: #ffffff;"></a>
+                    <a href="#" class="search-bottom-tab">A to Z Index</a>
+                    <a href="#" class="search-bottom-tab">Events</a>
+                    <a href="#" class="search-bottom-tab">Alumni</a>
+                    <a href="placements.html" class="search-bottom-tab">Placements</a>
+                    <a href="#" class="search-bottom-tab">Digital Library</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="pdp-hero">
+        <div class="pdp-hero-content">
+            <p class="pdp-breadcrumb"><a href="index.html">Home</a> / <a href="programmes.html">Academics</a> /
+                <strong>Artificial Intelligence &amp; Data Science</strong>
+            </p>
+            <h1 class="pdp-hero-title">Artificial intelligence<br>&amp; data science</h1>
+            <p class="pdp-hero-subtitle">A future-ready program shaping AI leaders for industry and research</p>
+            <div class="pdp-hero-buttons">
+                <a href="#" class="pdp-btn-primary">Apply Now <img src="images/arrow-white.svg" alt=""></a>
+                <a href="#" class="pdp-btn-secondary pdp-btn-secondary-light">Download Brochure <img
+                        src="images/download-icon.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="pdp-hero-image">
+            <img src="images/program-main.png" alt="AI & Data Science Programme">
+        </div>
+        <div class="pdp-info-bar">
+            <div class="pdp-info-item">
+                <span class="pdp-info-label">Mode</span>
+                <span class="pdp-info-value">Full-Time, Residential</span>
+            </div>
+            <div class="pdp-info-item">
+                <span class="pdp-info-label">Duration</span>
+                <span class="pdp-info-value">24 Months</span>
+            </div>
+            <div class="pdp-info-item">
+                <span class="pdp-info-label">Starting Date</span>
+                <span class="pdp-info-value">12 November, 2026</span>
+            </div>
+            <div class="pdp-info-item">
+                <span class="pdp-info-label">Admission Deadline</span>
+                <span class="pdp-info-value">05 February, 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION NAVIGATION -->
+    <nav class="pdp-nav" id="pdpNav">
+        <div class="pdp-nav-inner">
+            <a href="#overview" class="pdp-nav-item active">Overview</a>
+            <span class="pdp-nav-sep"></span>
+            <a href="#life-overview" class="pdp-nav-item">Life at Jio</a>
+            <span class="pdp-nav-sep"></span>
+            <a href="#highlights" class="pdp-nav-item">Highlights</a>
+            <span class="pdp-nav-sep"></span>
+            <a href="#faculty" class="pdp-nav-item">Faculty</a>
+            <span class="pdp-nav-sep"></span>
+            <a href="#curriculum" class="pdp-nav-item">Curriculum</a>
+            <span class="pdp-nav-sep"></span>
+            <a href="#testimonials" class="pdp-nav-item">Testimonials</a>
+            <span class="pdp-nav-sep"></span>
+            <a href="#learning" class="pdp-nav-item">Campus Life</a>
+            <span class="pdp-nav-sep"></span>
+            <a href="#capstone" class="pdp-nav-item">Capstone Projects</a>
+            <a href="#" class="pdp-nav-apply">Apply Now</a>
+        </div>
+        <div class="pdp-nav-mobile">
+            <span class="pdp-nav-mobile-label">Overview</span>
+            <img src="images/chevron-down.svg" alt="" class="pdp-nav-mobile-icon">
+        </div>
+    </nav>
+
+    <!-- PROGRAMME OVERVIEW -->
+    <section class="pdp-overview" id="overview">
+        <h2 class="pdp-section-title">Programme Overview</h2>
+        <p class="pdp-overview-desc">Jio Institute's M.Tech in Artificial Intelligence & Data Science is a rigorous
+            two-year programme that equips students with cutting-edge knowledge and practical skills in AI, machine
+            learning, data engineering, and analytics. Designed in collaboration with global academic and industry
+            partners, the programme prepares graduates to lead innovation in a data-driven world.</p>
+        <div class="pdp-skills-row">
+            <div class="pdp-skill-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#1a1a1a" stroke-width="1.5" />
+                    <path d="M12 2v10l7 7" stroke="#1a1a1a" stroke-width="1.5" />
+                </svg>
+                <span>Data Structures</span>
+            </div>
+            <div class="pdp-skill-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="7" height="18" rx="1" stroke="#1a1a1a" stroke-width="1.5" />
+                    <rect x="14" y="8" width="7" height="13" rx="1" stroke="#1a1a1a" stroke-width="1.5" />
+                </svg>
+                <span>Data Analysis</span>
+            </div>
+            <div class="pdp-skill-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="#1a1a1a" stroke-width="1.5" />
+                    <path
+                        d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"
+                        stroke="#1a1a1a" stroke-width="1.5" />
+                </svg>
+                <span>Web Scraping</span>
+            </div>
+            <div class="pdp-skill-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 3v18h18" stroke="#1a1a1a" stroke-width="1.5" />
+                    <path d="M7 14l4-4 4 4 5-5" stroke="#1a1a1a" stroke-width="1.5" />
+                </svg>
+                <span>Data Visualization</span>
+            </div>
+            <div class="pdp-skill-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 4h16v16H4z" stroke="#1a1a1a" stroke-width="1.5" />
+                    <path d="M4 12h16M12 4v16" stroke="#1a1a1a" stroke-width="1.5" />
+                </svg>
+                <span>Data Processing</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIFE OVERVIEW -->
+    <section class="pdp-life" id="life-overview">
+        <h2 class="pdp-life-title">Here's how your life is going to look like for the next 2 years</h2>
+        <div class="pdp-life-content">
+            <div class="pdp-life-video">
+                <img src="images/campus-main.png" alt="Campus Life Video">
+                <button class="pdp-play-btn">
+                    <img src="images/play-icon.svg" alt="Play">
+                </button>
+            </div>
+            <div class="pdp-life-panel">
+                <div class="pdp-life-tab active" data-panel="immersions">
+                    <h3 class="pdp-life-tab-title">Industry Immersions</h3>
+                    <p class="pdp-life-tab-desc">Get real-world exposure through curated industry visits and hands-on
+                        learning experiences. Understand how top companies operate and gain practical insights directly
+                        from the field.</p>
+                </div>
+                <div class="pdp-life-tab" data-panel="exchange">
+                    <h3 class="pdp-life-tab-title">Exchange programs</h3>
+                    <p class="pdp-life-tab-desc">Study at our partner institutions across the globe. Exchange programs
+                        offer semester-long opportunities to explore new academic environments and cultures.</p>
+                </div>
+                <div class="pdp-life-tab" data-panel="fireside">
+                    <h3 class="pdp-life-tab-title">Fireside Chats with CEOs &amp; CXOs</h3>
+                    <p class="pdp-life-tab-desc">Engage in intimate conversations with industry leaders, entrepreneurs,
+                        and thought leaders. These sessions provide unique insights into real-world challenges and
+                        opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY HIGHLIGHTS -->
+    <section class="pdp-highlights" id="highlights">
+        <div class="pdp-highlights-grid">
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">4 Terms</span>
+                <span class="pdp-highlight-desc">Spread across 2 years of study</span>
+            </div>
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">1000+ Hours</span>
+                <span class="pdp-highlight-desc">Of immersive learning experience</span>
+            </div>
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">500+ Alumni</span>
+                <span class="pdp-highlight-desc">Strong and growing network</span>
+            </div>
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">100% Placements</span>
+                <span class="pdp-highlight-desc">For qualifying graduates</span>
+            </div>
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">Career Prep</span>
+                <span class="pdp-highlight-desc">Industry-aligned skills training</span>
+            </div>
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">Global Immersion</span>
+                <span class="pdp-highlight-desc">International exposure programs</span>
+            </div>
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">50+ Industry Leaders</span>
+                <span class="pdp-highlight-desc">As guest faculty and mentors</span>
+            </div>
+            <div class="pdp-highlight-item">
+                <span class="pdp-highlight-value">Capstone Projects</span>
+                <span class="pdp-highlight-desc">Real-world problem solving</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATION -->
+    <section class="pdp-transformation">
+        <div class="pdp-transformation-inner">
+            <p class="pdp-transformation-text">Transforming aspiring professionals into <strong>future-ready
+                    leaders</strong> who can harness data to solve real-world problems.</p>
+        </div>
+    </section>
+
+    <!-- FACULTY SECTION -->
+    <section class="pdp-faculty" id="faculty">
+        <div class="pdp-faculty-header">
+            <h2 class="pdp-faculty-title">World-class Global Faculty<br>&amp; Industry Experts</h2>
+            <a href="#" class="pdp-btn-secondary pdp-faculty-btn">View All Distinguished Faculty <img
+                    src="images/arrow-black.svg" alt=""></a>
+        </div>
+        <div class="pdp-faculty-carousel">
+            <div class="pdp-faculty-images">
+                <div class="pdp-faculty-img side">
+                    <img src="images/faculty-side-left.png" alt="Faculty Member">
+                </div>
+                <div class="pdp-faculty-img center">
+                    <img src="images/faculty-center.png" alt="Faculty Member">
+                </div>
+                <div class="pdp-faculty-img side">
+                    <img src="images/faculty-side-right.png" alt="Faculty Member">
+                </div>
+            </div>
+        </div>
+        <div class="pdp-faculty-profiles">
+            <div class="pdp-faculty-tabs">
+                <h3 class="pdp-faculty-tabs-title">Meet the Distinguished Faculty</h3>
+                <div class="pdp-faculty-chips">
+                    <button class="pdp-chip active">Faculty</button>
+                    <button class="pdp-chip">Advisory Council</button>
+                </div>
+            </div>
+            <div class="pdp-faculty-cards">
+                <div class="pdp-faculty-card">
+                    <div class="pdp-faculty-card-img">
+                        <img src="images/profile-1.png" alt="Dr. Rajesh Kumar">
+                    </div>
+                    <div class="pdp-faculty-card-info">
+                        <span class="pdp-faculty-card-name">Dr. Rajesh Kumar</span>
+                        <span class="pdp-faculty-card-role">Professor of AI & ML</span>
+                    </div>
+                </div>
+                <div class="pdp-faculty-card">
+                    <div class="pdp-faculty-card-img">
+                        <img src="images/profile-2.png" alt="Dr. Priya Sharma">
+                    </div>
+                    <div class="pdp-faculty-card-info">
+                        <span class="pdp-faculty-card-name">Dr. Priya Sharma</span>
+                        <span class="pdp-faculty-card-role">Head of Data Science</span>
+                    </div>
+                </div>
+                <div class="pdp-faculty-card">
+                    <div class="pdp-faculty-card-img">
+                        <img src="images/profile-3.png" alt="Prof. David Chen">
+                    </div>
+                    <div class="pdp-faculty-card-info">
+                        <span class="pdp-faculty-card-name">Prof. David Chen</span>
+                        <span class="pdp-faculty-card-role">Visiting Faculty, MIT</span>
+                    </div>
+                </div>
+                <div class="pdp-faculty-card">
+                    <div class="pdp-faculty-card-img">
+                        <img src="images/profile-4.png" alt="Dr. Ananya Patel">
+                    </div>
+                    <div class="pdp-faculty-card-info">
+                        <span class="pdp-faculty-card-name">Dr. Ananya Patel</span>
+                        <span class="pdp-faculty-card-role">Associate Professor, NLP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pdp-faculty-nav-arrows">
+                <button class="nav-arrow prev disabled"><img src="images/arrow-right-nav.svg" alt="Previous"></button>
+                <button class="nav-arrow active"><img src="images/arrow-right-nav.svg" alt="Next"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRICULUM OVERVIEW -->
+    <section class="pdp-curriculum" id="curriculum">
+        <h2 class="pdp-curriculum-title">Curriculum Overview</h2>
+        <div class="pdp-curriculum-content">
+            <div class="pdp-curriculum-sidebar">
+                <button class="pdp-curriculum-cat active">Foundation Courses <img src="images/chevron-right.svg"
+                        alt=""></button>
+                <button class="pdp-curriculum-cat">Core Courses <img src="images/chevron-right.svg" alt=""></button>
+                <button class="pdp-curriculum-cat">Specialization <img src="images/chevron-right.svg" alt=""></button>
+                <button class="pdp-curriculum-cat">Industry Projects <img src="images/chevron-right.svg"
+                        alt=""></button>
+                <button class="pdp-curriculum-cat">Research & Thesis <img src="images/chevron-right.svg"
+                        alt=""></button>
+                <button class="pdp-curriculum-cat">Electives <img src="images/chevron-right.svg" alt=""></button>
+            </div>
+            <div class="pdp-curriculum-chips">
+                <button class="pdp-chip active">Foundation Courses</button>
+                <button class="pdp-chip">Core Courses</button>
+                <button class="pdp-chip">Advisory Council</button>
+            </div>
+            <div class="pdp-curriculum-modules">
+                <div class="pdp-module expanded">
+                    <div class="pdp-module-header">
+                        <h3>Mathematical Foundation</h3>
+                        <img src="images/chevron-down.svg" alt="" class="pdp-module-icon">
+                    </div>
+                    <div class="pdp-module-body">
+                        <p>Build the quantitative backbone required for advanced AI and data science. This module
+                            strengthens your understanding of the mathematical principles that power modern algorithms
+                            and machine learning models.</p>
+                        <div class="pdp-module-topics">
+                            <span class="pdp-topic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="6" stroke="#1a1a1a" stroke-width="1.2" />
+                                    <path d="M8 4v4l3 3" stroke="#1a1a1a" stroke-width="1.2" />
+                                </svg> Probability</span>
+                            <span class="pdp-topic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <rect x="2" y="2" width="5" height="12" rx="1" stroke="#1a1a1a"
+                                        stroke-width="1.2" />
+                                    <rect x="9" y="5" width="5" height="9" rx="1" stroke="#1a1a1a" stroke-width="1.2" />
+                                </svg> Statistics</span>
+                            <span class="pdp-topic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M2 2l12 12M14 2L2 14" stroke="#1a1a1a" stroke-width="1.2" />
+                                </svg> Linear Algebra</span>
+                            <span class="pdp-topic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="6" stroke="#1a1a1a" stroke-width="1.2" />
+                                    <path d="M5 8h6M8 5v6" stroke="#1a1a1a" stroke-width="1.2" />
+                                </svg> ML Intuition</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pdp-module">
+                    <div class="pdp-module-header">
+                        <h3>Python Programming</h3>
+                        <img src="images/chevron-right.svg" alt="" class="pdp-module-icon">
+                    </div>
+                    <div class="pdp-module-body">
+                        <p>Master Python for data science, covering libraries, scripting, and application development
+                            for AI solutions.</p>
+                    </div>
+                </div>
+                <div class="pdp-module">
+                    <div class="pdp-module-header">
+                        <h3>Data Structures and Algorithms</h3>
+                        <img src="images/chevron-right.svg" alt="" class="pdp-module-icon">
+                    </div>
+                    <div class="pdp-module-body">
+                        <p>Learn essential data structures and algorithms for efficient data processing and problem
+                            solving.</p>
+                    </div>
+                </div>
+                <div class="pdp-module">
+                    <div class="pdp-module-header">
+                        <h3>Databases &amp; Data Warehouses</h3>
+                        <img src="images/chevron-right.svg" alt="" class="pdp-module-icon">
+                    </div>
+                    <div class="pdp-module-body">
+                        <p>Understand relational databases, NoSQL, and data warehousing techniques for managing
+                            large-scale datasets.</p>
+                    </div>
+                </div>
+                <div class="pdp-module">
+                    <div class="pdp-module-header">
+                        <h3>Optimization for Business</h3>
+                        <img src="images/chevron-right.svg" alt="" class="pdp-module-icon">
+                    </div>
+                    <div class="pdp-module-body">
+                        <p>Apply optimization techniques to solve complex business problems using mathematical modeling
+                            and algorithms.</p>
+                    </div>
+                </div>
+                <div class="pdp-module">
+                    <div class="pdp-module-header">
+                        <h3>Data Visualization</h3>
+                        <img src="images/chevron-right.svg" alt="" class="pdp-module-icon">
+                    </div>
+                    <div class="pdp-module-body">
+                        <p>Create compelling visual representations of data using industry-standard tools and best
+                            practices.</p>
+                    </div>
+                </div>
+                <div class="pdp-module">
+                    <div class="pdp-module-header">
+                        <h3>Time Series Analysis</h3>
+                        <img src="images/chevron-right.svg" alt="" class="pdp-module-icon">
+                    </div>
+                    <div class="pdp-module-body">
+                        <p>Analyze temporal data patterns and build forecasting models for real-world applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOOLS SECTION -->
+    <section class="pdp-tools">
+        <h2 class="pdp-tools-title">These are the tools you will master</h2>
+        <div class="pdp-tools-row">
+            <div class="pdp-tool-item"><img src="images/meta-wordmark.svg" alt="Python"></div>
+            <div class="pdp-tool-item"><img src="images/uber-logo.svg" alt="TensorFlow"></div>
+            <div class="pdp-tool-item"><img src="images/dais-logo.png" alt="PyTorch"></div>
+            <div class="pdp-tool-item"><img src="images/meta-wordmark.svg" alt="Tableau"></div>
+            <div class="pdp-tool-item"><img src="images/uber-logo.svg" alt="AWS"></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="pdp-testimonials" id="testimonials">
+        <h2 class="pdp-section-title">Hear what our<br>students have to say</h2>
+        <div class="pdp-testimonial-card">
+            <div class="pdp-testimonial-company">
+                <span class="pdp-testimonial-label">Placed at</span>
+                <img src="images/hindustan-times-logo.png" alt="Company Logo" class="pdp-testimonial-logo">
+            </div>
+            <div class="pdp-testimonial-quote">
+                <img src="images/quote-mark-red.svg" alt="" class="pdp-quote-mark">
+                <p>The AI & Data Science programme at Jio Institute transformed my career. The hands-on projects,
+                    world-class faculty, and industry connections gave me the edge I needed to land my dream role. I
+                    cannot recommend this programme highly enough.</p>
+            </div>
+            <div class="pdp-testimonial-author">
+                <div class="pdp-testimonial-avatar">
+                    <img src="images/profile-1.png" alt="Student">
+                </div>
+                <div class="pdp-testimonial-author-info">
+                    <span class="pdp-testimonial-name">Arjun Mehta</span>
+                    <span class="pdp-testimonial-class">M.Tech AI & Data Science<br>Batch of 2025</span>
+                </div>
+                <a href="#" class="pdp-testimonial-linkedin">
+                    <img src="images/linkedin-blue.svg" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+        <div class="pdp-testimonial-nav">
+            <button class="nav-arrow prev disabled"><img src="images/arrow-right-nav.svg" alt="Previous"></button>
+            <button class="nav-arrow active"><img src="images/arrow-right-nav.svg" alt="Next"></button>
+        </div>
+    </section>
+
+    <!-- LEARNING BEYOND THE CLASSROOM -->
+    <section class="pdp-learning" id="learning">
+        <div class="pdp-learning-content">
+            <div class="pdp-learning-text-column">
+                <h2 class="pdp-learning-title">Learning beyond the classroom</h2>
+                <p class="pdp-learning-desc">A campus life shaped by sports, cultural activities, and shared experiences
+                    that build teamwork, resilience, and perspective.</p>
+                <div class="pdp-learning-nav-arrows">
+                    <button class="nav-arrow prev disabled"><img src="images/arrow-right-nav.svg"
+                            alt="Previous"></button>
+                    <button class="nav-arrow active"><img src="images/arrow-right-nav.svg" alt="Next"></button>
+                </div>
+            </div>
+            <div class="pdp-learning-images">
+                <img src="images/campus-a1.png" alt="Campus Life" class="pdp-learning-img-main">
+                <div class="pdp-learning-img-stack">
+                    <img src="images/campus-a2.png" alt="Campus Life">
+                    <img src="images/campus-a3.png" alt="Campus Life">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAPSTONE PROJECTS -->
+    <section class="pdp-capstone" id="capstone">
+        <div class="pdp-capstone-header">
+            <h2 class="pdp-capstone-title">Have a look at our<br>students capstone projects</h2>
+            <div class="pdp-capstone-chips">
+                <button class="pdp-chip active">2025</button>
+                <button class="pdp-chip">2024</button>
+                <button class="pdp-chip">2023</button>
+            </div>
+        </div>
+        <div class="pdp-capstone-grid">
+            <div class="pdp-capstone-card">
+                <div class="pdp-capstone-card-img"><img src="images/research-1.png" alt="Project"></div>
+                <h4 class="pdp-capstone-card-title">AI-Powered Healthcare Diagnostics</h4>
+                <p class="pdp-capstone-card-desc">Building deep learning models for early detection of diseases using
+                    medical imaging data.</p>
+            </div>
+            <div class="pdp-capstone-card">
+                <div class="pdp-capstone-card-img"><img src="images/research-2.png" alt="Project"></div>
+                <h4 class="pdp-capstone-card-title">Smart City Traffic Optimization</h4>
+                <p class="pdp-capstone-card-desc">Using reinforcement learning to optimize traffic flow in urban
+                    environments.</p>
+            </div>
+            <div class="pdp-capstone-card">
+                <div class="pdp-capstone-card-img"><img src="images/campus-1.png" alt="Project"></div>
+                <h4 class="pdp-capstone-card-title">Natural Language Processing for Regional Languages</h4>
+                <p class="pdp-capstone-card-desc">Developing NLP models for Indian regional languages to improve
+                    accessibility.</p>
+            </div>
+            <div class="pdp-capstone-card">
+                <div class="pdp-capstone-card-img"><img src="images/campus-2.png" alt="Project"></div>
+                <h4 class="pdp-capstone-card-title">Predictive Maintenance Using IoT</h4>
+                <p class="pdp-capstone-card-desc">IoT sensor data analysis for predicting equipment failures in
+                    manufacturing plants.</p>
+            </div>
+            <div class="pdp-capstone-card">
+                <div class="pdp-capstone-card-img"><img src="images/campus-3.png" alt="Project"></div>
+                <h4 class="pdp-capstone-card-title">Financial Fraud Detection System</h4>
+                <p class="pdp-capstone-card-desc">Real-time anomaly detection system for identifying fraudulent
+                    transactions.</p>
+            </div>
+            <div class="pdp-capstone-card">
+                <div class="pdp-capstone-card-img"><img src="images/campus-4.png" alt="Project"></div>
+                <h4 class="pdp-capstone-card-title">Autonomous Drone Navigation</h4>
+                <p class="pdp-capstone-card-desc">Computer vision and path planning algorithms for autonomous drone
+                    delivery systems.</p>
+            </div>
+        </div>
+        <div class="pdp-capstone-mobile-nav">
+            <button class="nav-arrow prev disabled"><img src="images/arrow-right-nav.svg" alt="Previous"></button>
+            <div class="pdp-capstone-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="nav-arrow active"><img src="images/arrow-right-nav.svg" alt="Next"></button>
+        </div>
+    </section>
+
+    <!-- ADMISSIONS -->
+    <section class="pdp-admissions" id="admissions">
+        <h2 class="pdp-admissions-title">Begin Your Journey<br>with us</h2>
+        <div class="pdp-admissions-content">
+            <div class="pdp-admissions-sidebar">
+                <button class="pdp-admissions-cat active">Admissions <img src="images/chevron-right.svg"
+                        alt=""></button>
+                <button class="pdp-admissions-cat">Fee Structure <img src="images/chevron-right.svg" alt=""></button>
+                <button class="pdp-admissions-cat">JET <img src="images/chevron-right.svg" alt=""></button>
+                <button class="pdp-admissions-cat">Careers <img src="images/chevron-right.svg" alt=""></button>
+                <button class="pdp-admissions-cat">FAQs <img src="images/chevron-right.svg" alt=""></button>
+            </div>
+            <div class="pdp-admissions-chips">
+                <button class="pdp-chip active">Admissions</button>
+                <button class="pdp-chip">Fee Structure</button>
+                <button class="pdp-chip">JET</button>
+                <button class="pdp-chip">Careers</button>
+                <button class="pdp-chip">FAQs</button>
+            </div>
+            <div class="pdp-admissions-details">
+                <div class="pdp-accordion-item">
+                    <div class="pdp-accordion-header">
+                        <span>Eligibility Criteria</span>
+                        <img src="images/chevron-down.svg" alt="" class="pdp-accordion-icon">
+                    </div>
+                </div>
+                <div class="pdp-accordion-divider"></div>
+                <div class="pdp-accordion-item">
+                    <div class="pdp-accordion-header">
+                        <span>Application Process</span>
+                        <img src="images/chevron-down.svg" alt="" class="pdp-accordion-icon">
+                    </div>
+                </div>
+                <div class="pdp-accordion-divider"></div>
+                <div class="pdp-accordion-item">
+                    <div class="pdp-accordion-header">
+                        <span>Application Deadline</span>
+                        <img src="images/chevron-down.svg" alt="" class="pdp-accordion-icon">
+                    </div>
+                </div>
+                <div class="pdp-accordion-divider"></div>
+                <div class="pdp-accordion-item">
+                    <div class="pdp-accordion-header">
+                        <span>Documents Required</span>
+                        <img src="images/chevron-down.svg" alt="" class="pdp-accordion-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUESTIONS CTA -->
+    <section class="pdp-questions">
+        <div class="pdp-questions-inner">
+            <h2 class="pdp-questions-title">Still have questions?</h2>
+            <div class="pdp-questions-buttons">
+                <a href="#" class="pdp-btn-primary">Schedule a Call <img src="images/arrow-white.svg" alt=""></a>
+                <a href="#" class="pdp-btn-secondary">Download Brochure <img src="images/download-icon.svg" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-newsletter">
+            <h3>Because true leaders<br>never stop learning</h3>
+            <div class="newsletter-right">
+                <p class="newsletter-label">Stay close to our work</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email ID">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+            <div class="footer-columns">
+                <div class="footer-column" data-accordion="open">
+                    <div class="footer-column-header">
+                        <h4>About</h4>
+                        <img src="images/chevron-up.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="about.html">About us</a>
+                        <a href="about.html#our-story">Our Story</a>
+                        <a href="about.html#vision">Our Vision</a>
+                        <a href="about.html#advantage">The Jio Institute Advantage</a>
+                        <a href="#">Growth Plan</a>
+                        <a href="#">Frequently Asked Questions</a>
+                    </div>
+                </div>
+                <div class="footer-column" data-accordion="closed">
+                    <div class="footer-column-header">
+                        <h4>Academics</h4>
+                        <img src="images/chevron-down.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="programmes.html">Academic Overview</a>
+                        <a href="#">Holistic Learning</a>
+                        <a href="#">Study Abroad</a>
+                        <a href="#">Capstone &amp; Industry Immersion</a>
+                        <a href="#">Laboratories</a>
+                        <a href="#">Library</a>
+                    </div>
+                </div>
+                <div class="footer-column other-links" data-accordion="closed">
+                    <div class="footer-column-header">
+                        <h4>Other links</h4>
+                        <img src="images/chevron-down.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="#">Careers</a>
+                        <a href="about.html#campus">Campus life</a>
+                        <a href="#">Executive education</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="accreditation">
+                <p class="accreditation-label">Accredited by:</p>
+                <img src="images/aacsb-badge.png" alt="AACSB Accreditation">
+            </div>
+        </div>
+        <div class="footer-contact">
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Location</span>
+                <span class="footer-contact-value">Ulwe, Navi Mumbai, Maharashtra 410206</span>
+            </div>
+            <div class="footer-contact-divider"></div>
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Write to us</span>
+                <span class="footer-contact-value">admissions@jioinstitute.edu.in</span>
+            </div>
+            <div class="footer-contact-divider"></div>
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Talk to us</span>
+                <span class="footer-contact-value">1800-889-1100</span>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <a href="index.html"><img src="images/footer-logo.png" alt="Jio Institute"></a>
+            </div>
+            <div class="footer-copyright">
+                <span>&copy; 2025 Jio Institute.</span>
+                <span>All rights reserved.</span>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/icon-youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="images/icon-whatsapp.svg" alt="WhatsApp"></a>
+                <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

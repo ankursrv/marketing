@@ -2,424 +2,659 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jio Institute - Healthcare AI</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/css/globals.css" />
-  <link rel="stylesheet" href="/css/home.css" />
-  <link rel="stylesheet" href="/css/common.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jio Institute - Healthcare AI</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;500&family=Inter:wght@300;400;500;700&family=Sora:wght@400;500&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
 </head>
 
 <body>
-  <main>
-    <!-- ===================== [ HEADER ] ===================== -->
-    <header class="header">
-      <div class="container">
-        <nav class="navbar">
-          <!-- Logo -->
-          <a href="/" class="navbar-logo">
-            <img src="/images/header-logo.png" alt="Jio Institute" class="responsive-image-cover" />
-          </a>
-          <!-- Nav Links -->
-          <ul class="navbar-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Programmes</a></li>
-            <li><a href="#">Placements</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Sports & Athletics</a></li>
-          </ul>
-          <!-- Right Icons -->
-          <div class="navbar-icons">
-            <button class="icon-btn" aria-label="Search">
-              <img src="/images/search.svg" alt="" aria-hidden="true" class="responsive-image-cover" />
-            </button>
-            <button class="icon-btn" aria-label="Menu">
-              <img src="/images/menu.svg" alt="" aria-hidden="true" class="responsive-image-cover" />
-            </button>
-          </div>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute"></a>
+            </div>
+            <div class="navbar-center">
+                <a href="about.html">About Us</a>
+                <a href="programmes.html">Programmes</a>
+                <a href="placements.html">Placements</a>
+                <a href="#">Research</a>
+                <a href="#">Sports &amp; Athletics</a>
+            </div>
+            <div class="navbar-icons">
+                <img src="images/search.svg" alt="Search">
+                <img src="images/menu.svg" alt="Menu" class="menu-icon">
+            </div>
+        </div>
+    </nav>
 
-        </nav>
-      </div>
-    </header>
-    <!-- ===================== [ Banner ] ===================== -->
-    <div class="banner">
-      <small class="banner-info-text">In Focus This Week</small>
-      <h1>Transforming Healthcare Through Artificial Intelligence</h1>
-      <p class="banner-description">we're pioneering the intersection of clinical care and computational
-        intelligence—training the next
-        generation of
-        healthcare innovators.</p>
-      <button class="btn-primary">
-        Learn More
-        <img src="/images/arrow-white-btn.svg" alt="" aria-hidden="true" class="" />
-      </button>
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-mobile-header">
+            <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute"
+                    class="search-overlay-logo"></a>
+            <button class="search-overlay-mobile-close" id="searchMobileClose">
+                <img src="images/close-icon.svg" alt="Close" style="--stroke-0: #ffffff;">
+            </button>
+        </div>
+        <div class="search-overlay-inner">
+            <button class="search-overlay-close" id="searchClose">
+                <img src="images/close-icon.svg" alt="Close">
+            </button>
+            <div class="search-input-area">
+                <div class="search-input-row">
+                    <img src="images/search-large.svg" alt="" class="search-icon">
+                    <input type="text" id="searchInput" placeholder="Search for programmes, events, etc...">
+                    <button class="search-input-clear" id="searchClear">
+                        <img src="images/close-circle.svg" alt="Clear">
+                    </button>
+                </div>
+            </div>
+            <div class="popular-searches">
+                <p class="popular-searches-label">Popular Searches</p>
+                <div class="popular-searches-grid">
+                    <a href="about.html#vision" class="popular-search-link">Mission &amp; Values <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html" class="popular-search-link desktop-only-search">Get to Know Us <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Journey <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Story <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Future Aspirations <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#vision" class="popular-search-link desktop-only-search">Vision for Tomorrow <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Why Us? <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Benefits of Studying
+                        Here <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">Growth Roadmap <img src="images/chevron-right.svg"
+                            alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Strategic Development Plan <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">FAQs <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Your Questions Answered <img
+                            src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html" class="popular-search-link mobile-only-search">Get to Know Us <img
+                            src="images/chevron-right.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="search-bottom-tabs desktop-search-tabs">
+                <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg" alt=""
+                        style="--stroke-0: #ffffff;"></a>
+                <a href="#" class="search-bottom-tab">Events</a>
+                <a href="#" class="search-bottom-tab">Jio Digital Library</a>
+                <a href="#" class="search-bottom-tab">News</a>
+                <a href="#" class="search-bottom-tab">Careers at Jio</a>
+                <a href="#" class="search-bottom-tab apply-now">Apply Now</a>
+            </div>
+            <div class="search-bottom-tabs mobile-search-tabs">
+                <div class="search-bottom-tabs-scroll">
+                    <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg"
+                            alt="" style="--stroke-0: #ffffff;"></a>
+                    <a href="#" class="search-bottom-tab">A to Z Index</a>
+                    <a href="#" class="search-bottom-tab">Events</a>
+                    <a href="#" class="search-bottom-tab">Alumni</a>
+                    <a href="placements.html" class="search-bottom-tab">Placements</a>
+                    <a href="#" class="search-bottom-tab">Digital Library</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- ===================== [ CHALLENGE CARDS SECTION ] ===================== -->
-    <section class="challenge container">
-      <h2>The Healthcare Challenge of Our Time</h2>
-      <div class="challenge-grid">
-        <!-- CHALLENGE CARDS 1 -->
-        <div class="challenge-card">
-          <img src="/images/challenge-1.png" alt="One-size-fits-all approaches" class="responsive-image-cover" />
-          <div class="challenge-card-overlay"></div>
-          <p class="challenge-card-content">One-size-fits-all approaches</p>
-          <span class="challenge-number">1</span>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg" aria-hidden="true">
+            <img src="images/hero-bg.png" alt="">
         </div>
-        <!-- CHALLENGE CARDS 2 -->
-        <div class="challenge-card">
-          <img src="/images/challenge-2.png" alt="Drug discovery takes decades" class="responsive-image-cover" />
-          <div class="challenge-card-overlay"></div>
-          <p class="challenge-card-content">Drug discovery takes decades</p>
-          <span class="challenge-number">2</span>
-        </div>
-        <!-- CHALLENGE CARDS 3 -->
-        <div class="challenge-card">
-          <img src="/images/challenge-3.png" alt="2.5 quintillion bytes" class="responsive-image-cover" />
-          <div class="challenge-card-overlay"></div>
-          <p class="challenge-card-content">2.5 quintillion bytes of health data daily—most of it untapped.</p>
-          <span class="challenge-number">3</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== [ COMMITMENT SECTION ] ===================== -->
-    <section class="commitment">
-      <div class="container">
-        <h2>Our Commitment in Action</h2>
-        <div class="commitment-layout">
-
-          <!-- Left — Numbered List -->
-          <div class="commitment-tabs">
-            <div class="commitment-tab commitment__tab--active">
-              <span class="commitment-tab-number">1</span>
-              <p>Researching the intersection between AI & Healthcare</p>
+        <div class="hero-content">
+            <p class="hero-label">In Focus This Week</p>
+            <div class="hero-text">
+                <h1>Transforming Healthcare Through Artificial Intelligence</h1>
+                <p class="hero-subtitle">we're pioneering the intersection of clinical care and computational
+                    intelligence—training the next generation of healthcare innovators.</p>
             </div>
-            <div class="commitment-tab">
-              <span class="commitment-tab-number">2</span>
-              <p>Collaborating with companies on the bleeding edge of innovation</p>
-            </div>
-            <div class="commitment-tab">
-              <span class="commitment-tab-number">3</span>
-              <p>Conducting programs for AI readiness</p>
-            </div>
-          </div>
-
-          <!-- Right — Cards -->
-          <div class="commitment-cards">
-            <div class="commitment-card">
-              <div class="commitment-image-container">
-                <img src="/images/research-1.png" alt="Neural imaging" class="responsive-image-cover" />
-              </div>
-              <div class="commitment-card-body">
-                <p class="title">Using AI in neural imaging techniques to detect Brain Cancer</p>
-                <p class="description">Our researchers have developed deep learning algorithms that detect 23 types of
-                  abnormalities in
-                  chest
-                  X-rays with 94% accuracy—matching or exceeding radiologist performance. Currently being piloted in 12
-                  hospitals across three continents.</p>
-                <a href="#" class="commitment-link">
-                  View Paper
-                  <img src="/images/arrow-red.svg" alt="" aria-hidden="true" width="12" height="12" />
+            <button class="hero-button">
+                <a href="#learn" class="btn-primary">
+                    Learn More
+                    <img src="/images/arrow-white-btn.svg" alt="" aria-hidden="true" class="" />
                 </a>
-              </div>
-            </div>
-
-            <div class="commitment-card">
-              <div class="commitment-card-body">
-                <p class="title">Centre for AI for All</h3>
-                <p class="description">The centre is focused on building a global community of AI leaders and
-                  practitioners to shape the
-                  future
-                  of AI.</p>
-                <a href="#" class="commitment-link">
-                  Explore Research Centre
-                  <img src="/images/arrow-red.svg" alt="" aria-hidden="true" width="12" height="12" />
-                </a>
-              </div>
-              <div class="commitment-image-container">
-                <img src="/images/research-2.png" alt="Centre for AI for All" class="responsive-image-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== [ PARTNERS SECTION ] ===================== -->
-    <section class="partners">
-      <div class="partners__layout container">
-
-        <!-- Left — Numbered List -->
-        <div class="partners__tabs">
-          <div class="partners__tab partners__tab--active">
-            <span class="partners__tab-number">1</span>
-            <p>Researching the intersection between AI & Healthcare</p>
-          </div>
-          <div class="partners__tab">
-            <span class="partners__tab-number">2</span>
-            <p>Collaborating with those on the bleeding edge of innovation</p>
-          </div>
-          <div class="partners__tab">
-            <span class="partners__tab-number">3</span>
-            <p>Conducting programs for AI readiness</p>
-          </div>
-        </div>
-
-        <!-- Right — Logo Grid (2 columns, offset) -->
-        <div class="partners__grid">
-          <div class="partners__col partners__col--left">
-            <div class="partners__logo-card">
-              <img src="/images/zoom.png" alt="Zoom" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/microsoft.png" alt="Blinkit" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/uber.png" alt="Uber" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/microsoft.png" alt="Microsoft" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/uber.png" alt="Blinkit" />
-            </div>
-          </div>
-
-          <div class="partners__col partners__col--right">
-            <div class="partners__logo-card">
-              <img src="/images/zoom.png" alt="Zoom" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/microsoft.png" alt="Blinkit" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/uber.png" alt="Uber" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/microsoft.png" alt="Microsoft" />
-            </div>
-            <div class="partners__logo-card">
-              <img src="/images/uber.png" alt="Blinkit" />
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===================== [ Executive SECTION ] ===================== -->
-    <section class="commitment executive">
-      <div class="container">
-        <div class="commitment-layout">
-
-          <!-- Left — Numbered List -->
-          <div class="commitment-tabs">
-            <div class="commitment-tab commitment__tab--active">
-              <span class="commitment-tab-number">1</span>
-              <p>Researching the intersection between AI & Healthcare</p>
-            </div>
-            <div class="commitment-tab">
-              <span class="commitment-tab-number">2</span>
-              <p>Collaborating with companies on the bleeding edge of innovation</p>
-            </div>
-            <div class="commitment-tab">
-              <span class="commitment-tab-number">3</span>
-              <p>Conducting programs for AI readiness</p>
-            </div>
-          </div>
-
-          <!-- Right — Cards -->
-          <div class="commitment__card">
-
-            <!-- Collage — 3 images -->
-            <div class="commitment__collage">
-              <img src="/images/collage-overlay.png" alt="Conference hall" class="collage__img collage__img--main" />
-              <img src="/images/exec-edu-1.png" alt="Doctors" class="collage__img collage__img--bottom-left" />
-              <img src="/images/exec-edu-2.png" alt="Hand" class="collage__img collage__img--top-right" />
-            </div>
-
-            <!-- Text -->
-            <div class="commitment-card-body">
-              <p class="title">Executive education in AI & Healthcare</p>
-              <p class="description">A two-and-a-half day, in-person programme for clinical and administrative leaders
-                who want to translate AI into
-                measurable improvements in access, quality, safety and operational performance.</p>
-              <a href="#" class="commitment-link">
+            </button>
+            <!-- <a href="#learn" class="hero-link">
                 Learn More
-                <img src="/images/arrow-red.svg" alt="" aria-hidden="true" width="12" height="12" />
-              </a>
-            </div>
-
-          </div>
+                <img src="images/arrow-white.svg" alt="">
+            </a> -->
         </div>
-      </div>
     </section>
 
-    <!-- ===================== [ FACULTY SECTION ] ===================== -->
-    <section class="faculty">
-      <div class="container">
+    <!-- HEALTHCARE CHALLENGE -->
+    <section class="healthcare-challenge">
+        <!-- <div class="healthcare-challenge-bg"></div> -->
+        <div class="healthcare-challenge-inner">
+            <h2>The Healthcare Challenge of Our Time</h2>
+            <div class="challenge-cards">
+                <div class="challenge-card">
+                    <div class="challenge-card-bg" aria-hidden="true">
+                        <img src="images/challenge-1.png" alt="">
+                    </div>
+                    <div class="challenge-card-overlay"></div>
+                    <p class="challenge-title">One-size-fits-all approaches</p>
+                    <span class="challenge-number">1</span>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-card-bg" aria-hidden="true">
+                        <img src="images/challenge-2.png" alt="">
+                    </div>
+                    <div class="challenge-card-overlay"></div>
+                    <p class="challenge-title">Drug discovery takes decades</p>
+                    <span class="challenge-number">2</span>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-card-bg" aria-hidden="true">
+                        <img src="images/challenge-3.png" alt="">
+                    </div>
+                    <div class="challenge-card-overlay"></div>
+                    <p class="challenge-title">2.5 quintillion bytes of health data daily—most of it untapped.</p>
+                    <span class="challenge-number">3</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- COMMITMENT + COLLABORATIONS + PROGRAMS — UNIFIED STICKY LAYOUT -->
+    <div class="commitment-section">
         <!-- Header -->
-        <div class="faculty-header">
-          <h2>The Mind Behind the Mission</h2>
-          <a href="#" class="btn-secondary">
-            View All Faculty
-            <img src="/images/arrow-black.svg" alt="" aria-hidden="true" />
-          </a>
+        <div class="commitment-header">
+            <h2>Our Commitment in Action</h2>
         </div>
-
-        <!-- Content -->
-        <div class="faculty__layout">
-
-          <!-- Left — Image -->
-          <div class="faculty__image-wrap">
-            <img src="/images/faculty.png" alt="Ms. Agnes Duckworth" />
-          </div>
-
-          <!-- Right — Quote -->
-          <div class="faculty__quote-wrap">
-            <span class="quote-mark">
-              <img src="/images/quote-mark-red.svg" alt="" aria-hidden="true" />
-            </span>
-            <blockquote class="faculty__quote">
-              Artificial intelligence isn't the future of healthcare—it's the present. And we're not waiting to see what
-              happens. We're shaping it. Every researcher in our labs, every student in our classrooms, every
-              partnership we
-              forge is driven by conviction.
-            </blockquote>
-            <div class="faculty__author">
-              <p class="faculty__author-name">Ms. Agnes Duckworth</p>
-              <p class="faculty__author-role">Head of the Department of Life Sciences at the Institution of Education &
-                Research.</p>
+        <!-- Sticky wrapper -->
+        <div class="commitment-content">
+            <!-- For Desktop LEFT: sticky numbered list (uses existing .numbered-list styles) -->
+            <div class="numbered-list desktop-only" id="commitment-nav"
+                style="position: sticky; top: 116px; align-self: flex-start; padding-right: 28px;">
+                <div class="numbered-item active" data-block="0">
+                    <span class="numbered-item-number">1</span>
+                    <p class="numbered-item-text">Researching the intersection between AI &amp; Healthcare</p>
+                </div>
+                <div class="numbered-item" data-block="1">
+                    <span class="numbered-item-number">2</span>
+                    <p class="numbered-item-text">Collaborating with companies on the bleeding edge of innovation
+                    </p>
+                </div>
+                <div class="numbered-item" data-block="2">
+                    <span class="numbered-item-number">3</span>
+                    <p class="numbered-item-text">Conducting programs for AI readiness</p>
+                </div>
             </div>
-          </div>
 
+            <!-- RIGHT: all three content blocks stacked -->
+            <div>
+                <!-- BLOCK 0: Research cards (commitment) -->
+                <div id="commitment-block-0" class="commitment-right-section">
+                    <!-- For MObile  -->
+                    <div class="numbered-item-mobile mobile-only" data-block="0">
+                        <div class="numbered-item-number">1</div>
+                        <p class="numbered-item-text">Researching the intersection between AI &amp; Healthcare</p>
+                    </div>
+                    <div id="commitment-block-0" class="commitment-right">
+                        <!-- Top research card -->
+                        <div class="research-card top">
+                            <div class="research-card-image">
+                                <img src="images/research-1.png" alt="Neural imaging research">
+                            </div>
+                            <div class="research-card-content">
+                                <div class="research-card-text">
+                                    <h3>Using AI in neural imaging techniques to detect Brain Cancer</h3>
+                                    <p>Our researchers have developed deep learning algorithms that detect 23 types of
+                                        abnormalities in chest X-rays with 94% accuracy—matching or exceeding
+                                        radiologist
+                                        performance. Currently being piloted in 12 hospitals across three continents.
+                                    </p>
+                                </div>
+                                <a href="#" class="research-link">
+                                    View Paper
+                                    <img src="images/arrow-red.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Bottom research card -->
+                        <div class="research-card bottom">
+                            <div class="research-card-content">
+                                <div class="research-card-text">
+                                    <h3>Centre for AI for All</h3>
+                                    <p>The centre is focused on building a global community of AI leaders and
+                                        practitioners
+                                        to
+                                        shape the future of AI.</p>
+                                </div>
+                                <a href="#" class="research-link">
+                                    Explore Research Centre
+                                    <img src="images/arrow-red-2.svg" alt="" aria-hidden="true">
+                                </a>
+                            </div>
+                            <div class="research-card-image flex-image">
+                                <img src="images/research-2.png" alt="Centre for AI">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOCK 1: Collaborations (maroon bg) -->
+                <!-- negative margin-left to break out of parent padding and cover left panel bg too -->
+                <div id="commitment-block-1" style="
+                    background: var(--primary-maroon);
+                    margin-left: calc(-450px - 28px - 80px);
+                    padding: 120px 80px 120px calc(408px + 28px + 80px);
+                    color: var(--white);
+                ">
+                    <!-- For Mobile  -->
+                    <div class="numbered-item-mobile mobile-only" data-block="0">
+                        <div class="numbered-item-number">2</div>
+                        <p class="numbered-item-text">Researching the intersection between AI &amp; Healthcare</p>
+                    </div>
+                    <div class="collab-right" style="height: auto;">
+                        <div class="logos-grid">
+                            <div class="logos-row">
+                                <div class="logo-cell"><img src="images/partner-logo-1.svg" alt="Microsoft"></div>
+                                <div class="logo-cell"><img src="images/partner-logo-2.svg" alt="Apple"></div>
+                                <div class="logo-cell"><img src="images/partner-logo-3.svg" alt="PayPal"></div>
+                                <div class="logo-cell"><img src="images/partner-logo-meta.svg" alt="Meta"></div>
+                            </div>
+                            <div class="logos-row">
+                                <div class="logo-cell"><img src="images/uber-logo.svg" alt="Uber"></div>
+                                <div class="logo-cell"><img src="images/logo-partner.png" alt="Spotify"></div>
+                                <div class="logo-cell"><img src="images/partner-logo-5.svg" alt="Google"></div>
+                                <div class="logo-cell"><img src="images/partner-logo-6.svg" alt="Amazon"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="commitment-btn-mobile">View Global Partners<img src="/images/arrow-white-btn.svg"
+                            alt="" aria-hidden="true" class="" width="12" height="12" /></a>
+                </div>
+
+                <!-- BLOCK 2: Programs (light bg) -->
+                <div id="commitment-block-2" style="
+                    background: var(--light-gray-bg);
+                    padding: 120px 0 120px 0;
+                ">
+                    <!-- For Mobile  -->
+                    <div class="numbered-item-mobile mobile-only" data-block="0">
+                        <div class="numbered-item-number">3</div>
+                        <p class="numbered-item-text">Researching the intersection between AI &amp; Healthcare</p>
+                    </div>
+                    <div class="programs-right-inner">
+                        <div class="programs-images">
+                            <img class="img-center" src="images/program-main.png" alt="Executive Education">
+                            <img class="img-rect" src="images/program-rect.png" alt="Students">
+                            <img class="img-bl" src="images/program-bl.png" alt="Learning">
+                            <img class="img-tr" src="images/program-tr.png" alt="Collaboration">
+                        </div>
+                        <div class="programs-text-block">
+                            <div class="programs-text-info">
+                                <h3>Executive education in AI &amp; Healthcare</h3>
+                                <p>A two-and-a-half day, in-person programme for clinical and administrative leaders who
+                                    want to
+                                    translate AI into measurable improvements in access, quality, safety and operational
+                                    performance.</p>
+                            </div>
+                            <a href="#" class="research-link">
+                                Learn More
+                                <img src="images/arrow-red.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+
+    <!-- FACULTY SECTION -->
+    <section class="faculty-section">
+        <div class="container">
+            <div class="faculty-header">
+                <div class="faculty-header-left">
+                    <h2>The Mind Behind the Mission</h2>
+                    <!-- <p class="faculty-subtitle">World-class faculty, clinical partners, and industry leaders united in
+                    advancing healthcare AI.</p> -->
+                </div>
+                <!-- For Desktop  -->
+                <button class="desktop-only btn-secondary">
+                    <a href="#" class="">
+                        View All Faculty
+                    </a>
+                    <img src="images/arrow-black-btn.svg" alt="">
+                </button>
+            </div>
+            <div class="faculty-content">
+                <div class="faculty-image">
+                    <img src="images/faculty.png" alt="Faculty">
+                </div>
+                <div class="faculty-quote">
+                    <img src="images/quote-mark-red.svg" alt="Quote" class="quote-mark">
+                    <blockquote>Artificial intelligence isn't the future of healthcare—it's the present. And we're not
+                        waiting to see what happens. We're shaping it. Every researcher in our labs, every student in
+                        our
+                        classrooms, every partnership we forge is driven by conviction.</blockquote>
+                    <div class="faculty-author-block">
+                        <p class="faculty-author">Ms. Agnes Duckworth</p>
+                        <div class="faculty-title">Founder Chairperson, Reliance Foundation<br>Institution of Education
+                            &amp; Research</div>
+                    </div>
+                </div>
+                <!-- For MObile  -->
+                <button class="mobile-only btn-secondary">
+                    <a href="#" class="">
+                        View All Faculty
+                    </a>
+                    <img src="images/arrow-black-btn.svg" alt="">
+                </button>
+            </div>
+        </div>
     </section>
-    <!-- =================== [ LEADERSHIP SECTION ] ==================== -->
-    <section class="leadership">
-      <div class="container">
-        
-        <div class="leadership-header">
-          <h2>Our leadership guiding us through</h2>
-          <a href="#" class="btn-secondary">
-            View Our Leadership
-            <img src="/images/arrow-black.svg" alt="" aria-hidden="true" />
-          </a>
-        </div>
 
-        <!-- Cards Grid -->
-        <div class="leadership-grid">
-          <div class="leadership-card">
-            <figure class="leadership-card-wrapper">
-              <img src="/images/leader-1.png" alt="Smt. Nita Ambani" />
-            </figure>
-            <div class="leadership-card-overlay">
-              <p class="leadership-card-name">Smt. Nita Ambani</p>
-              <p class="leadership-card-role">Founder Chairperson, Reliance Foundation Institution of Education &
-                Research
-              </p>
+    <!-- LEADERSHIP SECTION -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="leadership-header">
+                <div class="leadership-header-left">
+                    <h2>Our leadership guiding us through</h2>
+                    <!-- <p class="leadership-subtitle">World-class faculty, clinical partners, and industry leaders united in
+                    advancing healthcare AI.</p> -->
+                </div>
+                <!-- For Desktop  -->
+                <button class="desktop-only btn-secondary">
+                    <a href="#" class="">
+                        View our Leadership
+                    </a>
+                    <img src="images/arrow-black-btn.svg" alt="">
+                </button>
             </div>
-          </div>
-
-          <div class="leadership-card">
-            <figure class="leadership-card-wrapper">
-              <img src="/images/leader-2.png" alt="Shri Mukesh Ambani" />
-            </figure>
-            <div class="leadership-card-overlay">
-              <p class="leadership-card-name">Shri Mukesh Ambani</p>
-              <p class="leadership-card-role">Chairman & Managing Director, Reliance Industries Limited</p>
+            <div class="leadership-cards-wrapper">
+                <div class="leadership-cards">
+                    <div class="leader-card">
+                        <img src="images/leader-1.png" alt="Smt. Nita Ambani">
+                        <div class="leader-card-gradient"></div>
+                        <div class="leader-info">
+                            <p class="leader-name">Smt. Nita Ambani</p>
+                            <p class="leader-title">Founder Chairperson, Reliance Foundation <span>Institution of
+                                    Education
+                                    &amp; Research</span></p>
+                        </div>
+                    </div>
+                    <div class="leader-card">
+                        <img src="images/leader-2.png" alt="Shri Mukesh Ambani">
+                        <div class="leader-card-gradient"></div>
+                        <div class="leader-info">
+                            <p class="leader-name">Shri Mukesh Ambani</p>
+                            <p class="leader-title">Chairman &amp; Managing Director, <span>Reliance Industries
+                                    Limited</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- For Mobile  -->
+                <button class="mobile-only btn-secondary">
+                    <a href="#" class="">
+                        View our Leadership
+                    </a>
+                    <img src="images/arrow-black-btn.svg" alt="">
+                </button>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- =================== [ STORIES SECTION ] ==================== -->
-    <section class="container">
-      <div class="stories-header">
-        <h2>Stories Defining the Future</h2>
-        <a href="#" class="btn-secondary">
-          See All News
-          <img src="/images/arrow-black.svg" alt="" aria-hidden="true" />
-        </a>
-      </div>
-
-      <div class="stories-grid">
-
-        <!-- Featured card -->
-        <article class="card-featured">
-          <div class="img-wrap">
-            <!-- Replace src with real image -->
-            <img class="card-img" src="/images/news-main.png"
-              alt="Researcher at desk">
-          </div>
-          <div class="card-body">
-            <p class="card-title">Punjab Screens 700+ for Stroke Using AI</p>
-            <p class="card-desc">Our researchers have developed deep learning algorithms that detect 23 types of
-              abnormalities in chest X-rays with 94% accuracy—matching or exceeding radiologist performance. Currently
-              being
-              piloted in 12 hospitals across three continents.</p>
-            <span class="card-date">12 October 2025</span>
-          </div>
-        </article>
-
-        <!-- Right column -->
-        <div class="right-col">
-
-          <article class="card-side">
-            <div class="side-content">
-              <h3 class="side-title">Punjab Screens 700+ for Stroke Using AI</h3>
-              <p class="side-desc">Our researchers have developed deep learning algorithms that detect 23 types of
-                abnormalities in chest X-rays.</p>
-              <span class="card-date">12 October 2025</span>
+    <!-- NEWS SECTION -->
+    <section class="news-section">
+        <div class="container">
+            <div class="news-header">
+                <div class="news-header-left">
+                    <h2>Stories Defining the Future</h2>
+                    <!-- <p>News &amp; Stories</p> -->
+                </div>
+                <!-- For Desktop  -->
+                <button class="desktop-only btn-secondary">
+                    <a href="#" class="">
+                        See All News
+                    </a>
+                    <img src="images/arrow-black-btn.svg" alt="" aria-hidden="true">
+                </button>
             </div>
-            <div class="side-img-wrap">
-              <img class="side-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&q=80"
-                alt="Medical" onerror="this.outerHTML='<div class=\'img-placeholder\'>🏥</div>';">
+            <div class="news-content">
+                <div class="news-main">
+                    <div class="news-main-image">
+                        <img src="images/news-main.png" alt="Main News">
+                    </div>
+                    <div class="news-main-text">
+                        <h3>Punjab Screens 700+ for Stroke Using AI</h3>
+                        <p>Our researchers have developed deep learning algorithms that detect 23 types of abnormalities
+                            in
+                            chest X-rays with 94% accuracy—matching or exceeding radiologist performance. Currently
+                            being
+                            piloted in 12 hospitals across three continents.</p>
+                        <div class="news-date">12 October 2025</div>
+                    </div>
+                </div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-item-content">
+                            <h4>Punjab Screens 700+ for Stroke Using AI</h4>
+                            <p>Our researchers have developed deep learning algorithms that detect 23 types of
+                                abnormalities
+                                in chest X-rays.</p>
+                            <div class="news-date">12 October 2025</div>
+                        </div>
+                        <div class="news-item-image">
+                            <img src="images/news-thumb-1.png" alt="News">
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-item-content">
+                            <h4>AI Finds Diagnostic Clues in EHRs at Mount Sinai</h4>
+                            <p>Our researchers have developed deep learning algorithms that detect 23 types of
+                                abnormalities
+                                in chest X-rays.</p>
+                            <div class="news-date">12 October 2025</div>
+                        </div>
+                        <div class="news-item-image">
+                            <img src="images/news-thumb-2.png" alt="News">
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-item-content">
+                            <h4>"A Roadmap for Safe &amp; Effective AI in Health" Report</h4>
+                            <p>Our researchers have developed deep learning algorithms that detect 23 types of
+                                abnormalities
+                                in chest X-rays.</p>
+                            <div class="news-date">12 October 2025</div>
+                        </div>
+                        <div class="news-item-image">
+                            <img src="images/news-thumb-3.png" alt="News">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </article>
-
-          <article class="card-side">
-            <div class="side-content">
-              <h3 class="side-title">AI Finds Diagnostic Clues in EHRs at Mount Sinai</h3>
-              <p class="side-desc">Our researchers have developed deep learning algorithms that detect 23 types of
-                abnormalities in chest X-rays.</p>
-              <span class="card-date">12 October 2025</span>
-            </div>
-            <div class="side-img-wrap">
-              <img class="side-img" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&q=80"
-                alt="Sunset running" onerror="this.outerHTML='<div class=\'img-placeholder\'>🔬</div>';">
-            </div>
-          </article>
-
-          <article class="card-side">
-            <div class="side-content">
-              <h3 class="side-title">"A Roadmap for Safe &amp; Effective AI in Health" Report</h3>
-              <p class="side-desc">Our researchers have developed deep learning algorithms that detect 23 types of
-                abnormalities in chest X-rays.</p>
-              <span class="card-date">12 October 2025</span>
-            </div>
-            <div class="side-img-wrap">
-              <img class="side-img" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=200&q=80"
-                alt="Students" onerror="this.outerHTML='<div class=\'img-placeholder\'>📋</div>';">
-            </div>
-          </article>
-
         </div>
-      </div>
     </section>
-  </main>
 
-  <!-- =================== [ JS FILES ] ==================== -->
-  <script src="/js/script.js"></script>
+    <!-- JOIN SECTION -->
+    <section class="join-section">
+        <div class="container">
+            <div class="join-bg" aria-hidden="true">
+                <img src="images/join-bg.png" alt="" class="join-bg-desktop">
+                <img src="images/join-bg-mobile.png" alt="" class="mobile-only">
+                <div class="join-overlay desktop-only"></div>
+            </div>
+            <div class="join-content">
+                <div class="join-text">
+                    <h2>Thinking about joining Jio Institute?</h2>
+                    <p>Step into an ecosystem where learning meets innovation. Explore programs that shape leaders,
+                        thinkers, and changemakers of tomorrow.</p>
+                </div>
+                <div class="join-buttons">
+                    <button class="btn-secondary pill-btn-white">
+                        <a href="programmes.html" class="">
+                            Explore Our Programs
+                        </a>
+                        <img src="images/arrow-white-btn.svg" alt="">
+                    </button>
+                    <button class="tertiary-btn">
+                        <a href="about.html">
+                            About Jio Institute
+                        </a>
+                        <img src="images/arrow-white-btn.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAMPUS GALLERY SECTION -->
+    <!-- <section class="campus-section">
+        <div class="campus-header">
+            <h2>Experience Jio Institute Beyond the Campus</h2>
+            <p class="campus-description">Delve into our dynamic community through curated glimpses—insights, stories,
+                and updates shared across our social platforms. Each post offers a window into the vibrant life and
+                evolving journey at Jio Institute</p>
+        </div>
+        <div class="campus-photo">
+            <img src="images/campus-1.png" alt="Campus">
+        </div>
+        <div class="campus-photo">
+            <img src="images/campus-2.png" alt="Campus">
+        </div>
+        <div class="campus-photo">
+            <img src="images/campus-3.png" alt="Campus">
+        </div>
+        <div class="campus-photo">
+            <img src="images/campus-4.png" alt="Campus">
+        </div>
+    </section> -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-newsletter">
+                <h3>Because true leaders<br>never stop learning</h3>
+                <div class="newsletter-right">
+                    <p class="newsletter-label">Stay close to our work</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email ID">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-links">
+                <div class="footer-columns">
+
+                    <div class="footer-column" data-accordion="open">
+                        <div class="footer-column-header">
+                            <h4>About</h4>
+                            <img src="/images/chevron-up-white.svg" alt="" class="accordion-icon">
+                        </div>
+                        <div class="footer-column-links">
+                            <a href="about.html">About us</a>
+                            <a href="about.html#our-story">Our Story</a>
+                            <a href="about.html#vision">Our Vision</a>
+                            <a href="about.html#advantage">The Jio Institute Advantage</a>
+                            <a href="#">Growth Plan</a>
+                            <a href="#">Frequently Asked Questions</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column" data-accordion="closed">
+                        <div class="footer-column-header">
+                            <h4>Academics</h4>
+                            <img src="/images/chevron-down-white.svg" alt="" class="accordion-icon">
+                        </div>
+                        <div class="footer-column-links">
+                            <a href="programmes.html">Academic Overview</a>
+                            <a href="#">Holistic Learning</a>
+                            <a href="#">Study Abroad</a>
+                            <a href="#">Capstone &amp; Industry Immersion</a>
+                            <a href="#">Laboratories</a>
+                            <a href="#">Library</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column" data-accordion="closed">
+                        <div class="footer-column-header">
+                            <h4>Other links</h4>
+                            <img src="/images/chevron-down-white.svg" alt="" class="accordion-icon">
+                        </div>
+                        <div class="footer-column-links">
+                            <a href="#">Careers</a>
+                            <a href="about.html#campus">Campus life</a>
+                            <a href="#">Executive education</a>
+                            <a href="#">Blog</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="accreditation">
+                    <p class="accreditation-label">Accredited by:</p>
+                    <img src="images/aacsb-badge.png" alt="AACSB Accreditation">
+                </div>
+            </div>
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <span class="footer-contact-label">Location</span>
+                    <span class="footer-contact-value">Ulwe, Navi Mumbai, Maharashtra 410206</span>
+                </div>
+                <div class="footer-contact-divider"></div>
+                <div class="footer-contact-item">
+                    <span class="footer-contact-label">Write to us</span>
+                    <span class="footer-contact-value">admissions@jioinstitute.edu.in</span>
+                </div>
+                <div class="footer-contact-divider"></div>
+                <div class="footer-contact-item">
+                    <span class="footer-contact-label">Talk to us</span>
+                    <span class="footer-contact-value">1800-889-1100</span>
+                </div>
+            </div>
+            <!-- For Mobile Social Link  -->
+            <div class="footer-social mobile-only mobile-only-flex">
+                <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/icon-youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="images/icon-whatsapp.svg" alt="WhatsApp"></a>
+                <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-divider footer-divider-bottom"></div>
+            <div class="footer-bottom">
+                <!-- For Desktop Logo  -->
+                <a href="index.html" class="footer-logo desktop-only"><img src="images/footer-logo.png"
+                        alt="Jio Institute"></a>
+                <div class="footer-copyright">
+                    <span>&copy;</span>
+                    <span>2025 Jio Institute.</span>
+                    <span>All rights reserved.</span>
+                </div>
+                <!-- For Desktop Social Link  -->
+                <div class="footer-social desktop-only">
+                    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="images/icon-youtube.svg" alt="YouTube"></a>
+                    <a href="#"><img src="images/icon-whatsapp.svg" alt="WhatsApp"></a>
+                    <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a>
+                </div>
+                <!-- For Mobile Logo  -->
+                <a href="index.html" class="footer-logo mobile-only"><img src="images/footer-logo.png"
+                        alt="Jio Institute"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

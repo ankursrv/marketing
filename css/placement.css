@@ -1,0 +1,1823 @@
+/* ============================================
+   PLACEMENTS PAGE — placement.css
+   Mirrors Figma design for Student & Recruiter views
+   ============================================ */
+
+/* ---------- RESET / BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Inter', 'JioType', sans-serif; color: #111; background: #fff; }
+
+/* ---------- HERO SECTION ---------- */
+.plc-hero {
+    width: 100%;
+    background: #fff;
+    padding-top: 84px; /* navbar height */
+}
+
+.plc-hero-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 72px 80px 0;
+}
+
+.plc-breadcrumb {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 28px;
+    line-height: 1;
+}
+.plc-breadcrumb a { color: #000; text-decoration: none; }
+.plc-breadcrumb a:hover { text-decoration: underline; }
+.plc-breadcrumb strong { font-weight: 700; }
+
+.plc-hero-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 72px;
+}
+
+.plc-hero-text h1 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    max-width: 626px;
+}
+.plc-hero-desc {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000;
+    max-width: 626px;
+    margin-top: 16px;
+}
+
+.plc-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 0.5px solid rgba(0,0,0,0.4);
+    border-radius: 48px;
+    padding: 26px 32px;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+}
+.plc-btn-secondary:hover { background: #000; color: #fff; }
+.plc-btn-secondary svg { flex-shrink: 0; }
+
+/* Hero image + tab row */
+.plc-hero-image-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 116px;
+}
+
+.plc-hero-image {
+    width: 100%;
+    height: 364px;
+    overflow: hidden;
+    margin-bottom: -42px;
+}
+.plc-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.plc-tab-switcher {
+    display: flex;
+    background: #f5f5f5;
+    border-radius: 48px;
+    padding: 16px;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+    width: 844px;
+    max-width: calc(100% - 40px);
+}
+.plc-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-radius: 48px;
+    padding: 16px 24px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #111;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+}
+.plc-tab.active {
+    background: #000;
+    color: #fff;
+}
+
+/* ---------- TAB CONTENT ---------- */
+.plc-tab-content { display: none; }
+.plc-tab-content.active { display: block; }
+
+/* ---------- STATS BAR ---------- */
+.plc-stats-bar {
+    background: #f5f5f5;
+    padding: 80px;
+    display: flex;
+    align-items: flex-start;
+    gap: 27px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.plc-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.plc-stat-number {
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 1.1;
+    color: #000;
+    letter-spacing: -1.12px;
+}
+.plc-stat-label {
+    font-size: 18px;
+    color: #a0a8b1;
+    letter-spacing: -0.36px;
+    line-height: 1.4;
+}
+.plc-stat-divider {
+    width: 1px;
+    background: #a0a8b1;
+    align-self: stretch;
+    flex-shrink: 0;
+}
+
+/* ---------- CTC CHART SECTION ---------- */
+.plc-ctc-section {
+    background: #fff;
+    padding: 80px;
+    position: relative;
+}
+
+.plc-ctc-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+.plc-ctc-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    max-width: 762px;
+}
+.plc-ctc-desc {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #4e575f;
+    max-width: 414px;
+    flex-shrink: 0;
+}
+
+.plc-ctc-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+.plc-ctc-dropdowns { display: flex; gap: 24px; }
+
+.plc-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #f7f7f7;
+    border-radius: 42px;
+    padding: 18px 32px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    user-select: none;
+    white-space: nowrap;
+}
+.plc-dropdown svg { flex-shrink: 0; }
+
+.plc-tertiary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: #e30513;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* CTC Bars */
+.plc-ctc-bars {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 60px;
+    min-height: 450px;
+    padding-top: 80px;
+}
+.plc-ctc-divider-line {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+}
+.plc-ctc-bar-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 360px;
+    flex-shrink: 0;
+}
+.plc-ctc-bar-item::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: var(--bar-height);
+    background: var(--bar-color);
+    border-top: 7px solid var(--border-color);
+}
+.plc-ctc-label-above {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+.plc-ctc-label-type {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+.plc-ctc-value {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.plc-ctc-value small { font-size: 24px; font-weight: 400; }
+
+/* ---------- KEY DATES SECTION ---------- */
+.plc-dates-section {
+    background: #5d0023;
+    padding: 80px 80px;
+}
+.plc-dates-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+.plc-dates-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #fff;
+    max-width: 735px;
+    letter-spacing: 0.56px;
+}
+.plc-dates-header .plc-dropdown { flex-shrink: 0; }
+
+.plc-dates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background: rgba(45, 12, 25, 0.4);
+}
+
+.plc-dates-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 36px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.plc-dates-cell:nth-child(3),
+.plc-dates-cell:nth-child(6) { border-right: none; }
+.plc-dates-cell:nth-child(4),
+.plc-dates-cell:nth-child(5),
+.plc-dates-cell:nth-child(6) { border-bottom: none; }
+
+.plc-dates-month {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.48px;
+}
+.plc-dates-event {
+    font-size: 14px;
+    font-weight: 300;
+    color: #a0a8b1;
+    letter-spacing: -0.28px;
+}
+
+/* ---------- INTERNSHIP SECTION ---------- */
+.plc-internship-section {
+    background: #fff;
+    padding: 80px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+.plc-internship-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 120px;
+}
+.plc-internship-text h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #000;
+    letter-spacing: 0.56px;
+    margin-bottom: 40px;
+    max-width: 672px;
+}
+.plc-internship-text p {
+    font-size: 20px;
+    color: #6a7581;
+    line-height: 1.4;
+    letter-spacing: -0.35px;
+    max-width: 672px;
+    margin-bottom: 16px;
+}
+.plc-internship-stats {
+    display: flex;
+    gap: 27px;
+    align-items: flex-start;
+    max-width: 746px;
+}
+.plc-internship-image {
+    width: 517px;
+    height: 608px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 2px;
+}
+.plc-internship-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- RECRUITERS / LOGOS SECTION ---------- */
+.plc-recruiters-section {
+    background: #fff;
+    padding: 80px;
+}
+.plc-recruiters-header {
+    margin-bottom: 56px;
+}
+.plc-recruiters-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #000;
+    letter-spacing: 0.56px;
+    max-width: 735px;
+    margin-bottom: 16px;
+}
+.plc-recruiters-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+    max-width: 735px;
+    line-height: 1.4;
+}
+
+.plc-recruiters-layout {
+    display: flex;
+    gap: 137px;
+    align-items: flex-start;
+}
+
+.plc-category-list {
+    display: flex;
+    flex-direction: column;
+    border-right: 0.4px solid #6a7581;
+    width: 228px;
+    flex-shrink: 0;
+    gap: 4px;
+}
+.plc-category-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #2e2e2e;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.2s;
+    letter-spacing: 0.4px;
+    line-height: 1.6;
+}
+.plc-category-item.active {
+    background: rgba(227,5,19,0.08);
+    border-right: 4px solid #e30513;
+    color: #e30513;
+    font-weight: 500;
+    border-radius: 0;
+}
+.plc-category-item:hover:not(.active) { background: rgba(0,0,0,0.04); }
+
+.plc-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    flex: 1;
+}
+.plc-logo-cell {
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.plc-logo-cell img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.plc-logo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid #eee;
+}
+
+.plc-logo-name {
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.3px;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #e8e8e8;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ---------- ALUMNI SECTION ---------- */
+.plc-alumni-section {
+    background: #fff;
+    padding: 80px;
+    overflow: hidden;
+}
+.plc-alumni-header {
+    margin-bottom: 56px;
+    max-width: 735px;
+}
+.plc-alumni-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    margin-bottom: 16px;
+}
+.plc-alumni-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+}
+.plc-alumni-carousel {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+.plc-alumni-carousel::-webkit-scrollbar { display: none; }
+.plc-alumni-card {
+    position: relative;
+    width: 380px;
+    height: 480px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.plc-alumni-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.plc-alumni-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 160px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+    backdrop-filter: blur(2px);
+}
+.plc-alumni-info {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+.plc-alumni-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    flex-shrink: 0;
+}
+.plc-alumni-info h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.plc-alumni-info p {
+    font-size: 14px;
+    color: #d3d3d3;
+    letter-spacing: -0.56px;
+}
+
+.plc-carousel-nav {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+.plc-nav-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1.5px solid;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+.plc-nav-btn.disabled { border-color: rgba(0,0,0,0.2); color: rgba(0,0,0,0.2); cursor: default; pointer-events: none; }
+.plc-nav-btn.active { border-color: #e30513; color: #e30513; }
+.plc-nav-btn.active:hover { background: #e30513; color: #fff; }
+.plc-nav-btn svg { width: 24px; height: 24px; }
+
+/* ---------- TESTIMONIAL SECTION ---------- */
+.plc-testimonial-section {
+    background: #fff;
+    padding: 80px;
+}
+.plc-testimonial-header {
+    margin-bottom: 40px;
+    max-width: 735px;
+}
+.plc-testimonial-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #000;
+    margin-bottom: 16px;
+}
+.plc-testimonial-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+}
+.plc-testimonial-card {
+    background: #f5f5f5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 900px;
+}
+.plc-quote-mark { width: 35px; opacity: 0.6; }
+.plc-quote-text {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000;
+}
+.plc-testimonial-author {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+.plc-author-img {
+    width: 56px;
+    height: 76px;
+    border-radius: 26px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.plc-author-img img { width: 100%; height: 100%; object-fit: cover; }
+.plc-testimonial-author h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.plc-testimonial-author p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.6);
+}
+
+/* ---------- PREPARE SECTION (RECRUITERS) ---------- */
+.plc-prepare-section {
+    background: #fff;
+    padding: 80px;
+}
+.plc-prepare-text {
+    max-width: 800px;
+    margin-bottom: 52px;
+}
+.plc-prepare-text h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #000;
+    margin-bottom: 24px;
+}
+.plc-prepare-text p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #000;
+    max-width: 748px;
+}
+.plc-prepare-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+.plc-prepare-items {
+    flex: 1;
+    border-left: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    min-height: 510px;
+}
+.plc-prepare-item {
+    border-left: 4px solid transparent;
+    padding: 40px;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    transition: border-color 0.2s;
+}
+.plc-prepare-item.active { border-left-color: #aa0023; }
+.plc-prepare-item-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.24;
+    color: #000;
+}
+.plc-prepare-item.active .plc-prepare-item-title { color: #aa0023; }
+.plc-prepare-item-desc {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+    line-height: 1.5;
+}
+.plc-prepare-image {
+    width: 626px;
+    height: 510px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 2px;
+}
+.plc-prepare-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.plc-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background: rgba(223,15,20,0.32);
+    backdrop-filter: blur(12px);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.plc-play-btn:hover { background: rgba(223,15,20,0.55); }
+
+/* ---------- COHORT SECTION (RECRUITERS) ---------- */
+.plc-cohort-section {
+    background: #fff;
+    padding: 80px;
+}
+.plc-cohort-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+    gap: 40px;
+}
+.plc-cohort-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    max-width: 735px;
+    margin-bottom: 16px;
+}
+.plc-cohort-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+    line-height: 1.4;
+}
+.plc-cohort-stats {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #d9d9d9;
+}
+.plc-cohort-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Charts */
+.plc-charts-container {
+    display: flex;
+    gap: 0;
+    border: 1px solid #d9d9d9;
+    height: 600px;
+    overflow: hidden;
+}
+.plc-chart-box {
+    flex: 1;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+}
+.plc-chart-divider {
+    width: 1px;
+    background: #d9d9d9;
+    align-self: stretch;
+}
+.plc-chart-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    letter-spacing: 0.32px;
+    margin-top: 12px;
+}
+
+/* Bar Chart */
+.plc-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #d9d9d9;
+}
+.plc-bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    height: 100%;
+}
+.plc-bar-fill {
+    width: 100%;
+    height: calc(var(--h));
+    background: linear-gradient(180deg, #aa0023 0%, rgba(170,0,35,0.4) 100%);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.6s ease;
+}
+.plc-bar-pct {
+    font-size: 24px;
+    font-weight: 500;
+    color: #aa0023;
+}
+.plc-bar-lbl {
+    font-size: 14px;
+    color: rgba(0,0,0,0.6);
+    white-space: nowrap;
+    margin-top: 8px;
+}
+
+/* Pie Chart */
+.plc-pie-chart-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex: 1;
+    width: 100%;
+}
+.plc-pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+.plc-pie-inner {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.plc-pie-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.plc-pie-legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.plc-pie-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+.plc-pie-legend-item strong {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    display: block;
+}
+.plc-pie-legend-item span {
+    font-size: 14px;
+    color: #4e575f;
+    letter-spacing: -0.28px;
+}
+
+/* ---------- RECRUITING PARTNER SECTION ---------- */
+.plc-partner-section {
+    background: #f5f5f5;
+    display: flex;
+    gap: 0;
+    overflow: hidden;
+    align-items: center;
+    min-height: 586px;
+}
+.plc-partner-content {
+    padding: 80px;
+    max-width: 815px;
+    flex: 1;
+}
+.plc-partner-content h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #000;
+    letter-spacing: 0.56px;
+    margin-bottom: 40px;
+}
+.plc-partner-content p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #000;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: -0.35px;
+}
+.plc-partner-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+.plc-partner-dates p strong { font-weight: 500; }
+.plc-partner-image {
+    width: 597px;
+    flex-shrink: 0;
+    align-self: stretch;
+    overflow: hidden;
+}
+.plc-partner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- WHAT DEFINES OUR COHORT ---------- */
+.plc-cohort-define-section {
+    background: #5d0023;
+    padding: 120px 80px 80px;
+}
+.plc-cohort-define-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+.plc-cohort-define-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #fff;
+    max-width: 650px;
+}
+.plc-cohort-define-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 748px;
+    line-height: 1.4;
+}
+.plc-cohort-define-header .plc-dropdown { flex-shrink: 0; }
+.plc-cohort-define-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background: rgba(45, 12, 25, 0.4);
+}
+.plc-cohort-define-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 54px 36px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.plc-cohort-define-cell:nth-child(3n) { border-right: none; }
+.plc-cohort-define-cell:nth-child(n+4) { border-bottom: none; }
+.plc-cohort-define-cell .plc-stat-number { color: #fff; }
+.plc-cohort-define-cell .plc-stat-label { color: rgba(255,255,255,0.5); }
+
+/* ---------- IN THEIR OWN WORDS ---------- */
+.plc-words-section {
+    background: #fff;
+    padding: 120px 80px 80px;
+    overflow: hidden;
+}
+.plc-words-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+.plc-words-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    margin-bottom: 16px;
+}
+.plc-words-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+    max-width: 1136px;
+}
+.plc-words-header .plc-carousel-nav {
+    margin-top: 0;
+    flex-shrink: 0;
+}
+.plc-words-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+.plc-words-carousel::-webkit-scrollbar { display: none; }
+.plc-words-card {
+    width: 421px;
+    min-height: 558px;
+    flex-shrink: 0;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background: #fff;
+}
+.plc-words-card-featured {
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+.plc-words-featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+}
+.plc-words-featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.75) 100%);
+}
+.plc-words-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(223,15,20,0.5);
+    backdrop-filter: blur(12px);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+.plc-words-play-btn:hover { background: rgba(223,15,20,0.7); }
+.plc-words-featured-content {
+    position: relative;
+    z-index: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.plc-words-card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.plc-words-currently {
+    font-size: 14px;
+    color: rgba(0,0,0,0.5);
+    letter-spacing: -0.28px;
+}
+.plc-words-company-logo {
+    max-width: 120px;
+    max-height: 43px;
+    object-fit: contain;
+    align-self: flex-start;
+}
+.plc-words-quote {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+    justify-content: center;
+    padding: 24px 0;
+}
+.plc-words-quote svg {
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+.plc-words-quote p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000;
+}
+.plc-words-author {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.plc-words-author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.plc-words-avatar {
+    width: 56px;
+    height: 76px;
+    border-radius: 26px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.plc-words-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.plc-words-author h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.4;
+}
+.plc-words-author p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.5;
+}
+.plc-words-linkedin {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+}
+.plc-words-linkedin img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------- CAREERS AREN'T PLANNED ---------- */
+.plc-careers-section {
+    padding: 0;
+}
+.plc-careers-bg {
+    position: relative;
+    width: 100%;
+    min-height: 667px;
+    overflow: hidden;
+}
+.plc-careers-bg > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+}
+.plc-careers-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+}
+.plc-careers-content {
+    position: relative;
+    z-index: 1;
+    padding: 120px 80px 80px;
+    max-width: 700px;
+}
+.plc-careers-content h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.plc-careers-content p {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 580px;
+}
+
+/* ---------- THE PREPARATION SECTION ---------- */
+.plc-prep-section {
+    background: #fff;
+    padding: 120px 80px 80px;
+}
+.plc-prep-header {
+    margin-bottom: 48px;
+}
+.plc-prep-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    max-width: 765px;
+    margin-bottom: 16px;
+}
+.plc-prep-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+}
+.plc-prep-layout {
+    display: flex;
+    gap: 70px;
+    align-items: flex-start;
+}
+.plc-prep-sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 0.4px solid #6a7581;
+    width: 228px;
+    flex-shrink: 0;
+    gap: 4px;
+}
+.plc-prep-term {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #2e2e2e;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.2s;
+    letter-spacing: 0.4px;
+    line-height: 1.6;
+}
+.plc-prep-term.active {
+    background: rgba(227,5,19,0.08);
+    border-right: 4px solid #e30513;
+    color: #e30513;
+    font-weight: 500;
+    border-radius: 0;
+}
+.plc-prep-term:hover:not(.active) { background: rgba(0,0,0,0.04); }
+
+.plc-prep-content { flex: 1; }
+.plc-prep-content-header {
+    margin-bottom: 40px;
+}
+.plc-prep-content-header h3 {
+    font-size: 28px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+.plc-prep-content-header p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #4e575f;
+    line-height: 1.6;
+}
+.plc-prep-columns {
+    display: flex;
+    gap: 80px;
+}
+.plc-prep-col { flex: 1; }
+.plc-prep-accordion-item {
+    border-bottom: 1px solid #d9d9d9;
+}
+.plc-prep-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.4;
+}
+.plc-prep-icon {
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+.plc-prep-accordion-body {
+    display: none;
+    padding-bottom: 20px;
+}
+.plc-prep-accordion-item.open .plc-prep-accordion-body { display: block; }
+.plc-prep-accordion-item.open .plc-prep-icon { transform: rotate(0); }
+.plc-prep-accordion-body p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #4e575f;
+    line-height: 1.6;
+}
+
+/* ---------- RECRUITER TESTIMONIAL CAROUSEL ---------- */
+.plc-recruiter-testimonial-section {
+    background: #fff;
+    padding: 120px 80px 80px;
+    overflow: hidden;
+}
+.plc-recruiter-testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+.plc-recruiter-testimonial-header h2 {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    max-width: 748px;
+    margin-bottom: 16px;
+}
+.plc-recruiter-testimonial-header p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #4e575f;
+}
+.plc-recruiter-testimonial-header .plc-carousel-nav {
+    margin-top: 0;
+    flex-shrink: 0;
+}
+.plc-recruiter-testimonial-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+.plc-recruiter-testimonial-carousel::-webkit-scrollbar { display: none; }
+
+.plc-rt-card {
+    width: 421px;
+    min-height: 558px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Quote card */
+.plc-rt-card-quote {
+    background: #f5f5f5;
+    padding: 32px;
+}
+.plc-rt-company {
+    margin-bottom: 24px;
+}
+.plc-rt-company-logo {
+    max-width: 120px;
+    max-height: 40px;
+    object-fit: contain;
+}
+.plc-rt-quote-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+.plc-rt-quote-body svg {
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+.plc-rt-quote-body p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000;
+}
+.plc-rt-author {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: auto;
+}
+.plc-rt-author-img {
+    width: 56px;
+    height: 76px;
+    border-radius: 26px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.plc-rt-author-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.plc-rt-author h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.plc-rt-author p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.6);
+}
+
+/* Video card */
+.plc-rt-card-video {
+    overflow: hidden;
+}
+.plc-rt-video-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+}
+.plc-rt-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+}
+.plc-rt-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(223,15,20,0.5);
+    backdrop-filter: blur(12px);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+.plc-rt-play-btn:hover { background: rgba(223,15,20,0.7); }
+.plc-rt-video-info {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    z-index: 2;
+}
+
+/* Student card */
+.plc-rt-card-student {
+    background: #edeef0;
+    padding: 32px;
+}
+.plc-rt-student-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+.plc-rt-student-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.plc-rt-student-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.plc-rt-student-company {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+}
+.plc-rt-student-quote {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.plc-rt-student-quote p {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000;
+}
+.plc-rt-student-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.plc-rt-student-info h4 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.plc-rt-student-info p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.6);
+    margin-top: 4px;
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE (max 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar { padding: 16px 20px; }
+    .navbar-center { display: none; }
+    .navbar-logo img { height: 28px; }
+
+    /* Hero */
+    .plc-hero { padding-top: 72px; }
+    .plc-hero-content { padding: 40px 20px 0; }
+    .plc-hero-header {
+        flex-direction: column;
+        gap: 28px;
+        margin-bottom: 48px;
+    }
+    .plc-hero-text h1 { font-size: 34px; }
+    .plc-hero-desc { font-size: 16px; }
+    .plc-btn-secondary { width: 100%; justify-content: center; padding: 16px; font-size: 16px; }
+    .plc-hero-image { height: 280px; margin-bottom: -28px; }
+    .plc-hero-image-area { padding-bottom: 80px; }
+    .plc-tab-switcher { width: calc(100% - 40px); }
+    .plc-tab { font-size: 14px; padding: 12px 16px; }
+
+    /* Stats bar */
+    .plc-stats-bar {
+        flex-direction: column;
+        gap: 40px;
+        padding: 60px 20px;
+    }
+    .plc-stat-divider { width: 100%; height: 1px; }
+    .plc-stat-number { font-size: 40px; }
+
+    /* CTC section */
+    .plc-ctc-section { padding: 60px 20px; }
+    .plc-ctc-header { flex-direction: column; gap: 24px; }
+    .plc-ctc-header h2 { font-size: 28px; }
+    .plc-ctc-desc { font-size: 16px; }
+    .plc-ctc-filters { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .plc-ctc-dropdowns { flex-wrap: wrap; gap: 12px; }
+    .plc-ctc-bars {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        gap: 32px;
+        padding-top: 40px;
+    }
+    .plc-ctc-bar-item { width: 100%; }
+    .plc-ctc-bar-item::after { height: 80px; }
+    .plc-ctc-value { font-size: 32px; }
+
+    /* Dates section */
+    .plc-dates-section { padding: 60px 20px; }
+    .plc-dates-header { flex-direction: column; gap: 24px; }
+    .plc-dates-header h2 { font-size: 28px; }
+    .plc-dates-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .plc-dates-cell { border-right: none; }
+    .plc-dates-cell:nth-child(3) { border-right: none; }
+    .plc-dates-cell:nth-child(4),
+    .plc-dates-cell:nth-child(5) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    /* Internship */
+    .plc-internship-section {
+        flex-direction: column;
+        padding: 60px 20px;
+        gap: 48px;
+    }
+    .plc-internship-content { gap: 48px; }
+    .plc-internship-text h2 { font-size: 28px; }
+    .plc-internship-text p { font-size: 16px; }
+    .plc-internship-stats { flex-direction: column; gap: 40px; }
+    .plc-internship-image { width: 100%; height: 300px; }
+
+    /* Recruiters / logos */
+    .plc-recruiters-section { padding: 60px 20px; }
+    .plc-recruiters-header h2 { font-size: 28px; }
+    .plc-recruiters-layout { flex-direction: column; gap: 40px; }
+    .plc-category-list {
+        flex-direction: row;
+        width: 100%;
+        border-right: none;
+        border-bottom: 0.4px solid #6a7581;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .plc-category-list::-webkit-scrollbar { display: none; }
+    .plc-category-item { white-space: nowrap; font-size: 14px; padding: 12px 16px; }
+    .plc-category-item.active { border-right: none; border-bottom: 2px solid #e30513; }
+    .plc-logos-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Alumni */
+    .plc-alumni-section { padding: 60px 20px; }
+    .plc-alumni-header h2 { font-size: 28px; }
+    .plc-alumni-card { width: 280px; height: 380px; }
+
+    /* Testimonial */
+    .plc-testimonial-section { padding: 60px 20px; }
+    .plc-testimonial-header h2 { font-size: 28px; }
+    .plc-testimonial-card { padding: 20px; }
+    .plc-quote-text { font-size: 16px; }
+
+    /* Prepare section */
+    .plc-prepare-section { padding: 60px 20px; }
+    .plc-prepare-text h2 { font-size: 28px; }
+    .plc-prepare-text p { font-size: 16px; }
+    .plc-prepare-layout { flex-direction: column; gap: 40px; }
+    .plc-prepare-image { width: 100%; height: 300px; }
+
+    /* Cohort */
+    .plc-cohort-section { padding: 60px 20px; }
+    .plc-cohort-header { flex-direction: column; gap: 24px; }
+    .plc-cohort-header h2 { font-size: 28px; }
+    .plc-cohort-stats { flex-direction: column; gap: 32px; flex-wrap: wrap; }
+    .plc-stat-number { font-size: 40px; }
+    .plc-charts-container { flex-direction: column; height: auto; }
+    .plc-chart-divider { width: 100%; height: 1px; }
+    .plc-chart-box { padding: 24px 16px; height: auto; }
+    .plc-bar-chart { height: 240px; }
+    .plc-pie-chart-wrap { flex-direction: column; }
+
+    /* Partner section */
+    .plc-partner-section { flex-direction: column; }
+    .plc-partner-content { padding: 60px 20px; }
+    .plc-partner-content h2 { font-size: 28px; }
+    .plc-partner-content p { font-size: 16px; }
+    .plc-partner-image { width: 100%; height: 300px; }
+
+    /* What defines our cohort */
+    .plc-cohort-define-section { padding: 60px 20px; }
+    .plc-cohort-define-header { flex-direction: column; gap: 24px; align-items: flex-start; }
+    .plc-cohort-define-header h2 { font-size: 28px; }
+    .plc-cohort-define-header p { font-size: 16px; }
+    .plc-cohort-define-grid {
+        grid-template-columns: 1fr;
+    }
+    .plc-cohort-define-cell { border-right: none; padding: 36px 24px; }
+    .plc-cohort-define-cell:nth-child(n+4) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .plc-cohort-define-cell:last-child { border-bottom: none; }
+
+    /* In their own words */
+    .plc-words-section { padding: 60px 20px; }
+    .plc-words-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .plc-words-header h2 { font-size: 28px; }
+    .plc-words-header p { font-size: 16px; }
+    .plc-words-card { width: 300px; min-height: 460px; }
+    .plc-words-quote p { font-size: 16px; }
+
+    /* Careers section */
+    .plc-careers-bg { min-height: 500px; }
+    .plc-careers-content { padding: 60px 20px; }
+    .plc-careers-content h2 { font-size: 28px; }
+    .plc-careers-content p { font-size: 16px; }
+
+    /* Preparation section */
+    .plc-prep-section { padding: 60px 20px; }
+    .plc-prep-header h2 { font-size: 28px; }
+    .plc-prep-header p { font-size: 16px; }
+    .plc-prep-layout { flex-direction: column; gap: 40px; }
+    .plc-prep-sidebar {
+        flex-direction: row;
+        width: 100%;
+        border-right: none;
+        border-bottom: 0.4px solid #6a7581;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+    .plc-prep-sidebar::-webkit-scrollbar { display: none; }
+    .plc-prep-term { white-space: nowrap; font-size: 14px; padding: 12px 16px; }
+    .plc-prep-term.active { border-right: none; border-bottom: 2px solid #e30513; }
+    .plc-prep-columns { flex-direction: column; gap: 0; }
+    .plc-prep-content-header h3 { font-size: 22px; }
+    .plc-prep-content-header p { font-size: 14px; }
+    .plc-prep-accordion-header { font-size: 16px; }
+
+    /* Recruiter testimonial carousel */
+    .plc-recruiter-testimonial-section { padding: 60px 20px; }
+    .plc-recruiter-testimonial-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .plc-recruiter-testimonial-header h2 { font-size: 28px; }
+    .plc-recruiter-testimonial-header p { font-size: 16px; }
+    .plc-rt-card { width: 300px; min-height: 460px; }
+    .plc-rt-quote-body p { font-size: 16px; }
+    .plc-rt-student-quote p { font-size: 24px; }
+
+    /* Footer */
+    .footer { padding: 60px 20px 40px; }
+    .footer-newsletter { flex-direction: column; align-items: flex-start; gap: 32px; }
+    .footer-newsletter h3 { font-size: 28px; }
+    .newsletter-form { width: 100%; }
+    .footer-columns { flex-direction: column; gap: 0; }
+    .footer-column-header { padding: 16px 0; border-bottom: 0.5px solid rgba(255,255,255,0.2); cursor: pointer; }
+    .footer-column-header .accordion-icon { display: block; width: 20px; }
+    .footer-column-links { display: none; padding: 16px 0; }
+    .footer-column[data-accordion="open"] .footer-column-links { display: flex; }
+    .footer-links { flex-direction: column; }
+    .accreditation { align-items: flex-start; margin-top: 32px; }
+    .accreditation-label { text-align: left; }
+    .footer-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        margin: 0 -20px;
+        padding: 24px 20px;
+    }
+    .footer-contact-divider { display: none; }
+    .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .navbar { padding: 16px 40px; }
+    .plc-hero-content { padding: 72px 40px 0; }
+    .plc-stats-bar { padding: 60px 40px; }
+    .plc-ctc-section { padding: 60px 40px; }
+    .plc-dates-section { padding: 80px 40px; }
+    .plc-dates-grid { grid-template-columns: repeat(2, 1fr); }
+    .plc-internship-section { padding: 60px 40px; }
+    .plc-internship-image { width: 340px; height: 420px; }
+    .plc-recruiters-section { padding: 60px 40px; }
+    .plc-recruiters-layout { gap: 60px; }
+    .plc-logos-grid { grid-template-columns: repeat(3, 1fr); }
+    .plc-alumni-section { padding: 60px 40px; }
+    .plc-testimonial-section { padding: 60px 40px; }
+    .plc-prepare-section { padding: 60px 40px; }
+    .plc-prepare-image { width: 380px; }
+    .plc-cohort-section { padding: 60px 40px; }
+    .plc-partner-section { flex-direction: column; }
+    .plc-partner-content { padding: 60px 40px; }
+    .plc-partner-image { width: 100%; height: 400px; }
+    .footer { padding: 60px 40px 40px; }
+    .footer-contact { margin: 0 -40px; }
+    .plc-ctc-bars { gap: 24px; }
+    .plc-ctc-bar-item { width: 260px; }
+
+    /* Cohort define */
+    .plc-cohort-define-section { padding: 80px 40px; }
+    .plc-cohort-define-grid { grid-template-columns: repeat(2, 1fr); }
+    .plc-cohort-define-cell:nth-child(2n) { border-right: none; }
+    .plc-cohort-define-cell:nth-child(3), .plc-cohort-define-cell:nth-child(4) { border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    /* In their own words */
+    .plc-words-section { padding: 80px 40px; }
+    .plc-words-card { width: 340px; }
+
+    /* Careers */
+    .plc-careers-content { padding: 80px 40px; }
+
+    /* Preparation */
+    .plc-prep-section { padding: 80px 40px; }
+    .plc-prep-layout { gap: 40px; }
+    .plc-prep-columns { gap: 40px; }
+
+    /* Recruiter testimonial */
+    .plc-recruiter-testimonial-section { padding: 80px 40px; }
+    .plc-rt-card { width: 340px; }
+}

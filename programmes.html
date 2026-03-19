@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programmes - Jio Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600&family=Inter:wght@300;400;500;700&family=Sora:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/programmes.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute"></a>
+            </div>
+            <div class="navbar-center">
+                <a href="about.html">About Us</a>
+                <a href="programmes.html">Programmes</a>
+                <a href="placements.html">Placements</a>
+                <a href="#">Research</a>
+                <a href="#">Sports &amp; Athletics</a>
+            </div>
+            <div class="navbar-icons">
+                <img src="images/search.svg" alt="Search">
+                <img src="images/menu.svg" alt="Menu" class="menu-icon">
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-mobile-header">
+            <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute" class="search-overlay-logo"></a>
+            <button class="search-overlay-mobile-close" id="searchMobileClose">
+                <img src="images/close-icon.svg" alt="Close" style="--stroke-0: #ffffff;">
+            </button>
+        </div>
+        <div class="search-overlay-inner">
+            <button class="search-overlay-close" id="searchClose">
+                <img src="images/close-icon.svg" alt="Close">
+            </button>
+            <div class="search-input-area">
+                <div class="search-input-row">
+                    <img src="images/search-large.svg" alt="" class="search-icon">
+                    <input type="text" id="searchInput" placeholder="Search for programmes, events, etc...">
+                    <button class="search-input-clear" id="searchClear">
+                        <img src="images/close-circle.svg" alt="Clear">
+                    </button>
+                </div>
+            </div>
+            <div class="popular-searches">
+                <p class="popular-searches-label">Popular Searches</p>
+                <div class="popular-searches-grid">
+                    <a href="about.html#vision" class="popular-search-link">Mission &amp; Values <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html" class="popular-search-link desktop-only-search">Get to Know Us <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Journey <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Story <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Future Aspirations <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#vision" class="popular-search-link desktop-only-search">Vision for Tomorrow <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Why Us? <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Benefits of Studying Here <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">Growth Roadmap <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Strategic Development Plan <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">FAQs <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Your Questions Answered <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html" class="popular-search-link mobile-only-search">Get to Know Us <img src="images/chevron-right.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="search-bottom-tabs desktop-search-tabs">
+                <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg" alt="" style="--stroke-0: #ffffff;"></a>
+                <a href="#" class="search-bottom-tab">Events</a>
+                <a href="#" class="search-bottom-tab">Jio Digital Library</a>
+                <a href="#" class="search-bottom-tab">News</a>
+                <a href="#" class="search-bottom-tab">Careers at Jio</a>
+                <a href="#" class="search-bottom-tab apply-now">Apply Now</a>
+            </div>
+            <div class="search-bottom-tabs mobile-search-tabs">
+                <div class="search-bottom-tabs-scroll">
+                    <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg" alt="" style="--stroke-0: #ffffff;"></a>
+                    <a href="#" class="search-bottom-tab">A to Z Index</a>
+                    <a href="#" class="search-bottom-tab">Events</a>
+                    <a href="#" class="search-bottom-tab">Alumni</a>
+                    <a href="placements.html" class="search-bottom-tab">Placements</a>
+                    <a href="#" class="search-bottom-tab">Digital Library</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="plp-hero">
+        <p class="plp-breadcrumb"><a href="index.html">Home</a> / <strong>Academics</strong></p>
+        <div class="plp-hero-header">
+            <h1 class="plp-hero-title">Our Programmes</h1>
+            <p class="plp-hero-desc">Discover world-class programmes designed to shape future leaders through AI-powered, experiential learning.</p>
+        </div>
+        <div class="plp-hero-buttons">
+            <a href="#" class="plp-btn-primary">
+                Apply Now
+                <img src="images/arrow-up-right-white.svg" alt="">
+            </a>
+            <a href="#" class="plp-btn-secondary">
+                Download Brochure
+                <img src="images/download-icon.svg" alt="">
+            </a>
+        </div>
+    </section>
+    <div class="plp-hero-image">
+        <img src="images/about-header.png" alt="Jio Institute Campus">
+    </div>
+
+    <!-- FILTER BAR -->
+    <section class="plp-filter-bar">
+        <div class="plp-filter-bar-inner">
+            <!-- Desktop filter elements -->
+            <button class="plp-filter-dropdown">
+                Postgraduate
+                <img src="images/chevron-down.svg" alt="">
+            </button>
+            <div class="plp-filter-search">
+                <img src="images/search.svg" alt="" style="--stroke-0: #999999;">
+                <span>Search programme</span>
+            </div>
+
+            <!-- Mobile filter elements -->
+            <div class="plp-mobile-search-row">
+                <div class="plp-mobile-search-input">
+                    <img src="images/search.svg" alt="" style="--stroke-0: #999999;">
+                    <span>Search programme</span>
+                </div>
+                <button class="plp-mobile-filter-btn">
+                    <img src="images/filter-icon.svg" alt="Filter">
+                </button>
+            </div>
+            <div class="plp-mobile-dropdown">
+                <span>Postgraduate</span>
+                <img src="images/chevron-down.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMMES CONTENT -->
+    <section class="plp-content">
+        <!-- Sidebar filters (desktop only) -->
+        <aside class="plp-sidebar">
+            <div class="plp-filter-section">
+                <div class="plp-filter-header">
+                    <h3 class="plp-filter-title">Mode of Education</h3>
+                    <img src="images/chevron-up.svg" alt="">
+                </div>
+                <div class="plp-filter-options">
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-unchecked.svg" alt="">
+                        <span>On Campus</span>
+                    </label>
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-unchecked.svg" alt="">
+                        <span>Online</span>
+                    </label>
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-unchecked.svg" alt="">
+                        <span>Hybrid</span>
+                    </label>
+                </div>
+            </div>
+            <div class="plp-filter-divider"></div>
+            <div class="plp-filter-section">
+                <div class="plp-filter-header">
+                    <h3 class="plp-filter-title">Areas</h3>
+                    <img src="images/chevron-up.svg" alt="">
+                </div>
+                <div class="plp-filter-options">
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-checked.svg" alt="">
+                        <span>Artificial Intelligence &amp; Data Science</span>
+                    </label>
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-unchecked.svg" alt="">
+                        <span>Sports Management</span>
+                    </label>
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-unchecked.svg" alt="">
+                        <span>Management</span>
+                    </label>
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-unchecked.svg" alt="">
+                        <span>Digital Media &amp; Communication</span>
+                    </label>
+                    <label class="plp-filter-option">
+                        <img src="images/checkbox-unchecked.svg" alt="">
+                        <span>Education</span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Programme cards -->
+        <div class="plp-programmes">
+            <!-- Card 1 - AI & Data Science -->
+            <div class="plp-card">
+                <div class="plp-card-image">
+                    <img src="images/research-1.png" alt="AI & Data Science">
+                    <span class="plp-card-badge open">Applications Open</span>
+                </div>
+                <div class="plp-card-info">
+                    <div class="plp-card-details">
+                        <div class="plp-card-tags">
+                            <span class="plp-card-tag">2 Years</span>
+                            <span class="plp-card-tag">On Campus</span>
+                        </div>
+                        <div class="plp-card-text">
+                            <a href="programme-detail.html" style="text-decoration:none;color:inherit"><h3 class="plp-card-title">MSc in AI &amp; Data Science</h3></a>
+                            <p class="plp-card-desc">Master AI and Data Science with hands-on projects, industry immersion, and cutting-edge research in a world-class learning environment.</p>
+                        </div>
+                        <div class="plp-card-mode">
+                            <span class="plp-card-mode-label">Mode:</span>
+                            <span class="plp-card-mode-value">Full Time - On Campus</span>
+                        </div>
+                    </div>
+                    <div class="plp-card-actions">
+                        <a href="#" class="plp-btn-sm-primary">
+                            Apply Now
+                            <img src="images/arrow-up-right-white.svg" alt="">
+                        </a>
+                        <a href="#" class="plp-btn-sm-secondary">
+                            Download Brochure
+                            <img src="images/download-icon.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 - Sports Management -->
+            <div class="plp-card">
+                <div class="plp-card-image">
+                    <img src="images/campus-1.png" alt="Sports Management">
+                    <span class="plp-card-badge open">Applications Open</span>
+                </div>
+                <div class="plp-card-info">
+                    <div class="plp-card-details">
+                        <div class="plp-card-tags">
+                            <span class="plp-card-tag">2 Years</span>
+                            <span class="plp-card-tag">On Campus</span>
+                        </div>
+                        <div class="plp-card-text">
+                            <h3 class="plp-card-title">MBA in Sports Management</h3>
+                            <p class="plp-card-desc">Develop strategic sports leadership skills through a blend of management theory, live sports immersions, and global industry exposure.</p>
+                        </div>
+                        <div class="plp-card-mode">
+                            <span class="plp-card-mode-label">Mode:</span>
+                            <span class="plp-card-mode-value">Full Time - On Campus</span>
+                        </div>
+                    </div>
+                    <div class="plp-card-actions">
+                        <a href="#" class="plp-btn-sm-primary">
+                            Apply Now
+                            <img src="images/arrow-up-right-white.svg" alt="">
+                        </a>
+                        <a href="#" class="plp-btn-sm-secondary">
+                            Download Brochure
+                            <img src="images/download-icon.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 - Management -->
+            <div class="plp-card">
+                <div class="plp-card-image">
+                    <img src="images/exec-edu-1.png" alt="Management">
+                    <span class="plp-card-badge closed">Applications Closed</span>
+                </div>
+                <div class="plp-card-info">
+                    <div class="plp-card-details">
+                        <div class="plp-card-tags">
+                            <span class="plp-card-tag">2 Years</span>
+                            <span class="plp-card-tag">On Campus</span>
+                        </div>
+                        <div class="plp-card-text">
+                            <h3 class="plp-card-title">MBA in Management</h3>
+                            <p class="plp-card-desc">Build a strong foundation in business strategy, leadership, and innovation through immersive, real-world learning experiences.</p>
+                        </div>
+                        <div class="plp-card-mode">
+                            <span class="plp-card-mode-label">Mode:</span>
+                            <span class="plp-card-mode-value">Full Time - On Campus</span>
+                        </div>
+                    </div>
+                    <div class="plp-card-actions">
+                        <a href="#" class="plp-btn-sm-primary">
+                            Apply Now
+                            <img src="images/arrow-up-right-white.svg" alt="">
+                        </a>
+                        <a href="#" class="plp-btn-sm-secondary">
+                            Download Brochure
+                            <img src="images/download-icon.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALUMNI SECTION -->
+    <section class="plp-alumni">
+        <div class="plp-alumni-header">
+            <h2 class="plp-alumni-title">Learn more from<br>our Alumni</h2>
+            <div class="plp-alumni-nav">
+                <button class="plp-alumni-arrow prev disabled">
+                    <img src="images/arrow-right-nav.svg" alt="Previous">
+                </button>
+                <button class="plp-alumni-arrow active">
+                    <img src="images/arrow-right-nav.svg" alt="Next">
+                </button>
+            </div>
+        </div>
+        <div class="plp-alumni-cards">
+            <!-- Alumni Card 1 - Meta -->
+            <div class="plp-alumni-card">
+                <div class="plp-alumni-card-top">
+                    <span class="plp-alumni-currently">Currently at</span>
+                    <div class="plp-alumni-company">
+                        <img src="images/partner-logo-meta.svg" alt="Meta">
+                    </div>
+                </div>
+                <div class="plp-alumni-quote-section">
+                    <img src="images/quote-mark-red.svg" alt="" class="plp-alumni-quote-mark">
+                    <p class="plp-alumni-quote">The AI &amp; Data Science programme at Jio Institute transformed my career. The hands-on projects and industry connections opened doors I never imagined.</p>
+                </div>
+                <div class="plp-alumni-bottom">
+                    <div class="plp-alumni-person">
+                        <div class="plp-alumni-avatar">
+                            <img src="images/profile-1.png" alt="Rohan Mehta">
+                        </div>
+                        <div class="plp-alumni-name-block">
+                            <p class="plp-alumni-name">Rohan Mehta</p>
+                            <p class="plp-alumni-class">Class of 2024</p>
+                        </div>
+                    </div>
+                    <a href="#" class="plp-alumni-linkedin">
+                        <img src="images/linkedin-blue.svg" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Alumni Video Card -->
+            <div class="plp-alumni-video">
+                <img src="images/faculty-center.png" alt="Alumni Video" class="plp-alumni-video-bg">
+                <button class="plp-alumni-play-btn">
+                    <img src="images/play-icon.svg" alt="Play">
+                </button>
+                <div class="plp-alumni-video-overlay"></div>
+                <div class="plp-alumni-video-info">
+                    <div class="plp-alumni-video-person">
+                        <div class="plp-alumni-avatar">
+                            <img src="images/profile-2.png" alt="Priya Sharma">
+                        </div>
+                        <div class="plp-alumni-name-block">
+                            <p class="plp-alumni-video-name">Priya Sharma</p>
+                            <p class="plp-alumni-video-class">Class of 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alumni Card 2 - Uber -->
+            <div class="plp-alumni-card">
+                <div class="plp-alumni-card-top">
+                    <span class="plp-alumni-currently">Currently at</span>
+                    <div class="plp-alumni-company">
+                        <img src="images/uber-logo.svg" alt="Uber">
+                    </div>
+                </div>
+                <div class="plp-alumni-quote-section">
+                    <img src="images/quote-mark-red.svg" alt="" class="plp-alumni-quote-mark">
+                    <p class="plp-alumni-quote">Jio Institute's MBA in Sports Management gave me a unique edge. The global exposure and real-world sports immersions were game-changers.</p>
+                </div>
+                <div class="plp-alumni-bottom">
+                    <div class="plp-alumni-person">
+                        <div class="plp-alumni-avatar">
+                            <img src="images/profile-3.png" alt="Anika Patel">
+                        </div>
+                        <div class="plp-alumni-name-block">
+                            <p class="plp-alumni-name">Anika Patel</p>
+                            <p class="plp-alumni-class">Class of 2023</p>
+                        </div>
+                    </div>
+                    <a href="#" class="plp-alumni-linkedin">
+                        <img src="images/linkedin-blue.svg" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE ASSESSMENT SECTION -->
+    <section class="plp-assessment">
+        <h2 class="plp-assessment-title">Not sure where you fit in yet?</h2>
+        <div class="plp-assessment-right">
+            <p class="plp-assessment-text">Take our quick profile assessment to discover programmes tailored to your strengths, interests, and career aspirations. It only takes a few minutes.</p>
+            <a href="#" class="plp-btn-outline-white">
+                Take Assessment
+                <img src="images/arrow-up-right-white.svg" alt="">
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-newsletter">
+            <h3>Because true leaders<br>never stop learning</h3>
+            <div class="newsletter-right">
+                <p class="newsletter-label">Stay close to our work</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email ID">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+            <div class="footer-columns">
+                <div class="footer-column" data-accordion="open">
+                    <div class="footer-column-header">
+                        <h4>About</h4>
+                        <img src="images/chevron-up.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="about.html">About us</a>
+                        <a href="about.html#our-story">Our Story</a>
+                        <a href="about.html#vision">Our Vision</a>
+                        <a href="about.html#advantage">The Jio Institute Advantage</a>
+                        <a href="#">Growth Plan</a>
+                        <a href="#">Frequently Asked Questions</a>
+                    </div>
+                </div>
+                <div class="footer-column" data-accordion="closed">
+                    <div class="footer-column-header">
+                        <h4>Academics</h4>
+                        <img src="images/chevron-down.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="programmes.html">Academic Overview</a>
+                        <a href="#">Holistic Learning</a>
+                        <a href="#">Study Abroad</a>
+                        <a href="#">Capstone &amp; Industry Immersion</a>
+                        <a href="#">Laboratories</a>
+                        <a href="#">Library</a>
+                    </div>
+                </div>
+                <div class="footer-column other-links" data-accordion="closed">
+                    <div class="footer-column-header">
+                        <h4>Other links</h4>
+                        <img src="images/chevron-down.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="#">Careers</a>
+                        <a href="about.html#campus">Campus life</a>
+                        <a href="#">Executive education</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="accreditation">
+                <p class="accreditation-label">Accredited by:</p>
+                <img src="images/aacsb-badge.png" alt="AACSB Accreditation">
+            </div>
+        </div>
+        <div class="footer-contact">
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Location</span>
+                <span class="footer-contact-value">Ulwe, Navi Mumbai, Maharashtra 410206</span>
+            </div>
+            <div class="footer-contact-divider"></div>
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Write to us</span>
+                <span class="footer-contact-value">admissions@jioinstitute.edu.in</span>
+            </div>
+            <div class="footer-contact-divider"></div>
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Talk to us</span>
+                <span class="footer-contact-value">1800-889-1100</span>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <a href="index.html"><img src="images/footer-logo.png" alt="Jio Institute"></a>
+            </div>
+            <div class="footer-copyright">
+                <span>&copy; 2025 Jio Institute.</span>
+                <span>All rights reserved.</span>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/icon-youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="images/icon-whatsapp.svg" alt="WhatsApp"></a>
+                <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

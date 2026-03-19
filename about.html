@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jio Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500;600&family=Inter:wght@300;400;500;700&family=Sora:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute"></a>
+            </div>
+            <div class="navbar-center">
+                <a href="about.html">About Us</a>
+                <a href="programmes.html">Programmes</a>
+                <a href="placements.html">Placements</a>
+                <a href="#">Research</a>
+                <a href="#">Sports &amp; Athletics</a>
+            </div>
+            <div class="navbar-icons">
+                <img src="images/search.svg" alt="Search">
+                <img src="images/menu.svg" alt="Menu" class="menu-icon">
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-mobile-header">
+            <a href="index.html"><img src="images/jio-logo-white.svg" alt="Jio Institute" class="search-overlay-logo"></a>
+            <button class="search-overlay-mobile-close" id="searchMobileClose">
+                <img src="images/close-icon.svg" alt="Close" style="--stroke-0: #ffffff;">
+            </button>
+        </div>
+        <div class="search-overlay-inner">
+            <button class="search-overlay-close" id="searchClose">
+                <img src="images/close-icon.svg" alt="Close">
+            </button>
+            <div class="search-input-area">
+                <div class="search-input-row">
+                    <img src="images/search-large.svg" alt="" class="search-icon">
+                    <input type="text" id="searchInput" placeholder="Search for programmes, events, etc...">
+                    <button class="search-input-clear" id="searchClear">
+                        <img src="images/close-circle.svg" alt="Clear">
+                    </button>
+                </div>
+            </div>
+            <div class="popular-searches">
+                <p class="popular-searches-label">Popular Searches</p>
+                <div class="popular-searches-grid">
+                    <a href="about.html#vision" class="popular-search-link">Mission &amp; Values <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html" class="popular-search-link desktop-only-search">Get to Know Us <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Journey <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#our-story" class="popular-search-link desktop-only-search">Our Story <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Future Aspirations <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#vision" class="popular-search-link desktop-only-search">Vision for Tomorrow <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Why Us? <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html#advantage" class="popular-search-link desktop-only-search">Benefits of Studying Here <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">Growth Roadmap <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Strategic Development Plan <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link">FAQs <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="#" class="popular-search-link desktop-only-search">Your Questions Answered <img src="images/chevron-right.svg" alt=""></a>
+                    <a href="about.html" class="popular-search-link mobile-only-search">Get to Know Us <img src="images/chevron-right.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="search-bottom-tabs desktop-search-tabs">
+                <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg" alt="" style="--stroke-0: #ffffff;"></a>
+                <a href="#" class="search-bottom-tab">Events</a>
+                <a href="#" class="search-bottom-tab">Jio Digital Library</a>
+                <a href="#" class="search-bottom-tab">News</a>
+                <a href="#" class="search-bottom-tab">Careers at Jio</a>
+                <a href="#" class="search-bottom-tab apply-now">Apply Now</a>
+            </div>
+            <div class="search-bottom-tabs mobile-search-tabs">
+                <div class="search-bottom-tabs-scroll">
+                    <a href="#" class="search-bottom-tab quick-links">Quick Links <img src="images/chevron-right.svg" alt="" style="--stroke-0: #ffffff;"></a>
+                    <a href="#" class="search-bottom-tab">A to Z Index</a>
+                    <a href="#" class="search-bottom-tab">Events</a>
+                    <a href="#" class="search-bottom-tab">Alumni</a>
+                    <a href="placements.html" class="search-bottom-tab">Placements</a>
+                    <a href="#" class="search-bottom-tab">Digital Library</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO / BREADCRUMB SECTION -->
+    <section class="hero-section">
+        <div class="breadcrumb-area">
+            <p class="breadcrumb"><a href="index.html">Home</a> / <strong>About us</strong></p>
+            <div class="hero-header">
+                <h1 class="hero-title">About Jio<br>University</h1>
+                <p class="hero-description">Jio University offers AI-powered, world-class education and research to build future-ready leaders. It blends global expertise with industry immersion to solve real-world challenges and drive India's growth.</p>
+            </div>
+        </div>
+        <div class="header-image">
+            <img src="images/about-header.png" alt="Jio Institute Campus">
+        </div>
+        <div class="tab-navigation">
+            <a class="tab-item active" href="#our-story">Our Story</a>
+            <a class="tab-item" href="#vision">Vision and Mission</a>
+            <a class="tab-item" href="#leaders">Our Leaders</a>
+            <a class="tab-item" href="#advantage">Our Advantage</a>
+            <a class="tab-item" href="#faculty">Our Faculty</a>
+            <a class="tab-item" href="#campus">Campus Life</a>
+        </div>
+        <div class="tab-dropdown">
+            <span class="tab-dropdown-label">Overview</span>
+            <img src="images/chevron-down.svg" alt="" class="tab-dropdown-icon">
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="our-story-section" id="our-story">
+        <span class="year-display">2026</span>
+    </section>
+
+    <!-- TRANSFORMATION / OUR VISION -->
+    <section class="vision-section" id="vision">
+        <p class="vision-text">A world-class Indian <strong>Multidisciplinary Education and Research University</strong> dedicated to building leaders and solving India's problems through rapid innovation and lifelong learning.</p>
+        <span class="vision-watermark">Our Vision</span>
+    </section>
+
+    <!-- THE MINDS BEHIND THE VISION -->
+    <section class="leaders-section" id="leaders">
+        <div class="leaders-header">
+            <h2>The Minds Behind the Vision</h2>
+            <p>World-class faculty, clinical partners, and industry leaders united in advancing healthcare AI.</p>
+        </div>
+
+        <!-- Leader 1 - Nita Ambani -->
+        <div class="leader-quote-card">
+            <div class="leader-image">
+                <img src="images/leader-1.png" alt="Smt. Nita Ambani">
+            </div>
+            <div class="leader-quote-content">
+                <img src="images/quote-mark-red.svg" alt="" class="quote-mark">
+                <blockquote>Education is all about igniting young minds and enabling them to attain their fullest potential.</blockquote>
+                <div class="leader-author">
+                    <span class="name">Smt. Nita Ambani</span>
+                    <span class="title">Founder Chairperson, Reliance Foundation<br>Institution of Education &amp; Research</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leader 2 - Mukesh Ambani -->
+        <div class="leader-quote-card">
+            <div class="leader-image">
+                <img src="images/leader-2.png" alt="Shri Mukesh Ambani">
+            </div>
+            <div class="leader-quote-content">
+                <img src="images/quote-mark-red.svg" alt="" class="quote-mark">
+                <blockquote>Education is not about pouring knowledge into the brains of students but lighting that spark so that they learn by themselves.</blockquote>
+                <div class="leader-author">
+                    <span class="name">Shri Mukesh Ambani</span>
+                    <span class="title">Chairman &amp; Managing Director,<br>Reliance Industries Limited</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LED BY GLOBAL FACULTY -->
+    <section class="faculty-section" id="faculty">
+        <div class="faculty-overview">
+            <h2>Led by Global Faculty<br>&amp; Industry Experts</h2>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev disabled">
+                    <img src="images/arrow-right-nav.svg" alt="Previous">
+                </button>
+                <button class="nav-arrow active">
+                    <img src="images/arrow-right-nav.svg" alt="Next">
+                </button>
+            </div>
+        </div>
+
+        <!-- Faculty Carousel -->
+        <div class="faculty-carousel">
+            <!-- Side Left -->
+            <div class="faculty-card side">
+                <img class="faculty-bg" src="images/faculty-side-left.png" alt="Dr. Dipak Jain">
+                <div class="faculty-card-info">
+                    <div class="faculty-card-name">
+                        <div class="name-row">
+                            <span>Dr. Dipak Jain</span>
+                            <img src="images/arrow-up-right-white.svg" alt="">
+                        </div>
+                        <p class="role">Former Dean, Kellogg School of Management, USA | Former Dean, INSEAD, France | Ex-officio invitee, Governing Council</p>
+                    </div>
+                </div>
+                <button class="play-btn">
+                    <img src="images/play-icon.svg" alt="Play">
+                </button>
+            </div>
+
+            <!-- Center -->
+            <div class="faculty-card center">
+                <img class="faculty-bg" src="images/faculty-center.png" alt="Dr. Raghunath Mashelkar">
+                <div class="faculty-card-info">
+                    <div class="faculty-card-name">
+                        <div class="name-row">
+                            <span>Dr. Raghunath Mashelkar</span>
+                            <img src="images/arrow-up-right-white.svg" alt="">
+                        </div>
+                        <p class="role">Chancellor | Padma Vibhushan | Former Director General, CSIR,<br>Government of India</p>
+                    </div>
+                </div>
+                <button class="play-btn">
+                    <img src="images/play-icon.svg" alt="Play">
+                </button>
+            </div>
+
+            <!-- Side Right -->
+            <div class="faculty-card side">
+                <img class="faculty-bg" src="images/faculty-side-right.png" alt="Ms. Isha Ambani">
+                <div class="faculty-card-info">
+                    <div class="faculty-card-name">
+                        <div class="name-row">
+                            <span>Ms. Isha Ambani</span>
+                            <img src="images/arrow-up-right-white.svg" alt="">
+                        </div>
+                        <p class="role">Member of Executive Leadership teams, Reliance Retail, Reliance Jio, Reliance Foundation, and Dhirubhai Ambani International School</p>
+                    </div>
+                </div>
+                <button class="play-btn">
+                    <img src="images/play-icon.svg" alt="Play">
+                </button>
+            </div>
+        </div>
+
+        <!-- Faculty Tabs & Profiles -->
+        <div class="faculty-tabs">
+            <div class="faculty-tabs-header">
+                <div class="chips">
+                    <div class="chip active">Global Advisory Council</div>
+                    <div class="chip">Governing Council</div>
+                    <div class="chip">Academic Advisors</div>
+                </div>
+                <a href="#" class="view-all-link">
+                    View All Faculty
+                    <img src="images/arrow-up-right-red.svg" alt="">
+                </a>
+            </div>
+            <div class="profile-cards">
+                <div class="profile-card">
+                    <img class="profile-bg" src="images/profile-1.png" alt="Dr. Jean-Lou Chameau">
+                    <div class="profile-card-info">
+                        <span class="name">Dr. Jean-Lou Chameau</span>
+                        <span class="title">President Emeritus, California Institute of Technology, USA | Former President, KAUST, Saudi Arabia</span>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img class="profile-bg" src="images/profile-2.png" alt="Dr. Jeffrey Sachs">
+                    <div class="profile-card-info">
+                        <span class="name">Dr. Jeffrey Sachs</span>
+                        <span class="title">Director at Center for Sustainable Development, Columbia University, USA</span>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img class="profile-bg" src="images/profile-3.png" alt="Dr. Rick Levin">
+                    <div class="profile-card-info">
+                        <span class="name">Dr. Rick Levin</span>
+                        <span class="title">President Emeritus, Yale University, USA | Former CEO, Coursera</span>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img class="profile-bg" src="images/profile-4.png" alt="Dr. Subra Suresh">
+                    <div class="profile-card-info">
+                        <span class="name">Dr. Subra Suresh</span>
+                        <span class="title">Member, Global Advisory Council, Jio Institute | Former President, Nanyang Technological University</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE JIO INSTITUTE ADVANTAGE -->
+    <section class="advantage-section" id="advantage">
+        <div class="advantage-header">
+            <h2>The Jio Institute Advantage</h2>
+            <p>Because learning here follows the MERU framework multidisciplinary, experiential, research-led, and deeply connected to the real world.</p>
+        </div>
+        <div class="advantage-image">
+            <img src="images/advantage-1.png" alt="Six Schools, Modular Structure">
+            <div class="advantage-image-text">
+                <h3>Six Schools, Modular Structure</h3>
+                <p>Master your core domain with the flexibility to explore others, using AI as an integrated tool across every discipline from management to sports.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINCIPLES SECTION -->
+    <section class="principles-section">
+        <div class="principles-header">
+            <h2>The Principles That Drive Our Excellence</h2>
+            <div class="nav-arrows">
+                <button class="nav-arrow prev disabled">
+                    <img src="images/arrow-right-nav-disabled.svg" alt="Previous">
+                </button>
+                <button class="nav-arrow active">
+                    <img src="images/arrow-right-nav.svg" alt="Next">
+                </button>
+            </div>
+        </div>
+        <div class="principles-cards">
+            <div class="principle-card card-01">
+                <span class="principle-number">01</span>
+                <div class="principle-desc">
+                    <h3>Catalyse</h3>
+                    <p>We create a space for innovation to solve India's challenges and drive future growth.</p>
+                </div>
+            </div>
+            <div class="principle-card card-02">
+                <span class="principle-number">02</span>
+                <div class="principle-desc">
+                    <h3>Co-create</h3>
+                </div>
+            </div>
+            <div class="principle-card card-03">
+                <span class="principle-number">03</span>
+                <div class="principle-desc">
+                    <h3>Connect</h3>
+                </div>
+            </div>
+            <div class="principle-card card-04">
+                <span class="principle-number">04</span>
+                <div class="principle-desc">
+                    <h3>Communicate</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A CAMPUS BUILT FOR YOU -->
+    <section class="campus-section" id="campus">
+        <div class="campus-photos-mosaic">
+            <img class="cp-1" src="images/campus-a1.png" alt="">
+            <img class="cp-2" src="images/campus-a2.png" alt="">
+            <img class="cp-3" src="images/campus-main.png" alt="">
+            <img class="cp-4" src="images/campus-a4.png" alt="">
+            <img class="cp-5" src="images/campus-a5.png" alt="">
+            <img class="cp-6" src="images/campus-a6.png" alt="">
+            <img class="cp-7" src="images/campus-a10.png" alt="">
+            <img class="cp-8" src="images/campus-a7.png" alt="">
+            <img class="cp-9" src="images/campus-a8.png" alt="">
+            <img class="cp-10" src="images/campus-a9.png" alt="">
+        </div>
+        <div class="campus-content">
+            <h2>A Campus Built for You!</h2>
+            <p>Our 52 acre carbon-neutral Dronagiri campus provides a world-class, accessible launchpad strategically located under two hours from the commercial hubs of Mumbai and Pune.</p>
+            <a href="#" class="btn-primary">
+                Explore Campus Life
+                <img src="images/arrow-up-right-white.svg" alt="">
+            </a>
+        </div>
+    </section>
+
+    <!-- NURTURING A LIFETIME OF EXCELLENCE -->
+    <section class="legacy-section">
+        <div class="legacy-text">
+            <h2>Nurturing a Lifetime of Excellence</h2>
+            <p>Our 13 Reliance Foundation Schools build the bedrock of innovation for 14,000 students, creating a direct path to Jio Institute. This seamless journey transforms early curiosity into world-class leadership, dedicated to building a better future.</p>
+        </div>
+        <div class="legacy-logos">
+            <div class="legacy-logo-box">
+                <img src="images/reliance-foundation-logo.svg" alt="Reliance Foundation School">
+            </div>
+            <div class="legacy-logo-box dais">
+                <img src="images/dais-logo.png" alt="Dhirubhai Ambani International School">
+            </div>
+        </div>
+    </section>
+
+    <!-- MAKING HEADLINES -->
+    <section class="news-section">
+        <h2>Making Headlines, Shaping Futures.</h2>
+        <div class="blog-cards">
+            <div class="blog-card">
+                <div class="blog-card-image">
+                    <img src="images/blog-1.png" alt="Empowering Future Leaders">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <img class="newspaper-logo" src="images/hindustan-times-logo.png" alt="Hindustan Times">
+                        <h3>Empowering Future Leaders: How Jio Institute Prepares Students for the Future</h3>
+                    </div>
+                    <span class="date">12 October 2025</span>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card-image">
+                    <img src="images/blog-2.png" alt="AI-ready across Odisha">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <img class="newspaper-logo" src="images/statesman-logo.png" alt="The Statesman">
+                        <h3>Reliance Jio initiates steps to make thousands of teachers and students AI-ready across Odisha</h3>
+                    </div>
+                    <span class="date">12 October 2025</span>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-card-image">
+                    <img src="images/blog-1.png" alt="Empowering Future Leaders">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-meta">
+                        <img class="newspaper-logo" src="images/hindustan-times-logo.png" alt="Hindustan Times">
+                        <h3>Empowering Future Leaders: How Jio Institute Prepares Students for the Future</h3>
+                    </div>
+                    <span class="date">12 October 2025</span>
+                </div>
+            </div>
+        </div>
+        <div class="news-nav-arrows">
+            <button class="nav-arrow prev disabled">
+                <img src="images/arrow-right-nav.svg" alt="Previous">
+            </button>
+            <button class="nav-arrow active">
+                <img src="images/arrow-right-nav.svg" alt="Next">
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-newsletter">
+            <h3>Because true leaders<br>never stop learning</h3>
+            <div class="newsletter-right">
+                <p class="newsletter-label">Stay close to our work</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email ID">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+            <div class="footer-columns">
+                <div class="footer-column" data-accordion="open">
+                    <div class="footer-column-header">
+                        <h4>About</h4>
+                        <img src="images/chevron-up.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="about.html">About us</a>
+                        <a href="about.html#our-story">Our Story</a>
+                        <a href="about.html#vision">Our Vision</a>
+                        <a href="about.html#advantage">The Jio Institute Advantage</a>
+                        <a href="#">Growth Plan</a>
+                        <a href="#">Frequently Asked Questions</a>
+                    </div>
+                </div>
+                <div class="footer-column" data-accordion="closed">
+                    <div class="footer-column-header">
+                        <h4>Academics</h4>
+                        <img src="images/chevron-down.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="programmes.html">Academic Overview</a>
+                        <a href="#">Holistic Learning</a>
+                        <a href="#">Study Abroad</a>
+                        <a href="#">Capstone &amp; Industry Immersion</a>
+                        <a href="#">Laboratories</a>
+                        <a href="#">Library</a>
+                    </div>
+                </div>
+                <div class="footer-column other-links" data-accordion="closed">
+                    <div class="footer-column-header">
+                        <h4>Other links</h4>
+                        <img src="images/chevron-down.svg" alt="" class="accordion-icon">
+                    </div>
+                    <div class="footer-column-links">
+                        <a href="#">Careers</a>
+                        <a href="about.html#campus">Campus life</a>
+                        <a href="#">Executive education</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="accreditation">
+                <p class="accreditation-label">Accredited by:</p>
+                <img src="images/aacsb-badge.png" alt="AACSB Accreditation">
+            </div>
+        </div>
+        <div class="footer-contact">
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Location</span>
+                <span class="footer-contact-value">Ulwe, Navi Mumbai, Maharashtra 410206</span>
+            </div>
+            <div class="footer-contact-divider"></div>
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Write to us</span>
+                <span class="footer-contact-value">admissions@jioinstitute.edu.in</span>
+            </div>
+            <div class="footer-contact-divider"></div>
+            <div class="footer-contact-item">
+                <span class="footer-contact-label">Talk to us</span>
+                <span class="footer-contact-value">1800-889-1100</span>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <a href="index.html"><img src="images/footer-logo.png" alt="Jio Institute"></a>
+            </div>
+            <div class="footer-copyright">
+                <span>&copy; 2025 Jio Institute.</span>
+                <span>All rights reserved.</span>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/icon-youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="images/icon-whatsapp.svg" alt="WhatsApp"></a>
+                <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

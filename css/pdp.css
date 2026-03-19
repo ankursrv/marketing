@@ -1,0 +1,1351 @@
+/* ============================================================
+   PDP (Programme Detail Page) — Jio Institute
+   Desktop: 1440px | Mobile: 375px
+   Shared navbar/footer styles come from about.css
+   ============================================================ */
+
+/* ========== BREADCRUMB ========== */
+.pdp-breadcrumb {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+.pdp-breadcrumb a { color: inherit; text-decoration: none; }
+.pdp-breadcrumb a:hover { text-decoration: underline; }
+
+/* ========== SHARED BUTTONS ========== */
+.pdp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 72px;
+    padding: 0 48px;
+    background: #e30513;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.pdp-btn-primary:hover { background: #bd040f; }
+.pdp-btn-primary img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
+
+.pdp-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 72px;
+    padding: 0 48px;
+    background: transparent;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #000;
+    border-radius: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.pdp-btn-secondary:hover { background: #000; color: #fff; }
+.pdp-btn-secondary:hover img { filter: brightness(0) invert(1); }
+.pdp-btn-secondary img { width: 20px; height: 20px; transition: filter 0.3s ease; }
+
+/* ========== SHARED CHIP ========== */
+.pdp-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border: 1px solid #ddd;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.pdp-chip:hover { border-color: #999; }
+.pdp-chip.active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
+/* ========== NAV ARROWS (shared) ========== */
+.pdp-faculty-nav-arrows,
+.pdp-testimonial-nav,
+.pdp-learning-nav-arrows,
+.pdp-capstone-mobile-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.pdp-capstone-mobile-nav { display: none; }
+
+/* ========== 1. HERO SECTION ========== */
+.pdp-hero {
+    position: relative;
+    width: 100%;
+    min-height: 781px;
+    overflow: visible;
+    background: #fff;
+}
+.pdp-hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 706px;
+    height: 781px;
+    overflow: hidden;
+    border-radius: 0 0 0 12px;
+}
+.pdp-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pdp-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 626px;
+    padding: 78px 0 0 80px;
+}
+.pdp-hero-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 1.16;
+    color: #000;
+    margin-top: 24px;
+}
+.pdp-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #000;
+    margin-top: 24px;
+    max-width: 626px;
+}
+.pdp-hero-buttons {
+    display: flex;
+    gap: 24px;
+    margin-top: 48px;
+}
+.pdp-btn-secondary-light {
+    border: 0.5px solid rgba(0,0,0,0.4);
+}
+.pdp-info-bar {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    right: 80px;
+    z-index: 3;
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 8px 8px 20px 0px rgba(204,204,204,0.2);
+    padding: 32px 48px;
+    gap: 40px;
+    transform: translateY(50%);
+}
+.pdp-info-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.pdp-info-divider { display: none; }
+.pdp-info-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.56px;
+}
+.pdp-info-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+    letter-spacing: -0.48px;
+}
+
+/* ========== 2. SECTION NAVIGATION ========== */
+.pdp-nav {
+    position: sticky;
+    top: 84px;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 69px;
+    margin-top: 60px;
+}
+.pdp-nav-inner {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    max-width: 1440px;
+}
+.pdp-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    border-right: 1px solid #eee;
+}
+.pdp-nav-item:first-child { border-left: 1px solid #eee; padding-left: 80px; }
+.pdp-nav-item:hover,
+.pdp-nav-item.active { color: #e30513; }
+.pdp-nav-sep {
+    width: 1px;
+    background: #eee;
+    align-self: stretch;
+}
+.pdp-nav-apply {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 64px;
+    background: #e30513;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: auto;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+}
+.pdp-nav-apply:hover { background: #bd040f; }
+
+.pdp-nav-mobile {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100%;
+    cursor: pointer;
+}
+.pdp-nav-mobile-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+.pdp-nav-mobile-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+/* ========== 3. PROGRAMME OVERVIEW ========== */
+.pdp-overview {
+    padding: 120px 80px;
+    text-align: center;
+}
+.pdp-section-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 48px;
+    color: #000;
+}
+.pdp-overview-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.5;
+    max-width: 1134px;
+    margin: 28px auto 0;
+}
+.pdp-skills-row {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1280px;
+    margin: 40px auto 0;
+    border-top: 1px solid #ddd;
+    padding-top: 40px;
+}
+.pdp-skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.pdp-skill-item svg { flex-shrink: 0; }
+.pdp-skill-item span {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* ========== 4. LIFE OVERVIEW ========== */
+.pdp-life {
+    padding: 0 80px 120px;
+}
+.pdp-life-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.2;
+    letter-spacing: 0.56px;
+    color: #000;
+    max-width: 824px;
+}
+.pdp-life-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+}
+.pdp-life-video {
+    width: 626px;
+    height: 510px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+.pdp-life-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pdp-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(223, 15, 20, 0.32);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.pdp-play-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
+.pdp-play-btn img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
+
+.pdp-life-panel {
+    width: 567px;
+    flex-shrink: 0;
+}
+
+/* Life tab items */
+.pdp-life-tab {
+    padding: 34px 0;
+    border-top: 1px solid #c3c3c3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.pdp-life-tab:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+.pdp-life-tab-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #c3c3c3;
+    transition: color 0.3s ease;
+}
+.pdp-life-tab.active .pdp-life-tab-title {
+    color: #000;
+}
+.pdp-life-tab-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #000;
+    line-height: 1.5;
+    max-width: 438px;
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+.pdp-life-tab.active .pdp-life-tab-desc {
+    max-height: 300px;
+    opacity: 1;
+}
+.pdp-life-tab.active {
+    padding-bottom: 32px;
+    border-bottom: 1px solid #c3c3c3;
+}
+
+/* ========== 5. KEY HIGHLIGHTS ========== */
+.pdp-highlights {
+    padding: 0 80px;
+    margin-top: 120px;
+}
+.pdp-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1280px;
+}
+.pdp-highlight-item {
+    padding: 0 80px 0 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.pdp-highlight-item:nth-child(-n+4) { padding-bottom: 48px; }
+.pdp-highlight-item:nth-child(n+5) { padding-top: 48px; }
+.pdp-highlight-item:nth-child(4n) { padding-right: 0; }
+.pdp-highlight-item:nth-child(-n+4) {
+    border-bottom: 1px solid #ddd;
+}
+.pdp-highlight-item:not(:nth-child(4n)) {
+    border-right: 1px solid #ddd;
+    padding-right: 40px;
+}
+.pdp-highlight-item:nth-child(4n+1):not(:first-child),
+.pdp-highlight-item:nth-child(4n+2):not(:nth-child(2)),
+.pdp-highlight-item:nth-child(4n+3):not(:nth-child(3)) {
+    padding-left: 40px;
+}
+.pdp-highlight-item:nth-child(2),
+.pdp-highlight-item:nth-child(3),
+.pdp-highlight-item:nth-child(4) { padding-left: 40px; }
+.pdp-highlight-item:nth-child(6),
+.pdp-highlight-item:nth-child(7),
+.pdp-highlight-item:nth-child(8) { padding-left: 40px; }
+.pdp-highlight-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+}
+.pdp-highlight-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 12px;
+}
+
+/* ========== 6. TRANSFORMATION ========== */
+.pdp-transformation {
+    background: #5d0023;
+    margin-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 160px 80px;
+}
+.pdp-transformation-inner {
+    max-width: 746px;
+    text-align: center;
+}
+.pdp-transformation-text {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1.32;
+    color: #fff;
+}
+.pdp-transformation-text strong { font-weight: 700; }
+
+/* ========== 7. FACULTY SECTION ========== */
+.pdp-faculty {
+    padding: 120px 0;
+}
+.pdp-faculty-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 80px;
+    margin-bottom: 48px;
+}
+.pdp-faculty-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1.15;
+    color: #000;
+}
+.pdp-faculty-btn { flex-shrink: 0; }
+
+.pdp-faculty-carousel {
+    overflow: hidden;
+    padding: 0;
+}
+.pdp-faculty-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    padding: 0;
+}
+.pdp-faculty-img {
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.pdp-faculty-img.center {
+    width: 784px;
+    height: 520px;
+}
+.pdp-faculty-img.side {
+    width: 630px;
+    height: 402px;
+    opacity: 0.6;
+}
+.pdp-faculty-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pdp-faculty-profiles {
+    padding: 48px 80px 0;
+}
+.pdp-faculty-tabs {
+    margin-bottom: 32px;
+}
+.pdp-faculty-tabs-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.pdp-faculty-chips {
+    display: flex;
+    gap: 8px;
+}
+
+.pdp-faculty-cards {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+}
+.pdp-faculty-cards::-webkit-scrollbar { display: none; }
+
+.pdp-faculty-card {
+    width: 283px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.pdp-faculty-card-img {
+    width: 283px;
+    height: 376px;
+    overflow: hidden;
+}
+.pdp-faculty-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pdp-faculty-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+.pdp-faculty-card-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+}
+.pdp-faculty-card-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.8);
+    display: block;
+    margin-top: 4px;
+}
+
+/* ========== 8. CURRICULUM ========== */
+.pdp-curriculum {
+    padding: 120px 80px;
+}
+.pdp-curriculum-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 48px;
+    color: #000;
+    margin-bottom: 48px;
+}
+.pdp-curriculum-content {
+    display: flex;
+    gap: 108px;
+}
+.pdp-curriculum-sidebar {
+    width: 328px;
+    flex-shrink: 0;
+}
+.pdp-curriculum-cat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 72px;
+    padding: 20px 24px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    background: transparent;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+.pdp-curriculum-cat:hover { border-color: #999; }
+.pdp-curriculum-cat.active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+.pdp-curriculum-cat.active img { filter: brightness(0) invert(1); }
+.pdp-curriculum-cat img { width: 24px; height: 24px; flex-shrink: 0; }
+
+.pdp-curriculum-chips { display: none; }
+
+.pdp-curriculum-modules {
+    flex: 1;
+}
+
+.pdp-module {
+    border-bottom: 1px solid #ddd;
+}
+.pdp-module-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 83px;
+    padding: 20px 0;
+    cursor: pointer;
+    user-select: none;
+}
+.pdp-module-header h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+}
+.pdp-module-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.pdp-module.expanded .pdp-module-icon {
+    transform: rotate(90deg);
+}
+.pdp-module-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+.pdp-module.expanded .pdp-module-body {
+    max-height: 600px;
+}
+.pdp-module-body p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.5;
+    padding-bottom: 24px;
+}
+.pdp-module-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 32px;
+}
+.pdp-topic {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #f5f5f5;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* ========== 9. TOOLS ========== */
+.pdp-tools {
+    padding: 80px;
+    text-align: center;
+}
+.pdp-tools-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #000;
+    margin-bottom: 48px;
+}
+.pdp-tools-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.pdp-tool-item {
+    width: 232px;
+    height: 128px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.pdp-tool-item img {
+    max-width: 80%;
+    max-height: 60%;
+    object-fit: contain;
+}
+
+/* ========== 10. TESTIMONIALS ========== */
+.pdp-testimonials {
+    padding: 120px 80px;
+}
+.pdp-testimonial-card {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 1280px;
+    margin-top: 48px;
+}
+.pdp-testimonial-company {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.pdp-testimonial-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+.pdp-testimonial-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+.pdp-testimonial-quote {
+    margin-top: 24px;
+    position: relative;
+}
+.pdp-quote-mark {
+    width: 35px;
+    height: 28px;
+    display: block;
+    margin-bottom: 16px;
+}
+.pdp-testimonial-quote p {
+    font-family: 'Noto Serif', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+}
+.pdp-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+.pdp-testimonial-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.pdp-testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pdp-testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.pdp-testimonial-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    display: block;
+}
+.pdp-testimonial-class {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666;
+    display: block;
+}
+.pdp-testimonial-linkedin {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.pdp-testimonial-linkedin img { width: 34px; height: 34px; }
+.pdp-testimonial-nav {
+    margin-top: 32px;
+    justify-content: center;
+}
+
+/* ========== 11. LEARNING ========== */
+.pdp-learning {
+    padding: 120px 80px;
+}
+.pdp-learning-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 48px;
+}
+.pdp-learning-text-column {
+    width: 408px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+.pdp-learning-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1.25;
+    color: #000;
+    margin-bottom: 24px;
+}
+.pdp-learning-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #444;
+}
+.pdp-learning-nav-arrows {
+    margin-top: auto;
+}
+.pdp-learning-images {
+    display: flex;
+    gap: 28px;
+    flex: 1;
+}
+.pdp-learning-img-main {
+    width: 490px;
+    height: 600px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.pdp-learning-img-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.pdp-learning-img-stack img {
+    width: 310px;
+    height: 288px;
+    border-radius: 12px;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter 0.3s ease;
+}
+.pdp-learning-img-stack img:hover {
+    filter: grayscale(0);
+}
+
+/* ========== 12. CAPSTONE PROJECTS ========== */
+.pdp-capstone {
+    padding: 120px 80px;
+}
+.pdp-capstone-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+.pdp-capstone-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1.15;
+    color: #000;
+}
+.pdp-capstone-chips {
+    display: flex;
+    gap: 0;
+    flex-shrink: 0;
+    background: #f5f5f5;
+    padding: 6px;
+    border-radius: 100px;
+}
+.pdp-capstone-chips .pdp-chip {
+    width: 80px;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+    height: 48px;
+    border-radius: 100px;
+}
+.pdp-capstone-chips .pdp-chip.active {
+    background: #000;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.pdp-capstone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+.pdp-capstone-card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.pdp-capstone-card:hover { transform: translateY(-4px); }
+.pdp-capstone-card-img {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.pdp-capstone-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pdp-capstone-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 16px;
+    line-height: 1.3;
+}
+.pdp-capstone-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+.pdp-capstone-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.pdp-capstone-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ddd;
+}
+.pdp-capstone-dots .dot.active { background: #e30513; }
+
+/* ========== 13. ADMISSIONS ========== */
+.pdp-admissions {
+    padding: 0 80px 120px;
+}
+.pdp-admissions-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 96px;
+    line-height: 1.05;
+    color: #000;
+    margin-bottom: 60px;
+}
+.pdp-admissions-content {
+    display: flex;
+    gap: 48px;
+}
+.pdp-admissions-sidebar {
+    width: 228px;
+    flex-shrink: 0;
+}
+.pdp-admissions-cat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 72px;
+    padding: 16px 24px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    background: transparent;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+.pdp-admissions-cat:hover { border-color: #999; }
+.pdp-admissions-cat.active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+.pdp-admissions-cat.active img { filter: brightness(0) invert(1); }
+.pdp-admissions-cat img { width: 24px; height: 24px; flex-shrink: 0; }
+.pdp-admissions-chips { display: none; }
+
+.pdp-admissions-details { flex: 1; }
+.pdp-accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+.pdp-accordion-item:first-child { border-top: 1px solid #ddd; }
+.pdp-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 62px;
+    padding: 16px 0;
+    cursor: pointer;
+}
+.pdp-accordion-header span {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+}
+.pdp-accordion-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.pdp-accordion-divider { display: none; }
+
+/* ========== 14. QUESTIONS CTA ========== */
+.pdp-questions {
+    padding: 0 80px;
+}
+.pdp-questions-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    max-width: 1280px;
+}
+.pdp-questions-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: 300;
+    font-size: 36px;
+    color: #000;
+}
+.pdp-questions-buttons {
+    display: flex;
+    gap: 24px;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE — max-width: 768px
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Hero */
+    .pdp-hero { min-height: auto; overflow: visible; }
+    .pdp-hero-image {
+        position: relative;
+        width: 100%;
+        height: 290px;
+        right: auto;
+        top: auto;
+        border-radius: 0;
+    }
+    .pdp-hero-content {
+        max-width: 100%;
+        padding: 20px 20px 0;
+    }
+    .pdp-hero-title { font-size: 32px; line-height: 1.1; }
+    .pdp-hero-subtitle { font-size: 16px; margin-top: 12px; }
+    .pdp-hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 24px;
+    }
+    .pdp-btn-primary,
+    .pdp-btn-secondary {
+        width: 100%;
+        height: 52px;
+        font-size: 16px;
+        padding: 0 24px;
+    }
+    .pdp-info-bar {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: none;
+        flex-direction: column;
+        margin: 24px 20px 0;
+        padding: 16px;
+        gap: 0;
+        border: 1px solid #e6e6e6;
+        box-shadow: none;
+    }
+    .pdp-info-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+        gap: 0;
+    }
+    .pdp-info-item:last-child { border-bottom: none; }
+    .pdp-info-value { font-size: 16px; letter-spacing: 0; }
+    .pdp-info-label { font-size: 13px; }
+
+    /* Nav */
+    .pdp-nav { height: 56px; top: 80px; }
+    .pdp-nav-inner { display: none; }
+    .pdp-nav-mobile { display: flex; }
+    .pdp-nav.open .pdp-nav-inner {
+        display: flex;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        padding: 0 20px;
+        white-space: nowrap;
+        height: 48px;
+    }
+    .pdp-nav.open .pdp-nav-inner::-webkit-scrollbar { display: none; }
+    .pdp-nav.open .pdp-nav-item {
+        padding: 0 16px;
+        font-size: 14px;
+        height: 48px;
+        border: none;
+    }
+    .pdp-nav.open .pdp-nav-item:first-child { padding-left: 0; }
+    .pdp-nav.open .pdp-nav-sep { display: none; }
+    .pdp-nav-apply { display: none; }
+    .pdp-nav.open .pdp-nav-mobile-icon { transform: rotate(180deg); }
+
+    /* Overview */
+    .pdp-overview { padding: 60px 20px; }
+    .pdp-section-title { font-size: 28px; }
+    .pdp-overview-desc { font-size: 14px; margin-top: 20px; }
+    .pdp-skills-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 12px;
+        margin-top: 32px;
+        padding-top: 32px;
+    }
+
+    /* Life */
+    .pdp-life { padding: 60px 20px 0; }
+    .pdp-life-title { font-size: 36px; }
+    .pdp-life-content { flex-direction: column; gap: 24px; }
+    .pdp-life-video { width: 100%; height: 340px; }
+    .pdp-life-panel { max-height: none; }
+    .pdp-life-tab-title { font-size: 18px; }
+    .pdp-life-panel { width: 100%; }
+
+    /* Highlights */
+    .pdp-highlights { padding: 0 20px; margin-top: 60px; }
+    .pdp-highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    .pdp-highlight-item {
+        padding: 20px !important;
+        border-right: none !important;
+        border-bottom: 1px solid #ddd;
+    }
+    .pdp-highlight-item:nth-child(odd) { border-right: 1px solid #ddd !important; }
+    .pdp-highlight-item:nth-last-child(-n+2) { border-bottom: none; }
+    .pdp-highlight-value { font-size: 18px; }
+    .pdp-highlight-desc { font-size: 13px; }
+
+    /* Transformation */
+    .pdp-transformation {
+        padding: 60px 32px;
+        margin-top: 60px;
+    }
+    .pdp-transformation-text { font-size: 24px; }
+
+    /* Faculty */
+    .pdp-faculty { padding: 60px 0; }
+    .pdp-faculty-header {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 20px;
+    }
+    .pdp-faculty-title { font-size: 28px; }
+    .pdp-faculty-img.side { display: none; }
+    .pdp-faculty-img.center { width: 100%; height: auto; aspect-ratio: 784/520; }
+    .pdp-faculty-images { padding: 0 20px; gap: 0; }
+    .pdp-faculty-profiles { padding: 32px 20px 0; }
+    .pdp-faculty-tabs-title { font-size: 24px; }
+    .pdp-faculty-card { width: 240px; }
+    .pdp-faculty-card-img { width: 240px; height: 300px; }
+    .pdp-faculty-btn {
+        width: 100%;
+        height: 52px;
+        font-size: 14px;
+        padding: 0 24px;
+    }
+
+    /* Curriculum */
+    .pdp-curriculum { padding: 60px 20px; }
+    .pdp-curriculum-title { font-size: 28px; margin-bottom: 24px; }
+    .pdp-curriculum-content { flex-direction: column; gap: 24px; }
+    .pdp-curriculum-sidebar { display: none; }
+    .pdp-curriculum-chips {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+    }
+    .pdp-curriculum-chips::-webkit-scrollbar { display: none; }
+    .pdp-module-header h3 { font-size: 18px; }
+    .pdp-topic { padding: 8px 16px; font-size: 14px; }
+
+    /* Tools */
+    .pdp-tools { padding: 60px 20px; }
+    .pdp-tools-title { font-size: 28px; margin-bottom: 32px; }
+    .pdp-tools-row {
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        justify-content: flex-start;
+    }
+    .pdp-tools-row::-webkit-scrollbar { display: none; }
+    .pdp-tool-item { width: 145px; height: 80px; }
+
+    /* Testimonials */
+    .pdp-testimonials { padding: 60px 20px; }
+    .pdp-testimonials .pdp-section-title { font-size: 28px; }
+    .pdp-testimonial-card { padding: 24px; }
+    .pdp-testimonial-quote p { font-size: 16px; }
+    .pdp-testimonial-avatar { width: 48px; height: 48px; }
+
+    /* Learning */
+    .pdp-learning { padding: 60px 20px; }
+    .pdp-learning-header { flex-direction: column; gap: 24px; margin-bottom: 40px; }
+    .pdp-learning-title { font-size: 28px; }
+    .pdp-learning-desc { font-size: 14px; }
+    .pdp-learning-content { flex-direction: column; }
+    .pdp-learning-text-panel { width: 100%; min-height: auto; }
+    .pdp-learning-big-text { font-size: 48px; }
+    .pdp-learning-nav-arrows { padding-top: 24px; margin-top: 0; }
+    .pdp-learning-images { flex-direction: column; }
+    .pdp-learning-img-main { width: 100%; height: 300px; }
+    .pdp-learning-img-stack { display: none; }
+    .pdp-learning-btn {
+        width: 100%;
+        height: 52px;
+        font-size: 14px;
+        padding: 0 24px;
+    }
+
+    /* Capstone */
+    .pdp-capstone { padding: 60px 20px; }
+    .pdp-capstone-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .pdp-capstone-title { font-size: 48px; }
+    .pdp-capstone-grid { grid-template-columns: 1fr; }
+    .pdp-capstone-mobile-nav { display: flex; justify-content: center; margin-top: 24px; }
+
+    /* Admissions */
+    .pdp-admissions { padding: 60px 20px; }
+    .pdp-admissions-title { font-size: 28px; margin-bottom: 32px; }
+    .pdp-admissions-content { flex-direction: column; gap: 24px; }
+    .pdp-admissions-sidebar { display: none; }
+    .pdp-admissions-chips {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .pdp-admissions-chips::-webkit-scrollbar { display: none; }
+    .pdp-accordion-header span { font-size: 18px; }
+    .pdp-accordion-icon { width: 24px; height: 24px; }
+
+    /* Questions */
+    .pdp-questions { padding: 0 20px; }
+    .pdp-questions-inner {
+        height: auto;
+        padding: 48px 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+    .pdp-questions-title { font-size: 20px; }
+    .pdp-questions-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+}
+
+/* Newsletter Submit Button refinement for PDP */
+.footer-newsletter .newsletter-form {
+    padding: 6px 6px 6px 24px;
+    background: rgba(0,0,0,0.2);
+    border: 0.5px solid rgba(255,255,255,0.4);
+}
+
+.footer-newsletter .newsletter-form button {
+    height: 52px;
+    padding: 0 30px;
+    background: #fff;
+    color: #4a001c;
+    border-radius: 40px;
+    font-size: 16px;
+}
