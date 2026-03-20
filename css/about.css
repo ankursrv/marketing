@@ -525,7 +525,7 @@ button {
 }
 
 .vision-text {
-    font-family: 'Noto Serif', serif;
+    font-family: var(--font-secondary);
     font-size: 48px;
     font-weight: 300;
     line-height: 58px;
@@ -537,15 +537,15 @@ button {
 }
 
 .vision-text strong {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .vision-watermark {
     position: absolute;
-    bottom: 15px;
+    bottom: -100px;
     left: 50%;
-    transform: translateX(calc(-50% - 24px));
-    font-family: 'Noto Serif', serif;
+    transform: translateX(calc(-50% - -6px));
+    font-family: var(--font-secondary);
     font-size: 290px;
     font-weight: 400;
     color: #f5f5f5;
@@ -556,9 +556,12 @@ button {
 }
 
 /* ========== MINDS BEHIND THE VISION ========== */
-.leaders-section {
+.section-style {
     background: var(--white);
-    padding: 120px 80px;
+    padding: 120px 0;
+}
+
+.leaders-section {
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -567,16 +570,16 @@ button {
 .leaders-header {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
 }
 
-.leaders-header h2 {
+/* .leaders-header h2 {
     font-family: 'Noto Serif', serif;
     font-size: 56px;
     font-weight: 300;
     line-height: 67px;
     color: var(--text-dark);
-}
+} */
 
 .leaders-header p {
     font-size: 20px;
@@ -584,7 +587,6 @@ button {
     line-height: 24px;
     color: var(--text-gray);
     letter-spacing: 0.4px;
-    width: 854px;
 }
 
 .leader-quote-card {
@@ -596,6 +598,7 @@ button {
 
 .leader-quote-card .leader-image {
     width: 517px;
+    height: 400px;
     flex-shrink: 0;
     overflow: hidden;
 }
@@ -604,9 +607,9 @@ button {
     height: 580px;
 }
 
-.leader-quote-card:last-of-type .leader-image {
+/* .leader-quote-card:last-of-type .leader-image {
     height: 620px;
-}
+} */
 
 .leader-quote-card .leader-image img {
     width: 100%;
@@ -618,9 +621,8 @@ button {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
     justify-content: center;
-    padding: 32px 0;
     align-self: stretch;
 }
 
@@ -661,26 +663,24 @@ button {
 
 /* ========== FACULTY SECTION ========== */
 .faculty-section {
-    padding: 120px 0;
     background: var(--white);
 }
 
 .faculty-overview {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 80px;
+    align-items: center;
     margin-bottom: 48px;
 }
 
-.faculty-overview h2 {
+/* .faculty-overview h2 {
     font-family: 'Noto Serif', serif;
     font-size: 56px;
     font-weight: 300;
     line-height: 67px;
     color: var(--text-dark);
     width: 555px;
-}
+} */
 
 .nav-arrows {
     display: flex;
@@ -746,7 +746,7 @@ button {
 .faculty-card.center {
     width: 784px;
     height: 520px;
-    padding: 28px;
+    padding: 28px 28px 0 28px;
 }
 
 .faculty-card img.faculty-bg {
@@ -793,7 +793,7 @@ button {
 .faculty-card-name .name-row {
     display: flex;
     gap: 8px;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .faculty-card-name .name-row span {
@@ -808,8 +808,8 @@ button {
 }
 
 .faculty-card-name .name-row img {
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
 }
 
 .faculty-card-name .role {
@@ -1889,23 +1889,22 @@ button {
     }
 
     .vision-watermark {
-        font-size: 120px;
-        bottom: 10px;
+        font-size: 86px;
+        bottom: -27px;
+        width: 100%;
     }
 
     /* --- LEADERS SECTION --- */
+    .section-style {
+        padding: 60px 0;
+    }
+
     .leaders-section {
-        padding: 60px 20px;
         gap: 40px;
     }
 
-    .leaders-header h2 {
-        font-size: 28px;
-        line-height: 1.32;
-    }
-
     .leaders-header p {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 21px;
         width: 100%;
         letter-spacing: 0;
@@ -1913,17 +1912,18 @@ button {
 
     .leader-quote-card {
         flex-direction: column;
-        gap: 32px;
+        gap: 24px;
     }
 
     .leader-quote-card .leader-image {
         width: 100%;
+        height: 335px;
     }
 
-    .leader-quote-card:first-of-type .leader-image,
+    /* .leader-quote-card:first-of-type .leader-image,
     .leader-quote-card:last-of-type .leader-image {
         height: 360px;
-    }
+    } */
 
     .leader-quote-content {
         gap: 24px;
@@ -2665,9 +2665,9 @@ button {
 
 /* ========== TAB DROPDOWN PANEL (mobile) ========== */
 
-.tab-dropdown {
+/* .tab-dropdown {
     position: relative;
-}
+} */
 
 .tab-dropdown-panel {
     display: none;
