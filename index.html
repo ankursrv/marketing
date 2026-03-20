@@ -15,6 +15,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/search.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -430,7 +432,8 @@
                     <img src="images/arrow-black-btn.svg" alt="" aria-hidden="true">
                 </button>
             </div>
-            <div class="news-content">
+            <!-- Desktop News Layout (Original) -->
+            <div class="news-content desktop-only">
                 <div class="news-main">
                     <div class="news-main-image">
                         <img src="images/news-main.png" alt="Main News">
@@ -482,6 +485,73 @@
                             <img src="images/news-thumb-3.png" alt="News">
                         </div>
                     </div>
+                </div>
+            </div>
+            <!-- Mobile News Slider Layout -->
+            <div class="news-content-wrapper mobile-only-slider">
+                <div class="swiper news-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-main.png" alt="Main News">
+                                </div>
+                                <div class="news-card-text">
+                                    <h3>Punjab Screens 700+ for Stroke Using AI</h3>
+                                    <p>Our researchers have developed deep learning algorithms that detect 23 types of
+                                        abnormalities
+                                        in
+                                        chest X-rays with 94% accuracy—matching or exceeding radiologist performance.
+                                        Currently
+                                        being
+                                        piloted in 12 hospitals across three continents.</p>
+                                    <div class="news-date">12 October 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-thumb-1.png" alt="News">
+                                </div>
+                                <div class="news-card-text">
+                                    <h3>Punjab Screens 700+ for Stroke Using AI</h3>
+                                    <div class="news-date">12 October 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-thumb-2.png" alt="News">
+                                </div>
+                                <div class="news-card-text">
+                                    <h3>AI Finds Diagnostic Clues in EHRs at Mount Sinai</h3>
+                                    <div class="news-date">12 October 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="news-card">
+                                <div class="news-card-image">
+                                    <img src="images/news-thumb-3.png" alt="News">
+                                </div>
+                                <div class="news-card-text">
+                                    <h3>"A Roadmap for Safe &amp; Effective AI in Health" Report</h3>
+                                    <div class="news-date">12 October 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Arrows (Centered at bottom for mobile) -->
+                <div class="news-swiper-navigation mobile-only-flex">
+                    <div class="news-swiper-prev"><img src="images/chevron-right.svg" alt="Prev"></div>
+                    <div class="news-swiper-next"><img src="images/chevron-right.svg" alt="Next"></div>
                 </div>
             </div>
         </div>
@@ -653,7 +723,8 @@
             </div>
         </div>
     </footer>
-
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

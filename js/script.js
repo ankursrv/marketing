@@ -380,14 +380,14 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
         // On block-0 and block-2 (light bg), use default CSS colors
         var onDark = (idx === 1);
         items.forEach(function (item) {
-            var num  = item.querySelector('.numbered-item-number');
+            var num = item.querySelector('.numbered-item-number');
             var text = item.querySelector('.numbered-item-text');
             var isActive = item.classList.contains('active');
             if (onDark) {
-                num.style.color  = isActive ? '#ffffff' : 'rgba(255,255,255,0.3)';
+                num.style.color = isActive ? '#ffffff' : 'rgba(255,255,255,0.3)';
                 text.style.color = isActive ? '#ffffff' : 'rgba(255,255,255,0.3)';
             } else {
-                num.style.color  = '';
+                num.style.color = '';
                 text.style.color = '';
             }
         });
@@ -959,4 +959,136 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
             chip.classList.add('active');
         });
     });
+})();
+
+// ========== 18. NEWS SWIPER INITIALIZATION (Mobile Only) ==========
+
+(function () {
+    if (typeof Swiper === 'undefined') return;
+
+    // Target only the mobile slider
+    var mobileSwiperEl = document.querySelector('.mobile-only-slider .news-swiper');
+    if (!mobileSwiperEl) return;
+
+    var newsSwiper = new Swiper(mobileSwiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        observer: true,
+        observeParents: true,
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
+        navigation: {
+            nextEl: '.news-swiper-next',
+            prevEl: '.news-swiper-prev',
+        }
+    });
+})();
+
+// ========== 17. ABOUT PAGE: CONTROLLED TIMELINE SLIDER (CLICK TRIGGERED) ==========
+
+(function () {
+    var section = document.querySelector('.our-story-section.slider-version');
+    if (!section) return;
+
+    var yearBox = section.querySelector('.slider-year-box');
+    var slides = section.querySelectorAll('.slider-slide');
+    var progressContainer = section.querySelector('.slider-progress-container');
+    var progressBars = section.querySelectorAll('.slider-progress-bar .fill');
+    var yearSuffix = section.querySelector('.year-suffix');
+
+    var isRunning = false;
+
+    // Start on click
+    yearBox.addEventListener('click', function () {
+        if (isRunning) return;
+        isRunning = true;
+        startIntroSequence();
+    });
+
+    function startIntroSequence() {
+        // 1. Animate Year (last 2 digits)
+        countUp(yearSuffix, 0, 26, 1200, function () {
+            // 2. Fade out year box (no delay)
+            yearBox.classList.add('fade-out');
+
+            // 3. Start slides after fade animation
+            setTimeout(function () {
+                yearBox.style.display = 'none'; // Remove from flow
+                progressContainer.classList.add('active'); // Show progress bars
+                runStep(0);
+            }, 800); // Matches CSS transition duration
+        });
+    }
+
+
+
+    function runStep(index) {
+        if (index >= slides.length) return;
+
+        var slide = slides[index];
+
+        // Show Slide
+        if (index > 0) {
+            slides[index - 1].classList.remove('active');
+            slides[index - 1].classList.add('previous');
+        }
+        slide.classList.add('active');
+
+        // Animate Progress Bar
+        var bar = progressBars[index];
+        setTimeout(function () {
+            animateProgressBar(bar, 3000, function () {
+                // Next Step
+                runStep(index + 1);
+            });
+        }, 500);
+    }
+
+    function countUp(el, start, end, duration, callback) {
+        var startTime = null;
+        function animate(currentTime) {
+            if (!startTime) startTime = currentTime;
+            var progress = Math.min((currentTime - startTime) / duration, 1);
+            var current = Math.floor(progress * (end - start) + start);
+            el.textContent = current.toString().padStart(2, '0');
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                if (callback) callback();
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    function animateProgressBar(el, duration, callback) {
+        var startTime = null;
+        var parent = el.parentElement;
+        var isVertical = parent.offsetHeight > parent.offsetWidth;
+
+        function animate(currentTime) {
+
+            if (!startTime) startTime = currentTime;
+            var progress = Math.min((currentTime - startTime) / duration, 1);
+            var percentage = (progress * 100) + '%';
+
+            if (isVertical) {
+                el.style.height = percentage;
+                el.style.width = '100%';
+            } else {
+                el.style.width = percentage;
+                el.style.height = '100%';
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                if (callback) callback();
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
 })();
