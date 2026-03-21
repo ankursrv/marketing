@@ -218,41 +218,41 @@
     <!-- THE MINDS BEHIND THE VISION -->
     <section class="section-style" id="leaders">
         <div class="container leaders-section">
-        <div class="leaders-header">
-            <h2>The Minds Behind the Vision</h2>
-            <p>World-class faculty, clinical partners, and industry leaders united in advancing healthcare AI.</p>
-        </div>
-
-        <!-- Leader 1 - Nita Ambani -->
-        <div class="leader-quote-card">
-            <div class="leader-image">
-                <img src="images/leader-1.png" alt="Smt. Nita Ambani">
+            <div class="leaders-header">
+                <h2>The Minds Behind the Vision</h2>
+                <p>World-class faculty, clinical partners, and industry leaders united in advancing healthcare AI.</p>
             </div>
-            <div class="leader-quote-content">
-                <img src="images/quote-mark-red.svg" alt="" class="quote-mark">
-                <blockquote>Education is all about igniting young minds and enabling them to attain their fullest
-                    potential.</blockquote>
-                <div class="leader-author">
-                    <span class="name">Smt. Nita Ambani</span>
-                    <span class="title">Founder Chairperson, Reliance Foundation<br>Institution of Education &amp;
-                        Research</span>
+
+            <!-- Leader 1 - Nita Ambani -->
+            <div class="leader-quote-card">
+                <div class="leader-image">
+                    <img src="images/leader-1.png" alt="Smt. Nita Ambani">
+                </div>
+                <div class="leader-quote-content">
+                    <img src="images/quote-mark-red.svg" alt="" class="quote-mark">
+                    <blockquote>Education is all about igniting young minds and enabling them to attain their fullest
+                        potential.</blockquote>
+                    <div class="leader-author">
+                        <span class="name">Smt. Nita Ambani</span>
+                        <span class="title">Founder Chairperson, Reliance Foundation<br>Institution of Education &amp;
+                            Research</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Leader 2 - Mukesh Ambani -->
-        <div class="leader-quote-card">
-            <div class="leader-image">
-                <img src="images/leader-2.png" alt="Shri Mukesh Ambani">
-            </div>
-            <div class="leader-quote-content">
-                <img src="images/quote-mark-red.svg" alt="" class="quote-mark">
+            <!-- Leader 2 - Mukesh Ambani -->
+            <div class="leader-quote-card">
+                <div class="leader-image">
+                    <img src="images/leader-2.png" alt="Shri Mukesh Ambani">
+                </div>
+                <div class="leader-quote-content">
+                    <img src="images/quote-mark-red.svg" alt="" class="quote-mark">
                     <blockquote>Education is not about pouring knowledge into the brains of students but lighting that
                         spark
-                    so that they learn by themselves.</blockquote>
-                <div class="leader-author">
-                    <span class="name">Shri Mukesh Ambani</span>
-                    <span class="title">Chairman &amp; Managing Director,<br>Reliance Industries Limited</span>
+                        so that they learn by themselves.</blockquote>
+                    <div class="leader-author">
+                        <span class="name">Shri Mukesh Ambani</span>
+                        <span class="title">Chairman &amp; Managing Director,<br>Reliance Industries Limited</span>
                     </div>
                 </div>
             </div>
@@ -327,6 +327,123 @@
                 <button class="play-btn">
                     <img src="images/play-icon.svg" alt="Play">
                 </button>
+            </div>
+        </div>
+        <!-- MODAL  -->
+        <div class="modal-backdrop" id="modalBackdrop">
+            <div class="modal" id="modal">
+
+                <!-- <button class="modal-close" id="modalClose">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button> -->
+
+                <!-- HEADER: name + role on top -->
+                <div class="modal-header">
+                    <div>
+                        <h4 id="modalName">Dr. Raghunath Mashelkar</h4>
+                        <small class="modal-header-tag" id="modalTag">Chancellor</small>
+                        <p class="modal-header-role" id="modalRole">Padma Vibhushan | Former Director General, CSIR,
+                            Government of
+                            India</p>
+                    </div>
+                    <button class="modal-close" id="modalClose">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- BODY ROW: left image + right tabs -->
+                <div class="modal-body-row">
+
+                    <!-- LEFT: Image Slider -->
+                    <div class="modal-left">
+                        <div class="mslider-track" id="msliderTrack">
+                            <img class="mslide-img"
+                                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="" />
+                            <img class="mslide-img"
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="" />
+                            <img class="mslide-img"
+                                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="" />
+                            <img class="mslide-img"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" alt="" />
+                            <img class="mslide-img"
+                                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="" />
+                        </div>
+                        <div class="mslider-dots">
+                            <button class="mslider-dot active" data-mi="0"></button>
+                            <button class="mslider-dot" data-mi="1"></button>
+                            <button class="mslider-dot" data-mi="2"></button>
+                            <button class="mslider-dot" data-mi="3"></button>
+                            <button class="mslider-dot" data-mi="4"></button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Horizontal Tabs + Content -->
+                    <div class="modal-right">
+                        <div class="tab-bar">
+                            <button class="tab-btn active" data-tab="profile">Profile</button>
+                            <button class="tab-btn" data-tab="qualifications">Qualifications</button>
+                            <button class="tab-btn" data-tab="achievements">Achievements</button>
+                            <button class="tab-btn" data-tab="experience">Experience</button>
+                            <button class="tab-btn" data-tab="associations">Associations</button>
+                        </div>
+
+                        <div class="tab-content">
+                            <div class="tab-panel active" id="tab-profile">
+                                <p>Dr. Raghunath Mashelkar is known globally for his pioneering research in polymer
+                                    science and
+                                    engineering, exceptional and transformative leadership of major Indian R&D
+                                    institutions,
+                                    playing a key role in pioneering the intellectual property movement in India and
+                                    being a
+                                    dominant force in shaping India's science, technology and innovation policies and
+                                    performance in the post-liberalised India.</p>
+                                <p>He served as the Director General of Council of Scientific and Industrial Research
+                                    (CSIR),
+                                    with thirty-eight laboratories for over eleven years. He was also the President of
+                                    Indian
+                                    National Science Academy and Chairman of National Innovation Foundation.</p>
+                            </div>
+                            <div class="tab-panel" id="tab-qualifications">
+                                <p>Ph.D. in Chemical Engineering from the University of Bombay. Post-doctoral research
+                                    at the
+                                    University of Salford, UK. Holds honorary doctorates from over 40 universities
+                                    worldwide.
+                                </p>
+                                <p>Fellow of the Royal Society (FRS), London. Fellow of the Royal Academy of Engineering
+                                    (FREng), UK. Fellow of all three Indian Science Academies.</p>
+                            </div>
+                            <div class="tab-panel" id="tab-achievements">
+                                <p>Recipient of the Padma Vibhushan — India's second highest civilian honour. JRD Tata
+                                    Innovation Award, CSIR Shanti Swarup Bhatnagar Award, and numerous national and
+                                    international accolades.</p>
+                                <p>Has been ranked among the 100 top global innovation leaders. Author of over 200
+                                    research
+                                    papers and holder of several patents in polymer engineering.</p>
+                            </div>
+                            <div class="tab-panel" id="tab-experience">
+                                <p>Director General, Council of Scientific and Industrial Research (CSIR) — 1995 to
+                                    2006. During
+                                    his tenure, CSIR became one of the most innovative R&D organisations globally.</p>
+                                <p>Member, Scientific Advisory Council to the Prime Minister of India. Board member of
+                                    several
+                                    multinational corporations and global research institutions.</p>
+                            </div>
+                            <div class="tab-panel" id="tab-associations">
+                                <p>President, Indian National Science Academy. Chairman, National Innovation Foundation.
+                                    Member
+                                    of the Global Council, World Economic Forum.</p>
+                                <p>Associated with leading international bodies including the UN Advisory Panel on
+                                    Science &
+                                    Technology, and advisory boards of MIT, Cambridge, and IITs across India.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 

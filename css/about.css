@@ -69,6 +69,11 @@ h3 {
     line-height: 1.32;
 }
 
+h4 {
+    font-size: 40px;
+    line-height: 1.32;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -722,10 +727,20 @@ button {
     display: flex;
     gap: 48px;
     align-items: center;
-    justify-content: center;
     height: 520px;
     margin-bottom: 120px;
-    overflow: hidden;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.faculty-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.faculty-carousel::before,
+.faculty-carousel::after {
+    content: '';
+    flex: 0 0 calc(50% - 392px - 48px);
 }
 
 .faculty-card {
@@ -735,7 +750,8 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 24px;
+    padding: 28px 28px 0 28px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .faculty-card.side {
@@ -746,7 +762,6 @@ button {
 .faculty-card.center {
     width: 784px;
     height: 520px;
-    padding: 28px 28px 0 28px;
 }
 
 .faculty-card img.faculty-bg {
@@ -969,6 +984,220 @@ button {
     height: 48px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* ── FACULTY MODAL ── */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    z-index: 10002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    background: #fff;
+    width: 100%;
+    max-width: 1280px;
+    overflow: hidden;
+    transform: translateY(24px) scale(0.98);
+    transition: transform 0.35s cubic-bezier(0.34, 1.46, 0.64, 1), opacity 0.3s ease;
+    opacity: 0;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    position: relative;
+}
+
+.modal-backdrop.open .modal {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* ── CLOSE ── */
+.modal-close {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.5px solid #ccc;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    border-color: var(--red-accent);
+    color: #333;
+}
+
+.modal-close svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ── HEADER ── */
+.modal-header {
+    padding: 32px 36px 20px;
+    display: flex;
+    align-items: self-start;
+    justify-content: space-between;
+}
+
+.modal-header-tag {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--red-accent);
+    margin-top: 12px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.modal-header-role {
+    font-size: 16px;
+    color: var(--text-gray);
+    font-weight: 300;
+}
+
+/* ── BODY ── */
+.modal-body-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 24px 36px 32px;
+    gap: 28px;
+}
+
+/* ── LEFT IMAGE SLIDER ── */
+.modal-left {
+    flex: 0 0 355px;
+    width: 355px;
+    height: 465px;
+    overflow: hidden;
+}
+
+.mslider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+}
+
+.mslide-img {
+    flex: 0 0 355px;
+    width: 355px;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* dots bottom */
+.mslider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 34px;
+    z-index: 3;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.mslider-dot {
+    width: 10px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--text-light-gray);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: background 0.25s, width 0.25s;
+}
+
+.mslider-dot.active {
+    background: var(--red-accent);
+    width: 20px;
+}
+
+/* ── RIGHT CONTENT ── */
+.modal-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Horizontal tab bar */
+.tab-bar {
+    height: 60px;
+    display: flex;
+    gap: 4px;
+    background: var(--light-gray-bg);
+    border-radius: 48px;
+    /* padding: 8px; */
+    margin-bottom: 18px;
+    width: fit-content;
+}
+
+.tab-btn {
+    padding: 8px 24px;
+    margin: 8px;
+    border-radius: 48px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--black);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.tab-btn.active {
+    background: var(--black);
+    color: var(--white);
+    font-weight: 500;
+}
+
+/* Tab content box */
+.tab-content {
+    background: var(--light-gray-bg);
+    border-radius: 8px;
+    padding: 24px;
+    font-size: 16px;
+    color: var(--dark);
+    font-weight: 300;
+    line-height: 1.8;
+    min-height: 180px;
+}
+
+.tab-content p+p {
+    margin-top: 14px;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
 }
 
 /* ========== JIO INSTITUTE ADVANTAGE ========== */
@@ -1712,6 +1941,10 @@ button {
         font-size: 32px;
     }
 
+    h4 {
+        font-size: 24px;
+    }
+
     /* --- NAVBAR --- */
     .navbar-inner {
         height: 80px;
@@ -1992,6 +2225,11 @@ button {
         scroll-snap-type: x mandatory;
     }
 
+    .faculty-carousel::before,
+    .faculty-carousel::after {
+        display: none;
+    }
+
     .faculty-card.side {
         width: 280px;
         height: 400px;
@@ -2001,12 +2239,18 @@ button {
     .faculty-card.center {
         width: 319px;
         height: 400px;
-        padding: 24px;
         scroll-snap-align: start;
     }
 
+    .faculty-card {
+        width: 319px;
+        height: 400px;
+        scroll-snap-align: start;
+        padding: 12px 12px 0 12px;
+    }
+
     .faculty-card.center .faculty-card-info {
-        padding: 24px;
+        padding: 16px;
     }
 
     .faculty-card-name .name-row span,
@@ -2087,6 +2331,93 @@ button {
         font-size: 12px;
         line-height: 18px;
         height: 36px;
+    }
+
+    .modal-backdrop {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .modal {
+        overflow-y: auto;
+        height: 100dvh;
+        border-radius: 0;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .modal-header {
+        padding: 20px;
+        gap: 16px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--white);
+    }
+
+    .modal-header h4 {
+        font-weight: 500;
+    }
+
+    .modal-close {
+        width: 32px;
+        height: 32px;
+    }
+
+    .modal-close svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .modal-header-role {
+        font-size: 14px;
+    }
+
+    .modal-body-row {
+        padding: 0;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Image fills full width on mobile */
+    .modal-left {
+        width: 100%;
+        flex: none;
+        height: 397px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0;
+    }
+
+    .mslide-img {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    /* Dots sit at bottom of the image block */
+    .mslider-dots {
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 6px;
+    }
+
+    /* Right panel gets normal padding */
+    .modal-right {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .tab-bar {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .tab-bar::-webkit-scrollbar {
+        display: none;
     }
 
     /* --- ADVANTAGE SECTION --- */

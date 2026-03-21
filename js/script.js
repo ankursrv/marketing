@@ -478,14 +478,203 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
         window.addEventListener('resize', updateArrows);
     }
 
-    // Faculty carousel (about.html)
-    initCarousel('.faculty-carousel', '.faculty-overview .nav-arrows', '.faculty-card');
+    // Faculty carousel (about.html) - Custom scaling slider logic
+    (function initFacultyCarousel() {
+        var container = document.querySelector('.faculty-carousel');
+        var arrowParent = document.querySelector('.faculty-overview .nav-arrows');
+        if (!container || !arrowParent) return;
+
+        var prevBtn = arrowParent.querySelector('.nav-arrow.prev');
+        var nextBtn = arrowParent.querySelector('.nav-arrow.active, .nav-arrow:not(.prev)');
+        if (!prevBtn || !nextBtn) return;
+
+        var items = Array.from(container.querySelectorAll('.faculty-card'));
+        if (!items.length) return;
+
+        var currentIndex = 0;
+        items.forEach(function(item, idx) {
+            if (item.classList.contains('center')) {
+                currentIndex = idx;
+            }
+        });
+
+        function updateSlider() {
+            items.forEach(function (item, idx) {
+                if (idx === currentIndex) {
+                    item.classList.remove('side');
+                    item.classList.add('center');
+                } else {
+                    item.classList.remove('center');
+                    item.classList.add('side');
+                }
+            });
+
+            var atStart = currentIndex === 0;
+            var atEnd = currentIndex === items.length - 1;
+            
+            prevBtn.classList.toggle('disabled', atStart);
+            nextBtn.classList.toggle('disabled', atEnd);
+            
+            var prevImg = prevBtn.querySelector('img');
+            var nextImg = nextBtn.querySelector('img');
+            if (prevImg) prevImg.src = atStart ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
+            if (nextImg) nextImg.src = atEnd ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
+
+            var isMobile = window.innerWidth <= 768;
+            var gap = isMobile ? 16 : 48;
+            var sideWidth = isMobile ? 280 : 630;
+            var targetScroll = currentIndex * (sideWidth + gap);
+            
+            container.scrollTo({ left: targetScroll, behavior: 'smooth' });
+        }
+
+        prevBtn.addEventListener('click', function () {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+
+        nextBtn.addEventListener('click', function () {
+            if (currentIndex < items.length - 1) {
+                currentIndex++;
+                updateSlider();
+            }
+        });
+        
+        // Initial setup
+        var atStart = currentIndex === 0;
+        var atEnd = currentIndex === items.length - 1;
+        prevBtn.classList.toggle('disabled', atStart);
+        nextBtn.classList.toggle('disabled', atEnd);
+
+        // Snap to center instantly on load
+        var isMobile = window.innerWidth <= 768;
+        var gap = isMobile ? 16 : 48;
+        var sideWidth = isMobile ? 280 : 630;
+        container.scrollLeft = currentIndex * (sideWidth + gap);
+    })();
 
     // News/blog cards carousel (about.html)
     initCarousel('.blog-cards', '.news-nav-arrows', '.blog-card');
 
     // Alumni carousel (programmes.html)
     initCarousel('.plp-alumni-cards', '.plp-alumni-nav', '.plp-alumni-card, .plp-alumni-video');
+})();
+
+// ==========  FACULTY MODAL LOGIC ==========
+
+(function () {
+    var cards = document.querySelectorAll('.faculty-card, .profile-card, .leader-quote-card');
+    var backdrop = document.getElementById('modalBackdrop');
+    var closeBtn = document.getElementById('modalClose');
+    var modal = document.getElementById('modal');
+
+    // Proceed only if the modal elements exist
+    if (!backdrop || !closeBtn || !modal) return;
+
+    // 1. Modal Open Behavior: On click of any card
+    var openModal = function (e) {
+        e.preventDefault();
+
+        var targetCard = e.currentTarget;
+
+        // Extract data to show in modal
+        var nameEl = targetCard.querySelector('.name-row span, .name, .leader-author .name');
+        var roleEl = targetCard.querySelector('.role, .title');
+        var imgEl = targetCard.querySelector('img.faculty-bg, img.profile-bg, .leader-image img');
+
+        // Update modal content with respective data
+        if (nameEl) {
+            var modalName = document.getElementById('modalName');
+            if (modalName) modalName.textContent = nameEl.textContent;
+        }
+
+        if (roleEl) {
+            var modalRole = document.getElementById('modalRole');
+            if (modalRole) modalRole.textContent = roleEl.textContent;
+        }
+
+        if (imgEl) {
+            var mslideImgs = modal.querySelectorAll('.mslide-img');
+            if (mslideImgs.length > 0) {
+                mslideImgs[0].src = imgEl.src;
+            }
+        }
+
+        // Open Modal
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    };
+
+    cards.forEach(function (card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', openModal);
+    });
+
+    // 2. Strict Modal Close Behavior
+    var closeModal = function () {
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    // Close ONLY when the close button is clicked
+    closeBtn.addEventListener('click', closeModal);
+
+    // Explicitly do NOT close the modal on outside click
+    backdrop.addEventListener('click', function (e) {
+        if (e.target === backdrop) {
+            // Strict control: Do nothing.
+        }
+    });
+
+    // Explicitly do NOT close on ESC key press
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && backdrop.classList.contains('open')) {
+            // Strict control: Do nothing / prevent default.
+            e.preventDefault();
+        }
+    });
+
+    // --- Modal Inner Interactions (Tabs & Sliders) ---
+    var tabs = modal.querySelectorAll('.tab-btn');
+    var panels = modal.querySelectorAll('.tab-panel');
+
+    if (tabs.length && panels.length) {
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                tabs.forEach(function (t) { t.classList.remove('active'); });
+                panels.forEach(function (p) { p.classList.remove('active'); });
+
+                tab.classList.add('active');
+
+                var targetId = 'tab-' + tab.getAttribute('data-tab');
+                var targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    }
+
+    var dots = modal.querySelectorAll('.mslider-dot');
+    var track = document.getElementById('msliderTrack');
+
+    if (dots.length > 0 && track) {
+        dots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+                var index = parseInt(dot.getAttribute('data-mi'), 10);
+
+                dots.forEach(function (d) { d.classList.remove('active'); });
+                dot.classList.add('active');
+
+                // Use the actual rendered width so it works on mobile (full-width) and desktop (355px)
+                var imgWidth = track.querySelector('.mslide-img') ? track.querySelector('.mslide-img').offsetWidth : 355;
+                track.style.transform = 'translateX(-' + (index * imgWidth) + 'px)';
+            });
+        });
+    }
+
 })();
 
 // ========== 9. PRINCIPLES CAROUSEL (about.html) ==========
