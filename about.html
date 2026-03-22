@@ -333,12 +333,6 @@
         <div class="modal-backdrop" id="modalBackdrop">
             <div class="modal" id="modal">
 
-                <!-- <button class="modal-close" id="modalClose">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path d="M18 6L6 18M6 6l12 12" />
-                    </svg>
-                </button> -->
-
                 <!-- HEADER: name + role on top -->
                 <div class="modal-header">
                     <div>
@@ -448,108 +442,184 @@
         </div>
 
         <!-- Faculty Tabs & Profiles -->
-        <div class="faculty-tabs">
-            <div class="faculty-tabs-header">
-                <div class="chips">
-                    <div class="chip active">Global Advisory Council</div>
-                    <div class="chip">Governing Council</div>
-                    <div class="chip">Academic Advisors</div>
+        <div class="container">
+            <div class="faculty-tabs">
+                <div class="faculty-tabs-header">
+                    <div class="chips">
+                        <button class="chip active" data-council="global">Global Advisory Council</button>
+                        <button class="chip" data-council="governing">Governing Council</button>
+                        <button class="chip" data-council="academic">Academic Advisors</button>
+                    </div>
+                    <!-- For Desktop  -->
+                    <button class="btn-secondary desktop-only">
+                        <a href="#">View All Faculty</a>
+                        <img src="images/arrow-black-btn.svg" alt="" aria-hidden="true">
+                    </button>
                 </div>
-                <a href="#" class="view-all-link">
-                    View All Faculty
-                    <img src="images/arrow-up-right-red.svg" alt="">
-                </a>
-            </div>
-            <div class="profile-cards">
-                <div class="profile-card">
-                    <img class="profile-bg" src="images/profile-1.png" alt="Dr. Jean-Lou Chameau">
-                    <div class="profile-card-info">
-                        <span class="name">Dr. Jean-Lou Chameau</span>
-                        <span class="title">President Emeritus, California Institute of Technology, USA | Former
-                            President, KAUST, Saudi Arabia</span>
+                <div class="profile-cards">
+                    <!-- Global Advisory Council -->
+                    <div class="profile-card" data-council="global">
+                        <img class="profile-bg" src="images/profile-1.png" alt="Dr. Jean-Lou Chameau">
+                        <div class="profile-card-info">
+                            <span class="name">Dr. Jean-Lou Chameau</span>
+                            <span class="title">President Emeritus, California Institute of Technology, USA | Former
+                                President, KAUST, Saudi Arabia</span>
+                        </div>
+                    </div>
+                    <div class="profile-card" data-council="global">
+                        <img class="profile-bg" src="images/profile-2.png" alt="Dr. Jeffrey Sachs">
+                        <div class="profile-card-info">
+                            <span class="name">Dr. Jeffrey Sachs</span>
+                            <span class="title">Director at Center for Sustainable Development, Columbia University,
+                                USA</span>
+                        </div>
+                    </div>
+                    <div class="profile-card" data-council="global">
+                        <img class="profile-bg" src="images/profile-3.png" alt="Dr. Rick Levin">
+                        <div class="profile-card-info">
+                            <span class="name">Dr. Rick Levin</span>
+                            <span class="title">President Emeritus, Yale University, USA | Former CEO, Coursera</span>
+                        </div>
+                    </div>
+                    <div class="profile-card" data-council="global">
+                        <img class="profile-bg" src="images/profile-4.png" alt="Dr. Subra Suresh">
+                        <div class="profile-card-info">
+                            <span class="name">Dr. Subra Suresh</span>
+                            <span class="title">Member, Global Advisory Council, Jio Institute | Former President,
+                                Nanyang Technological University</span>
+                        </div>
+                    </div>
+                    <!-- Governing Council -->
+                    <div class="profile-card" data-council="governing" style="display:none">
+                        <img class="profile-bg" src="images/profile-1.png" alt="Governing Council Member">
+                        <div class="profile-card-info">
+                            <span class="name">Governing Council Member</span>
+                            <span class="title">Placeholder — Governing Council</span>
+                        </div>
+                    </div>
+                    <!-- Academic Advisors -->
+                    <div class="profile-card" data-council="academic" style="display:none">
+                        <img class="profile-bg" src="images/profile-2.png" alt="Academic Advisor">
+                        <div class="profile-card-info">
+                            <span class="name">Academic Advisor</span>
+                            <span class="title">Placeholder — Academic Advisors</span>
+                        </div>
                     </div>
                 </div>
-                <div class="profile-card">
-                    <img class="profile-bg" src="images/profile-2.png" alt="Dr. Jeffrey Sachs">
-                    <div class="profile-card-info">
-                        <span class="name">Dr. Jeffrey Sachs</span>
-                        <span class="title">Director at Center for Sustainable Development, Columbia University,
-                            USA</span>
-                    </div>
-                </div>
-                <div class="profile-card">
-                    <img class="profile-bg" src="images/profile-3.png" alt="Dr. Rick Levin">
-                    <div class="profile-card-info">
-                        <span class="name">Dr. Rick Levin</span>
-                        <span class="title">President Emeritus, Yale University, USA | Former CEO, Coursera</span>
-                    </div>
-                </div>
-                <div class="profile-card">
-                    <img class="profile-bg" src="images/profile-4.png" alt="Dr. Subra Suresh">
-                    <div class="profile-card-info">
-                        <span class="name">Dr. Subra Suresh</span>
-                        <span class="title">Member, Global Advisory Council, Jio Institute | Former President, Nanyang
-                            Technological University</span>
-                    </div>
-                </div>
+                <!-- For Mobile  -->
+                <button class="btn-secondary mobile-only">
+                    <a href="#">View All Faculty</a>
+                    <img src="images/arrow-black-btn.svg" alt="" aria-hidden="true">
+                </button>
             </div>
         </div>
     </section>
 
     <!-- THE JIO INSTITUTE ADVANTAGE -->
     <section class="advantage-section" id="advantage">
-        <div class="advantage-header">
-            <h2>The Jio Institute Advantage</h2>
-            <p>Because learning here follows the MERU framework multidisciplinary, experiential, research-led, and
-                deeply connected to the real world.</p>
-        </div>
-        <div class="advantage-image">
-            <img src="images/advantage-1.png" alt="Six Schools, Modular Structure">
-            <div class="advantage-image-text">
-                <h3>Six Schools, Modular Structure</h3>
-                <p>Master your core domain with the flexibility to explore others, using AI as an integrated tool across
-                    every discipline from management to sports.</p>
+        <div class="container">
+            <div class="advantage-header">
+                <h2>The Jio Institute Advantage</h2>
+                <p>Because learning here follows the MERU framework multidisciplinary, experiential, research-led, and
+                    deeply connected to the real world.</p>
+            </div>
+            <!-- Desktop: single image -->
+            <div class="advantage-image desktop-only">
+                <img src="images/advantage-1.png" alt="Six Schools, Modular Structure">
+                <div class="advantage-image-text">
+                    <h3>Six Schools, Modular Structure</h3>
+                    <p>Master your core domain with the flexibility to explore others, using AI as an integrated tool
+                        across every discipline from management to sports.</p>
+                </div>
+            </div>
+
+            <!-- Mobile: Stacked Card Slider -->
+            <div class="adv-stack mobile-only" id="advStack">
+                <div class="adv-card adv-card--0" data-index="0">
+                    <img src="images/advantage-1.png" alt="Six Schools, Modular Structure">
+                    <div class="adv-card-text">
+                        <h3>Six Schools, Modular Structure</h3>
+                        <p>Master your core domain with the flexibility to explore others, using AI as an integrated
+                            tool across every discipline from management to sports.</p>
+                    </div>
+                </div>
+                <div class="adv-card adv-card--1" data-index="1">
+                    <img src="images/campus-main.png" alt="Mandatory Global Exposure">
+                    <div class="adv-card-text">
+                        <h3>Mandatory Global &amp; Industry Exposure</h3>
+                        <p>Mandatory study abroad at partner universities across Singapore, Canada, UK, and the USA,
+                            with deep industry immersion built into every programme.</p>
+                    </div>
+                </div>
+                <div class="adv-card adv-card--2" data-index="2">
+                    <img src="images/about-header.png" alt="Research-Led Learning">
+                    <div class="adv-card-text">
+                        <h3>Research-Led Learning</h3>
+                        <p>Coursework grounded in live research projects, innovation labs, and thought leadership —
+                            turning every student into a future-ready problem solver.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- PRINCIPLES SECTION -->
     <section class="principles-section">
-        <div class="principles-header">
-            <h2>The Principles That Drive Our Excellence</h2>
-            <div class="nav-arrows">
-                <button class="nav-arrow prev disabled">
-                    <img src="images/arrow-right-nav-disabled.svg" alt="Previous">
-                </button>
-                <button class="nav-arrow active">
-                    <img src="images/arrow-right-nav.svg" alt="Next">
-                </button>
-            </div>
-        </div>
-        <div class="principles-cards">
-            <div class="principle-card card-01">
-                <span class="principle-number">01</span>
-                <div class="principle-desc">
-                    <h3>Catalyse</h3>
-                    <p>We create a space for innovation to solve India's challenges and drive future growth.</p>
+        <div class="container">
+            <div class="principles-header">
+                <h2>The Principles That Drive Our Excellence</h2>
+                <div class="nav-arrows">
+                    <button class="nav-arrow prev disabled">
+                        <img src="images/arrow-right-nav-disabled.svg" alt="Previous">
+                    </button>
+                    <button class="nav-arrow active">
+                        <img src="images/arrow-right-nav.svg" alt="Next">
+                    </button>
                 </div>
             </div>
-            <div class="principle-card card-02">
-                <span class="principle-number">02</span>
-                <div class="principle-desc">
-                    <h3>Co-create</h3>
+            <div class="principles-cards">
+                <div class="principle-card card-01" data-number="01" data-title="Catalyse"
+                    data-desc="We create a space for innovation to solve India's challenges and drive future growth.">
+                    <span class="principle-number">01</span>
+                    <div class="principle-desc">
+                        <h3>Catalyse</h3>
+                        <p>We create a space for innovation to solve India's challenges and drive future growth.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="principle-card card-03">
-                <span class="principle-number">03</span>
-                <div class="principle-desc">
-                    <h3>Connect</h3>
+                <div class="principle-card card-02" data-number="02" data-title="Co-create"
+                    data-desc="We partner with industry, government, and communities to co-build solutions that matter.">
+                    <span class="principle-number">02</span>
+                    <div class="principle-desc">
+                        <h3>Co-create</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="principle-card card-04">
-                <span class="principle-number">04</span>
-                <div class="principle-desc">
-                    <h3>Communicate</h3>
+                <div class="principle-card card-03" data-number="03" data-title="Connect"
+                    data-desc="We build bridges between disciplines, cultures, and ideas to enable holistic thinking.">
+                    <span class="principle-number">03</span>
+                    <div class="principle-desc">
+                        <h3>Connect</h3>
+                    </div>
+                </div>
+                <div class="principle-card card-04" data-number="04" data-title="Communicate"
+                    data-desc="We equip every graduate to articulate their ideas compellingly across any audience.">
+                    <span class="principle-number">04</span>
+                    <div class="principle-desc">
+                        <h3>Communicate</h3>
+                    </div>
+                </div>
+                <div class="principle-card card-05" data-number="05" data-title="Communicate"
+                    data-desc="We equip every graduate to articulate their ideas compellingly across any audience.">
+                    <span class="principle-number">05</span>
+                    <div class="principle-desc">
+                        <h3>Communicate</h3>
+                    </div>
+                </div>
+                <div class="principle-card card-06" data-number="06" data-title="Communicate"
+                    data-desc="We equip every graduate to articulate their ideas compellingly across any audience.">
+                    <span class="principle-number">06</span>
+                    <div class="principle-desc">
+                        <h3>Communicate</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -557,50 +627,65 @@
 
     <!-- A CAMPUS BUILT FOR YOU -->
     <section class="campus-section" id="campus">
-        <div class="campus-photos-mosaic">
-            <img class="cp-1" src="images/campus-a1.png" alt="">
-            <img class="cp-2" src="images/campus-a2.png" alt="">
-            <img class="cp-3" src="images/campus-main.png" alt="">
-            <img class="cp-4" src="images/campus-a4.png" alt="">
-            <img class="cp-5" src="images/campus-a5.png" alt="">
-            <img class="cp-6" src="images/campus-a6.png" alt="">
-            <img class="cp-7" src="images/campus-a10.png" alt="">
-            <img class="cp-8" src="images/campus-a7.png" alt="">
-            <img class="cp-9" src="images/campus-a8.png" alt="">
-            <img class="cp-10" src="images/campus-a9.png" alt="">
+        <div class="campus-media">
+            <div class="campus-image">
+                <img src="images/campus.png" alt="Jio Institute Campus">
+            </div>
+            <div class="campus-content">
+                <h2>A Campus Built for You!</h2>
+                <p>Our 52 acre carbon-neutral Dronagiri campus provides a world-class, accessible launchpad
+                    strategically
+                    located under two hours from the commercial hubs of Mumbai and Pune.</p>
+                <a href="#" class="btn-primary">
+                    Explore Campus Life
+                    <img src="images/arrow-up-right-white.svg" alt="">
+                </a>
+            </div>
         </div>
-        <div class="campus-content">
-            <h2>A Campus Built for You!</h2>
-            <p>Our 52 acre carbon-neutral Dronagiri campus provides a world-class, accessible launchpad strategically
-                located under two hours from the commercial hubs of Mumbai and Pune.</p>
-            <a href="#" class="btn-primary">
-                Explore Campus Life
-                <img src="images/arrow-up-right-white.svg" alt="">
-            </a>
-        </div>
+
+
     </section>
 
     <!-- NURTURING A LIFETIME OF EXCELLENCE -->
     <section class="legacy-section">
-        <div class="legacy-text">
-            <h2>Nurturing a Lifetime of Excellence</h2>
-            <p>Our 13 Reliance Foundation Schools build the bedrock of innovation for 14,000 students, creating a direct
-                path to Jio Institute. This seamless journey transforms early curiosity into world-class leadership,
-                dedicated to building a better future.</p>
-        </div>
-        <div class="legacy-logos">
-            <div class="legacy-logo-box">
-                <img src="images/reliance-foundation-logo.svg" alt="Reliance Foundation School">
-            </div>
-            <div class="legacy-logo-box dais">
-                <img src="images/dais-logo.png" alt="Dhirubhai Ambani International School">
+        <div class="container">
+            <div class="legacy-content">
+                <div class="legacy-text">
+                    <h2>Nurturing a Lifetime of Excellence</h2>
+                    <p>Our 13 Reliance Foundation Schools build the bedrock of innovation for 14,000 students, creating
+                        a
+                        direct
+                        path to Jio Institute. This seamless journey transforms early curiosity into world-class
+                        leadership,
+                        dedicated to building a better future.</p>
+                </div>
+                <div class="legacy-logos">
+                    <div class="legacy-logo-box reliance">
+                        <img src="images/reliance-foundation-logo.svg" alt="Reliance Foundation School">
+                    </div>
+                    <div class="legacy-logo-box dais">
+                        <img src="images/dais-logo.png" alt="Dhirubhai Ambani International School">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- MAKING HEADLINES -->
     <section class="news-section">
-        <h2>Making Headlines, Shaping Futures.</h2>
+        <div class="container">
+            <div class="news-header">
+                <h2>Making Headlines, Shaping Futures.</h2>
+                <div class="news-nav-arrows">
+                    <button class="nav-arrow prev disabled">
+                        <img src="images/arrow-right-nav.svg" alt="Previous">
+                    </button>
+                    <button class="nav-arrow next active">
+                        <img src="images/arrow-right-nav.svg" alt="Next">
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="blog-cards">
             <div class="blog-card">
                 <div class="blog-card-image">
@@ -640,14 +725,14 @@
                 </div>
             </div>
         </div>
-        <div class="news-nav-arrows">
+        <!-- <div class="news-nav-arrows">
             <button class="nav-arrow prev disabled">
                 <img src="images/arrow-right-nav.svg" alt="Previous">
             </button>
             <button class="nav-arrow active">
                 <img src="images/arrow-right-nav.svg" alt="Next">
             </button>
-        </div>
+        </div> -->
     </section>
 
     <!-- FOOTER -->

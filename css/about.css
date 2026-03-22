@@ -85,6 +85,25 @@ button {
     cursor: pointer;
 }
 
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 24px;
+    height: 64px;
+    border: 1px solid rgba(204, 204, 204, 1);
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--black);
+    white-space: nowrap;
+}
+
+.btn-secondary img {
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+}
+
 /* ========== NAVBAR ========== */
 .navbar {
     position: fixed;
@@ -876,7 +895,6 @@ button {
 
 /* Chips/Tabs */
 .faculty-tabs {
-    padding: 0 80px;
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -894,6 +912,7 @@ button {
     border-radius: 48px;
     padding: 8px;
     width: 820px;
+    border: 0.5px solid var(--text-light-gray);
 }
 
 .chip {
@@ -916,7 +935,7 @@ button {
     color: var(--white);
 }
 
-.view-all-link {
+/* .view-all-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -926,12 +945,12 @@ button {
     text-decoration: none;
     padding: 24px 32px;
     border-radius: 48px;
-}
+} */
 
-.view-all-link img {
+/* .view-all-link img {
     width: 24px;
     height: 24px;
-}
+} */
 
 /* Profile Cards */
 .profile-cards {
@@ -945,6 +964,7 @@ button {
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .profile-card img.profile-bg {
@@ -1203,11 +1223,7 @@ button {
 /* ========== JIO INSTITUTE ADVANTAGE ========== */
 .advantage-section {
     background: var(--white);
-    padding: 120px 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    align-items: center;
+    padding: 120px 0;
 }
 
 .advantage-header {
@@ -1215,16 +1231,17 @@ button {
     justify-content: space-between;
     align-items: flex-end;
     width: 1280px;
+    margin-bottom: 48px;
 }
 
-.advantage-header h2 {
+/* .advantage-header h2 {
     font-family: 'Noto Serif', serif;
     font-size: 56px;
     font-weight: 300;
     line-height: 67px;
     color: var(--text-dark);
     width: 516px;
-}
+} */
 
 .advantage-header p {
     font-size: 20px;
@@ -1270,6 +1287,7 @@ button {
     font-weight: 400;
     line-height: 31px;
     color: var(--white);
+    font-family: var(--font-primary);
 }
 
 .advantage-image-text p {
@@ -1279,31 +1297,81 @@ button {
     color: var(--text-light-gray);
 }
 
+/* ── ADVANTAGE MOBILE STACKED SLIDER ── */
+.adv-stack {
+    position: relative;
+    height: 640px;
+    width: 100%;
+}
+
+.adv-card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    transform-origin: top center;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+        opacity 0.5s ease;
+}
+
+.adv-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card text overlay */
+.adv-card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.adv-card-text h3 {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--white);
+}
+
+.adv-card-text p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
 /* ========== PRINCIPLES SECTION ========== */
 .principles-section {
     background: var(--white);
-    padding: 120px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    align-items: center;
+    padding-bottom: 120px;
 }
 
 .principles-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    width: 1280px;
+    align-items: center;
+    margin-bottom: 48px;
 }
 
-.principles-header h2 {
+/* .principles-header h2 {
     font-family: 'Noto Serif', serif;
     font-size: 56px;
     font-weight: 300;
     line-height: 1.16;
     color: var(--black);
     width: 734px;
-}
+} */
 
 .principles-cards {
     width: 1440px;
@@ -1318,37 +1386,21 @@ button {
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
+    z-index: 1;
 }
 
 .principle-card.card-01 {
-    left: 80px;
+    left: 0;
     top: 0;
     width: 408px;
     height: 486px;
     background: var(--primary-maroon);
     color: var(--white);
+    z-index: 5;
 }
 
-.principle-card.card-02 {
-    left: 516px;
-    top: 232px;
-    width: 408px;
-    height: 254px;
-    background: var(--light-gray-bg);
-    color: var(--black);
-}
-
-.principle-card.card-03 {
-    left: 952px;
-    top: 232px;
-    width: 408px;
-    height: 254px;
-    background: var(--light-gray-bg);
-    color: var(--black);
-}
-
-.principle-card.card-04 {
-    left: 1388px;
+/* Slide cards — left position set dynamically by JS */
+.principle-card:not(.card-01) {
     top: 232px;
     width: 408px;
     height: 254px;
@@ -1381,11 +1433,12 @@ button {
     font-size: 28px;
     font-weight: 500;
     line-height: 1.2;
+    font-family: var(--font-primary);
 }
 
-.principle-card:not(.card-01) .principle-desc h3 {
+/* .principle-card:not(.card-01) .principle-desc h3 {
     text-align: right;
-}
+} */
 
 .principle-desc p {
     font-size: 16px;
@@ -1394,157 +1447,104 @@ button {
     color: #e6e6e6;
 }
 
-/* ========== CAMPUS SECTION ========== */
 .campus-section {
-    background: var(--light-gray-bg);
-    height: 960px;
-    position: relative;
+    background-color: #f7f7f7;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    padding-bottom: 100px;
 }
 
-.campus-photos-mosaic {
-    position: absolute;
-    top: -758px;
-    left: 50%;
-    transform: translateX(calc(-50% - 0.17px));
-    width: 1509.66px;
-    height: 776px;
+.campus-media {
+    position: relative;
 }
 
-.campus-photos-mosaic img {
-    position: absolute;
+.campus-image {
+    width: 100%;
+    margin-bottom: 24px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.campus-image.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.campus-image img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-}
-
-.campus-photos-mosaic .cp-1 {
-    width: 272px;
-    height: 181px;
-    left: 25.66px;
-    top: 466px;
-}
-
-.campus-photos-mosaic .cp-2 {
-    width: 339px;
-    height: 390px;
-    left: -41px;
-    top: 68px;
-}
-
-.campus-photos-mosaic .cp-3 {
-    width: 469px;
-    height: 439px;
-    left: 50%;
-    top: 58px;
-    transform: translateX(calc(-50% - 1.33px));
-}
-
-.campus-photos-mosaic .cp-4 {
-    width: 188px;
-    height: 306px;
-    left: 996px;
-    top: 193px;
-}
-
-.campus-photos-mosaic .cp-5 {
-    width: 239px;
-    height: 256px;
-    left: 996px;
-    top: -71px;
-}
-
-.campus-photos-mosaic .cp-6 {
-    width: 205px;
-    height: 370px;
-    left: 306px;
-    top: 127px;
-}
-
-.campus-photos-mosaic .cp-7 {
-    width: 205px;
-    height: 138px;
-    left: 306px;
-    top: -19px;
-}
-
-.campus-photos-mosaic .cp-8 {
-    width: 282px;
-    height: 220px;
-    left: 1192px;
-    top: 427px;
-}
-
-.campus-photos-mosaic .cp-9 {
-    width: 282px;
-    height: 226px;
-    left: 1192px;
-    top: 193px;
-}
-
-.campus-photos-mosaic .cp-10 {
-    width: 231px;
-    height: 166px;
-    left: 1243px;
-    top: 19px;
+    display: block;
 }
 
 .campus-content {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 40px;
     align-items: center;
     text-align: center;
-    margin-top: 272px;
+    padding: 0 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
 }
 
-.campus-content h2 {
+/* .campus-content h2 {
     font-family: 'Noto Serif', serif;
-    font-size: 56px;
-    font-weight: 300;
-    line-height: 67px;
-    color: var(--text-dark);
-    width: 659px;
-}
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 24px;
+} */
 
 .campus-content p {
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--black);
+    margin-top: 24px;
+    margin-bottom: 40px;
+    max-width: 846px;
     font-weight: 300;
-    line-height: 1.5;
-    color: var(--text-dark);
-    width: 846px;
 }
 
 .btn-primary {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 24px 32px;
-    background: var(--red-accent);
+    gap: 12px;
+    padding: 16px 32px;
+    background: #e31e24;
     color: var(--white);
-    border-radius: 48px;
-    font-size: 18px;
-    font-weight: 400;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
-    cursor: pointer;
-    border: none;
-    white-space: nowrap;
+    transition: background 0.3s ease;
 }
 
 .btn-primary img {
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
 }
+
+.btn-primary:hover {
+    background: #c1171c;
+}
+
+
 
 /* ========== LEGACY SECTION ========== */
 .legacy-section {
     background: var(--primary-maroon);
-    padding: 120px 80px;
+    padding: 120px 0;
+}
+
+.legacy-content {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -1553,10 +1553,6 @@ button {
 }
 
 .legacy-text h2 {
-    font-family: 'Noto Serif', serif;
-    font-size: 56px;
-    font-weight: 300;
-    line-height: 67px;
     color: var(--white);
     margin-bottom: 24px;
 }
@@ -1571,18 +1567,27 @@ button {
 .legacy-logos {
     display: flex;
     gap: 26px;
-    align-items: flex-start;
+    align-items: center;
 }
 
-.legacy-logo-box {
-    width: 300px;
-    height: 156px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.legacy-logo-box.reliance {
+    width: 204px;
+    height: 80px;
 }
 
 .legacy-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.legacy-logo-box.dais {
+    width: 250px;
+    height: 156px;
+}
+
+
+/* .legacy-logo-box img {
     max-width: 204px;
     max-height: 80px;
     object-fit: contain;
@@ -1592,25 +1597,37 @@ button {
     max-width: 196px;
     max-height: 196px;
     border-radius: 50%;
-}
+} */
 
 /* ========== NEWS / BLOG SECTION ========== */
 .news-section {
-    padding: 120px 80px;
+    padding: 120px 0;
     background: var(--white);
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 48px; */
+}
+.news-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+.news-nav-arrows{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
-.news-section h2 {
+/* .news-section h2 {
     font-family: 'Noto Serif', serif;
     font-size: 56px;
     font-weight: 300;
     line-height: 67px;
     color: var(--text-dark);
     width: 626px;
-}
+} */
 
 .blog-cards {
     display: flex;
@@ -1926,7 +1943,15 @@ button {
     display: contents;
 }
 
-.news-nav-arrows {
+/* .news-nav-arrows {
+    display: none;
+} */
+
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
     display: none;
 }
 
@@ -1943,6 +1968,20 @@ button {
 
     h4 {
         font-size: 24px;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        height: 48px;
     }
 
     /* --- NAVBAR --- */
@@ -2052,6 +2091,11 @@ button {
     .tab-dropdown-icon {
         width: 14px;
         height: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .rotate-180 {
+        transform: rotate(180deg);
     }
 
     /* --- OUR STORY (TIMELINE) --- */
@@ -2278,7 +2322,6 @@ button {
 
     /* Faculty Tabs & Profiles */
     .faculty-tabs {
-        padding: 0 20px;
         gap: 32px;
     }
 
@@ -2300,10 +2343,10 @@ button {
         height: 40px;
     }
 
-    .view-all-link {
+    /* .view-all-link {
         padding: 0;
         font-size: 16px;
-    }
+    } */
 
     .profile-cards {
         display: grid;
@@ -2422,21 +2465,21 @@ button {
 
     /* --- ADVANTAGE SECTION --- */
     .advantage-section {
-        padding: 60px 20px;
-        gap: 40px;
+        padding: 60px 0;
     }
 
     .advantage-header {
         flex-direction: column;
         gap: 16px;
         width: 100%;
+        margin-bottom: 40px;
     }
 
-    .advantage-header h2 {
+    /* .advantage-header h2 {
         font-size: 28px;
         line-height: 1.32;
         width: 100%;
-    }
+    } */
 
     .advantage-header p {
         font-size: 16px;
@@ -2467,78 +2510,91 @@ button {
 
     /* --- PRINCIPLES SECTION --- */
     .principles-section {
-        padding: 60px 0 120px;
-        gap: 32px;
+        position: relative;
+        padding-bottom: 60px;
     }
 
     .principles-header {
-        width: 100%;
-        padding: 0 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
+        margin-bottom: 40px;
     }
 
-    .principles-header h2 {
+    .principle-card {
+        padding: 24px;
+    }
+
+    /* .principles-header h2 {
         font-size: 28px;
         line-height: 1.32;
         width: 100%;
-    }
+    } */
 
     .principles-header .nav-arrows {
-        display: none;
+        display: flex;
+        position: absolute;
+        bottom: 56px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        gap: 16px;
+    }
+
+    .nav-arrow {
+        width: 48px;
+        height: 48px;
     }
 
     .principles-cards {
-        width: 100%;
-        height: auto;
+        width: calc(100vw - 40px);
+        margin: 0 auto;
         display: flex;
         gap: 16px;
-        padding-left: 20px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
     }
 
     .principle-card {
         position: relative;
         left: auto !important;
         top: auto !important;
-        width: 300px;
-        height: 400px;
+        width: 100% !important;
+        height: 100%;
         flex-shrink: 0;
-        scroll-snap-align: start;
-    }
-
-    .principle-card.card-02,
-    .principle-card.card-03,
-    .principle-card.card-04 {
-        width: 300px;
-        height: 400px;
         background: var(--primary-maroon);
         color: var(--white);
     }
 
-    .principle-card.card-02 .principle-number,
-    .principle-card.card-03 .principle-number,
-    .principle-card.card-04 .principle-number {
+    .principle-card.card-01 {
+        height: 400px;
+    }
+
+    .principle-card.card-02,
+    .principle-card.card-03,
+    .principle-card.card-04,
+    .principle-card.card-05,
+    .principle-card.card-06 {
+        width: 100% !important;
+        height: 400px;
+        background: var(--primary-maroon);
+    }
+
+    .principle-card .principle-number {
+        /* font-size: 80px; */
+        color: var(--white);
+        opacity: 0.2;
+    }
+
+    .principle-card .principle-desc h3 {
+        font-size: 24px;
+        text-align: left;
         color: var(--white);
     }
 
-    .principle-card:not(.card-01) .principle-desc h3 {
-        text-align: left;
-    }
-
-    .principle-desc p {
-        color: #e6e6e6;
-    }
-
-    .principle-number {
-        font-size: 80px;
-    }
-
-    .principle-desc h3 {
-        font-size: 24px;
+    .principle-card .principle-desc p {
+        display: block !important;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 0.8);
     }
 
     .principle-desc p {
@@ -2591,7 +2647,8 @@ button {
     .campus-content {
         margin-top: 40px;
         padding: 0 20px;
-        gap: 24px;
+        gap: 0;
+        position: relative;
     }
 
     .campus-content h2 {
@@ -2604,7 +2661,7 @@ button {
         font-size: 16px;
         line-height: 24px;
         width: 100%;
-        color: #333333;
+        margin-top: 8px;
     }
 
     .btn-primary {
@@ -2617,8 +2674,11 @@ button {
 
     /* --- LEGACY SECTION --- */
     .legacy-section {
+        padding: 60px 0;
+    }
+
+    .legacy-content {
         flex-direction: column;
-        padding: 60px 20px;
         gap: 40px;
     }
 
@@ -2626,11 +2686,11 @@ button {
         width: 100%;
     }
 
-    .legacy-text h2 {
+    /* .legacy-text h2 {
         font-size: 28px;
         line-height: 1.32;
         margin-bottom: 16px;
-    }
+    } */
 
     .legacy-text p {
         font-size: 14px;
@@ -2638,11 +2698,21 @@ button {
     }
 
     .legacy-logos {
-        gap: 12px;
+        gap: 60px;
         width: 100%;
     }
 
-    .legacy-logo-box {
+    .legacy-logo-box.reliance {
+        width: 132px;
+        height: 52px;
+    }
+
+    .legacy-logo-box.dais {
+        width: 74px;
+        height: 74px;
+    }
+
+    /* .legacy-logo-box {
         width: 161px;
         height: 78px;
     }
@@ -2655,7 +2725,7 @@ button {
     .legacy-logo-box.dais img {
         max-width: 78px;
         max-height: 78px;
-    }
+    } */
 
     /* --- NEWS SECTION --- */
     .news-section {
@@ -2663,11 +2733,11 @@ button {
         gap: 40px;
     }
 
-    .news-section h2 {
+    /* .news-section h2 {
         font-size: 28px;
         line-height: 1.32;
         width: 100%;
-    }
+    } */
 
     .blog-cards {
         flex-direction: column;
@@ -3007,12 +3077,9 @@ button {
     left: 0;
     right: 0;
     background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
     padding: 8px 0;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 4px;
 }
 
 .tab-dropdown-panel.active {
@@ -3046,8 +3113,8 @@ button {
     display: none;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .principle-card {
         transform: none !important;
     }
-}
+} */

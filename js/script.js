@@ -328,7 +328,8 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
             }
             if (label) label.textContent = link.textContent;
             panel.classList.remove('active');
-            icon.src = 'images/chevron-down.svg';
+            // icon.src = 'images/chevron-down.svg';
+            icon.classList.remove('rotate-180');
         });
         panel.appendChild(link);
     });
@@ -338,7 +339,8 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
         if (e.target.closest('.tab-dropdown-panel')) return;
         var isOpen = panel.classList.contains('active');
         panel.classList.toggle('active');
-        icon.src = isOpen ? 'images/chevron-down.svg' : 'images/chevron-up.svg';
+        // icon.src = isOpen ? 'images/chevron-down.svg' : 'images/chevron-up.svg';
+        icon.classList.toggle('rotate-180');
     });
 
     // Close dropdown when clicking outside
@@ -431,8 +433,8 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
         var arrowParent = document.querySelector(arrowParentSelector);
         if (!container || !arrowParent) return;
 
-        var prevBtn = arrowParent.querySelector('.nav-arrow.prev, .plp-alumni-arrow.prev');
-        var nextBtn = arrowParent.querySelector('.nav-arrow.active, .nav-arrow:not(.prev), .plp-alumni-arrow.active, .plp-alumni-arrow:not(.prev)');
+        var prevBtn = arrowParent.querySelector('.prev');
+        var nextBtn = arrowParent.querySelector('.next, .active:not(.prev)');
         if (!prevBtn || !nextBtn) return;
 
         // Enable scroll behavior
@@ -446,7 +448,9 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
 
         function getScrollAmount() {
             var item = items[0];
-            return item.offsetWidth + parseInt(getComputedStyle(container).gap || '24');
+            var gap = parseInt(getComputedStyle(container).gap);
+            if (isNaN(gap)) gap = 24;
+            return item.offsetWidth + gap;
         }
 
         function updateArrows() {
@@ -683,8 +687,8 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
     var container = document.querySelector('.principles-cards');
     if (!container) return;
 
-    var cards = container.querySelectorAll('.principle-card');
-    if (!cards.length) return;
+    var allCards = Array.from(container.querySelectorAll('.principle-card'));
+    if (!allCards.length) return;
 
     var section = container.closest('.principles-section');
     if (!section) return;
@@ -693,43 +697,140 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
     var nextBtn = section.querySelector('.nav-arrow:not(.prev)');
     if (!prevBtn || !nextBtn) return;
 
-    var shift = 0;
-    var maxShift = 436; // pixels to shift (reveals card-04)
+    var displayCard = allCards[0];
+    var slideCards  = allCards.slice(1);
 
-    // Add transition to cards
-    cards.forEach(function (card) {
-        card.style.transition = 'transform 0.5s ease';
+    var numDisplay = displayCard.querySelector('.principle-number');
+    var descH3     = displayCard.querySelector('.principle-desc h3');
+    var descP      = displayCard.querySelector('.principle-desc p');
+
+    var slides = allCards.map(function (card) {
+        return {
+            number: card.getAttribute('data-number') || '',
+            title:  card.getAttribute('data-title')  || '',
+            desc:   card.getAttribute('data-desc')   || ''
+        };
     });
 
-    function updateArrows() {
-        prevBtn.classList.toggle('disabled', shift <= 0);
-        nextBtn.classList.toggle('disabled', shift >= maxShift);
-        var prevImg = prevBtn.querySelector('img');
-        var nextImg = nextBtn.querySelector('img');
-        if (prevImg) prevImg.src = shift <= 0 ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
-        if (nextImg) nextImg.src = shift >= maxShift ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
+    var current = 0;
+    var total   = slides.length;
+    var STEP, GAP, displayW;
+
+    function isMobile() {
+        return window.innerWidth <= 768;
     }
 
-    function applyShift() {
-        cards.forEach(function (card) {
-            card.style.transform = 'translateX(' + (-shift) + 'px)';
-        });
+    function initLayout() {
+        displayW = displayCard.offsetWidth;
+        GAP = isMobile() ? 16 : 28;
+        
+        if (isMobile()) {
+            STEP = displayW + GAP;
+            allCards.forEach(function (card) {
+                card.style.left = '0px';
+                card.style.position = 'relative';
+                card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+            applySlide();
+        } else {
+            STEP = slideCards.length > 0 ? slideCards[0].offsetWidth + 28 : displayW + 28;
+            displayCard.style.left = '0px';
+            displayCard.style.position = 'absolute';
+            displayCard.style.transform = 'none';
+            
+            slideCards.forEach(function (card, i) {
+                card.style.position = 'absolute';
+                card.style.left = (displayW + 28 + i * STEP) + 'px';
+                card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+            
+            if (numDisplay) numDisplay.style.transition = 'opacity 0.25s ease';
+            if (descH3) descH3.style.transition = 'opacity 0.25s ease';
+            if (descP) descP.style.transition = 'opacity 0.25s ease';
+            
+            applySlide();
+        }
+    }
+
+    function updateContent(idx) {
+        if (isMobile() || !numDisplay || !descH3) return;
+        var slide = slides[idx];
+        numDisplay.style.opacity = '0';
+        descH3.style.opacity     = '0';
+        if (descP) descP.style.opacity = '0';
+
+        setTimeout(function () {
+            numDisplay.textContent = slide.number;
+            descH3.textContent     = slide.title;
+            if (descP) descP.textContent = slide.desc;
+            numDisplay.style.opacity = '0.2';
+            descH3.style.opacity     = '1';
+            if (descP) descP.style.opacity = '1';
+        }, 250);
+    }
+
+    function applySlide() {
+        var offset = -(current * STEP);
+        if (isMobile()) {
+            allCards.forEach(function (card) {
+                card.style.transform = 'translateX(' + offset + 'px)';
+            });
+        } else {
+            slideCards.forEach(function (card) {
+                card.style.transform = 'translateX(' + offset + 'px)';
+            });
+            updateContent(current);
+        }
         updateArrows();
     }
 
+    function updateArrows() {
+        var atStart = current <= 0;
+        var atEnd   = current >= total - 1;
+        prevBtn.classList.toggle('disabled', atStart);
+        nextBtn.classList.toggle('disabled', atEnd);
+        var prevImg = prevBtn.querySelector('img');
+        var nextImg = nextBtn.querySelector('img');
+        if (prevImg) prevImg.src = atStart ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
+        if (nextImg) nextImg.src = atEnd   ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
+    }
+
     nextBtn.addEventListener('click', function () {
-        if (shift >= maxShift) return;
-        shift = Math.min(shift + maxShift, maxShift);
-        applyShift();
+        if (current >= total - 1) return;
+        current++;
+        applySlide();
     });
 
     prevBtn.addEventListener('click', function () {
-        if (shift <= 0) return;
-        shift = Math.max(shift - maxShift, 0);
-        applyShift();
+        if (current <= 0) return;
+        current--;
+        applySlide();
     });
 
-    updateArrows();
+    // Touch support for swiping
+    var touchStartX = 0;
+    container.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    container.addEventListener('touchend', function (e) {
+        var touchEndX = e.changedTouches[0].clientX;
+        var deltaX = touchStartX - touchEndX;
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX > 0 && current < total - 1) {
+                current++;
+                applySlide();
+            } else if (deltaX < 0 && current > 0) {
+                current--;
+                applySlide();
+            }
+        }
+    }, { passive: true });
+
+    window.addEventListener('resize', function() {
+        initLayout();
+    });
+    initLayout();
 })();
 
 // ========== 10. FACULTY CHIPS TAB SWITCHING (about.html) ==========
@@ -738,13 +839,34 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
     var chips = document.querySelectorAll('.faculty-tabs .chip');
     if (!chips.length) return;
 
+    var allCards = document.querySelectorAll('.profile-cards .profile-card');
+
+    function filterCards(council) {
+        allCards.forEach(function (card) {
+            if (!council || card.getAttribute('data-council') === council) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
     chips.forEach(function (chip) {
         chip.style.cursor = 'pointer';
         chip.addEventListener('click', function () {
             chips.forEach(function (c) { c.classList.remove('active'); });
             chip.classList.add('active');
+
+            var council = chip.getAttribute('data-council');
+            filterCards(council);
         });
     });
+
+    // Run on load to respect initial active chip
+    var activeChip = document.querySelector('.faculty-tabs .chip.active');
+    if (activeChip) {
+        filterCards(activeChip.getAttribute('data-council'));
+    }
 })();
 
 // ========== 11. PLP SIDEBAR FILTERS (programmes.html) ==========
@@ -1280,4 +1402,146 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
         requestAnimationFrame(animate);
     }
 
+})();
+
+// ========== 23. ADVANTAGE MOBILE STACKED SLIDER ==========
+
+(function () {
+    var stack = document.getElementById('advStack');
+    if (!stack) return;
+
+    // Only run on mobile
+    if (window.innerWidth > 768) return;
+
+    var cards = Array.from(stack.querySelectorAll('.adv-card'));
+    var dots  = Array.from(stack.querySelectorAll('.adv-dot'));
+    var total = cards.length;
+    var current = 0;
+
+    // Heights (card is ~72% of stack height, peek is the rest split as offsets)
+    var CARD_H   = Math.round(stack.offsetHeight * 0.87); // active card height
+    var PEEK_1   = 14;  // px peeking above active (card behind it)
+    var PEEK_2   = 26;  // px peeking above the second card
+
+    function setCardSizes() {
+        cards.forEach(function (c) {
+            c.style.height = CARD_H + 'px';
+            c.style.bottom = 'auto';
+        });
+    }
+
+    // Map a card's position relative to active (0=active, 1=behind, 2=further back, negative=gone)
+    function positionOf(cardIdx) {
+        var rel = (cardIdx - current + total) % total;
+        return rel; // 0 = active, 1 = one behind, 2 = two behind, etc.
+    }
+
+    function applyStates() {
+        cards.forEach(function (card, idx) {
+            var pos = positionOf(idx);
+            card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease';
+
+            if (pos === 0) {
+                // Active — sits lowest in stack, full size
+                card.style.zIndex    = 10;
+                card.style.top       = '54px';
+                card.style.transform = 'scale(1)';
+                card.style.opacity   = '1';
+            } else if (pos === 1) {
+                // One behind — peeks 12px above active
+                card.style.zIndex    = 9;
+                card.style.top       = '32px';
+                card.style.transform = 'scale(0.96)';
+                card.style.opacity   = '1';
+            } else if (pos === 2) {
+                // Two behind — peeks from very top
+                card.style.zIndex    = 8;
+                card.style.top       = '10px';
+                card.style.transform = 'scale(0.92)';
+                card.style.opacity   = '1';
+            } else {
+                // Hidden
+                card.style.zIndex    = 7;
+                card.style.top       = '0px';
+                card.style.transform = 'scale(0.88)';
+                card.style.opacity   = '0';
+            }
+        });
+
+    }
+
+    function goTo(idx) {
+        current = (idx + total) % total;
+        applyStates();
+    }
+
+    // Dot clicks
+    dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); });
+    });
+
+    // Swipe (touch)
+    var touchStartX = 0;
+    var touchStartY = 0;
+    stack.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    stack.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) < 30 && Math.abs(dy) < 30) return; // tap, not swipe
+        // Vertical swipe up → next; down → prev
+        if (Math.abs(dy) > Math.abs(dx)) {
+            if (dy < -30) goTo(current + 1);  // swipe up = next
+            if (dy >  30) goTo(current - 1);  // swipe down = prev
+        } else {
+            if (dx < -30) goTo(current + 1);  // swipe left = next
+            if (dx >  30) goTo(current - 1);  // swipe right = prev
+        }
+    }, { passive: true });
+
+    // Tap on back cards to bring them forward
+    cards.forEach(function (card, idx) {
+        card.addEventListener('click', function () {
+            var pos = positionOf(idx);
+            if (pos !== 0) goTo(idx); // bring clicked card to front
+        });
+    });
+
+    // Init
+    setCardSizes();
+    applyStates();
+
+    // Re-init on resize (in case orientation changes)
+    window.addEventListener('resize', function () {
+        if (window.innerWidth <= 768) {
+            CARD_H = Math.round(stack.offsetHeight * 0.87);
+            setCardSizes();
+            applyStates();
+        }
+    });
+})();
+
+// ========== 11. CAMPUS SECTION SCROLL ANIMATION ==========
+(function () {
+    var campusSection = document.getElementById('campus');
+    var campusImage   = campusSection ? campusSection.querySelector('.campus-image') : null;
+    if (!campusSection || !campusImage) return;
+
+    var observerOptions = {
+        threshold: 0.2 // Trigger when 20% of the section is visible
+    };
+
+    var observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                campusImage.classList.add('animate-in');
+                observer.unobserve(entry.target); // Run once
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(campusSection);
 })();
