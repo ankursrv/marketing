@@ -524,10 +524,9 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
             if (prevImg) prevImg.src = atStart ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
             if (nextImg) nextImg.src = atEnd ? 'images/arrow-right-nav-disabled.svg' : 'images/arrow-right-nav.svg';
 
-            var isMobile = window.innerWidth <= 768;
-            var gap = isMobile ? 16 : 48;
-            var sideWidth = isMobile ? 280 : 630;
-            var targetScroll = currentIndex * (sideWidth + gap);
+            var containerRect = container.getBoundingClientRect();
+            var cardRect = items[currentIndex].getBoundingClientRect();
+            var targetScroll = (items[currentIndex].offsetLeft + items[currentIndex].offsetWidth / 2) - (container.offsetWidth / 2);
             
             container.scrollTo({ left: targetScroll, behavior: 'smooth' });
         }
@@ -552,11 +551,11 @@ document.querySelectorAll('.footer-column-header').forEach(function (header) {
         prevBtn.classList.toggle('disabled', atStart);
         nextBtn.classList.toggle('disabled', atEnd);
 
-        // Snap to center instantly on load
-        var isMobile = window.innerWidth <= 768;
-        var gap = isMobile ? 16 : 48;
-        var sideWidth = isMobile ? 280 : 630;
-        container.scrollLeft = currentIndex * (sideWidth + gap);
+        // Snap to center inside a small timeout to ensure layout reflow is done
+        setTimeout(function() {
+            var targetScroll = (items[currentIndex].offsetLeft + items[currentIndex].offsetWidth / 2) - (container.offsetWidth / 2);
+            container.scrollLeft = targetScroll;
+        }, 100);
     })();
 
     // News/blog cards carousel (about.html)
