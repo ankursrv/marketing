@@ -325,6 +325,12 @@ button {
     text-align: center;
     cursor: pointer;
     transition: opacity 0.8s ease-in-out, visibility 0.8s;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .slider-year-box.fade-out {
@@ -446,8 +452,11 @@ button {
 /* Mobile Adjustments for Slider */
 @media (max-width: 768px) {
     .our-story-section.slider-version {
-        padding: 60px 0 0 0;
-        min-height: auto;
+        padding: 60px 0;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .slider-container {
@@ -459,6 +468,11 @@ button {
     .slider-year-box {
         font-size: 80px;
         margin-bottom: 40px;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        transform: none;
     }
 
     .slider-viewport {
@@ -1754,7 +1768,8 @@ button {
 }
 
 .newsletter-form input {
-    flex: 1;
+    /* flex: 1; */
+    width: calc(100% - 122px);
     border: none;
     background: transparent;
     color: var(--white);
